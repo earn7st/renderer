@@ -34,9 +34,38 @@ bool inside_triangle(const Vec2f& p, const Vec2f& v_a, const Vec2f& v_b, const V
     return ((x_a ^ x_b) == 0 && (x_b ^ x_c) == 0);
 }
 
-Vec3f compute_barycentric_coord(const Vec2f&, const Vec2f&, const Vec2f&)
+// edge: va -> vb
+float edge_function(const Vec2f& v, const Vec2f& v_a, const Vec2f& v_b)
 {
-    // TODO
+    return (v_a.y_ - v_b.y_) * v.x_ + (v_b.x_ - v_a.x_) * v.y_ + v_a.x_ * v_b.y_ - v_b.x_ * v_a.y_;
+}
+
+// compute f_ab_v_c and f_ca_v_b multiple times
+Vec3f compute_barycentric_coord_2D(const Vec2f& v, const Vec2f& v_a, const Vec2f& v_b, const Vec2f& v_c)
+{
+    float f_ab_v_c = edge_function(v_c, v_a, v_b);
+    float f_ab_v = edge_function(v, v_a, v_b);
+    
+    float f_ac_v_b = edge_function(v_b, v_a, v_c);
+    float f_ac_v = edge_function(v, v_a, v_c);
+    
+    float gamma = f_ab_v / f_ab_v_c;
+    float beta = f_ac_v / f_ac_v_b;
+    float alpha = 1 - gamma - beta;
+
+    return Vec3f(alpha, beta, gamma);
+}
+
+Vec3f compute_barycentric_coord_2D(const Vec2f& v, const Vec2f& v_a, const Vec2f& v_b, const Vec2f& v_c, float f_ac_vb, float f_ab_vc)
+{
+    float f_ab_v = edge_function(v, v_a, v_b);
+    float f_ac_v = edge_function(v, v_a, v_c);
+
+    float gamma = f_ab_v / f_ab_vc;
+    float beta = f_ac_v / f_ac_vb;
+    float alpha = 1 - gamma - beta;
+
+    return Vec3f(alpha, beta, gamma);
 }
 
 #endif

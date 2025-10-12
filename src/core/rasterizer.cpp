@@ -29,6 +29,9 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
 
     } else if (render_state.polygon_mode == FILL)
     {
+        float edge_func_result_v1 = edge_function(v1_screen_pos, v0_screen_pos, v2_screen_pos);
+        float edge_func_result_v2 = edge_function(v2_screen_pos, v0_screen_pos, v1_screen_pos);
+
         uint32_t min_x = std::max((uint32_t)0, (uint32_t)std::floor(std::min({v0_screen_pos.x_, v1_screen_pos.x_, v2_screen_pos.x_})));
         uint32_t min_y = std::max((uint32_t)0, (uint32_t)std::floor(std::min({v0_screen_pos.y_, v1_screen_pos.y_, v2_screen_pos.y_})));
         uint32_t max_x = std::min(screen_width - 1, (uint32_t)std::ceil(std::max({v0_screen_pos.x_, v1_screen_pos.x_, v2_screen_pos.x_})));
@@ -42,8 +45,9 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                 float cy = y + 0.5;
                 if(inside_triangle(Vec2f(cx, cy), v0_screen_pos, v1_screen_pos, v2_screen_pos))
                 {
-                    Vec3f bary = compute_barycentric_coord(v0_screen_pos, v1_screen_pos, v2_screen_pos);
-                    
+                    Vec3f bary = compute_barycentric_coord_2D(Vec2f(cx, cy), v0_screen_pos, v1_screen_pos, v2_screen_pos, edge_func_result_v1, edge_func_result_v2);
+                    float alpha = bary.x_, beta = bary.y_, gamma = bary.z_;
+                    std::cout << alpha << " " << beta << " " << gamma << std::endl;
                 }
             }
         }
