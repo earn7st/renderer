@@ -1,28 +1,11 @@
 #include "renderer/resource_manager.h"
 
-bool ResourceManager::initialize()
+void ResourceManager::load_mesh(const std::shared_ptr<Mesh> mesh)
 {
-    return true;
+    spMeshes_.push_back(mesh);
 }
 
-void ResourceManager::load_mesh(const Mesh& mesh)
+void ResourceManager::load_material(const std::shared_ptr<Material> material)
 {
-    meshes_.push_back(mesh);
-}
-
-void ResourceManager::load_material(const Material& material)
-{
-    materials_.push_back(material);
-}
-
-const Mesh& ResourceManager::get_mesh(int i)
-{
-    assert(i < meshes_.size());
-    return meshes_[i];
-}
-
-const Mesh* ResourceManager::get_pMesh(int i)
-{
-    assert(i < meshes_.size());
-    return &meshes_[i];
+    spMaterials_.push_back(material);
 }

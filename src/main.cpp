@@ -8,9 +8,6 @@
 #include "scene/mesh.h"
 #include "scene/camera.h"
 
-
-#define SCENE_PATH  "../scenes/"
-
 int main(int argc, char* argv[])
 {
 

@@ -9,21 +9,16 @@ class ResourceManager
 {
 public:
     ResourceManager() = default;
+    
+    void load_mesh(const std::shared_ptr<Mesh>);
+    void load_material(const std::shared_ptr<Material>);
 
-    bool initialize();
-
-    void load_mesh(const Mesh& mesh);
-    void load_material(const Material& material);
-
-    const Mesh& get_mesh(int i);
-    const Mesh* get_pMesh(int i);
-
-    const std::vector<Mesh>& get_meshes() { return meshes_; }
+    const std::vector<std::shared_ptr<Mesh>>& get_spMeshes() { return spMeshes_; }
 
 private:
-    std::vector<Mesh> meshes_;
-    std::vector<Material> materials_;
-    std::vector<Texture> textures_;
+    std::vector<std::shared_ptr<Mesh>> spMeshes_;
+    std::vector<std::shared_ptr<Material>> spMaterials_;
+    std::vector<std::shared_ptr<Texture>> spTextures_;
 };
 
 #endif

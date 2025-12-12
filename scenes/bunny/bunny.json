@@ -1,5 +1,6 @@
 {
   "name": "bunny",
+  "group": false,
   "positions": [
     [
       -0.00341018,
@@ -25034,6 +25035,7 @@
       0.17582418527042398
     ]
   ],
+  "texcoords": null,
   "faces": [
     [
       1068,

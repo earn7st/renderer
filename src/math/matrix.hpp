@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cassert>
 #include <stdexcept>
+#include <cmath>
 
 #include "constant.h"
 #include "vector.hpp"
@@ -17,8 +18,8 @@ public:
 
     union
     {
-        double m_[4][4];
-        double m_array_[16];
+        float m_[4][4];
+        float m_array_[16];
     }; 
 
     Matrix() : m_{  {0, 0, 0, 0},
@@ -26,10 +27,10 @@ public:
                     {0, 0, 0, 0},
                     {0, 0, 0, 0} } {}
 
-    Matrix(double m00, double m01, double m02, double m03,
-        double m10, double m11, double m12, double m13,
-        double m20, double m21, double m22, double m23,
-        double m30, double m31, double m32, double m33)
+    Matrix(float m00, float m01, float m02, float m03,
+        float m10, float m11, float m12, float m13,
+        float m20, float m21, float m22, float m23,
+        float m30, float m31, float m32, float m33)
     {
         m_[0][0] = m00, m_[0][1] = m01, m_[0][2] = m02, m_[0][3] = m03;
         m_[1][0] = m10, m_[1][1] = m11, m_[1][2] = m12, m_[1][3] = m13;
@@ -37,18 +38,18 @@ public:
         m_[3][0] = m30, m_[3][1] = m31, m_[3][2] = m32, m_[3][3] = m33;
     }
 
-    Matrix(const std::initializer_list<double>& init)
+    Matrix(const std::initializer_list<float>& init)
     {
         assert(init.size() == 16 && "Matrix initializer must have exactly 16 values");
         std::copy(init.begin(), init.end(), &m_[0][0]);
     }
 
-    Matrix(const Matrix& m) { memcpy(m_array_, m.m_array_, 16 * sizeof(double)); }
+    Matrix(const Matrix& m) { memcpy(m_array_, m.m_array_, 16 * sizeof(float)); }
 
     Matrix& operator = (const Matrix& m)
     {
         if(this == &m) return *this;
-        memcpy(m_array_, m.m_array_, 16 * sizeof(double));
+        memcpy(m_array_, m.m_array_, 16 * sizeof(float));
         return *this;
     }
 };
@@ -141,17 +142,17 @@ Matrix transpose(const Matrix& mat)
 }
 
 inline 
-Matrix scale(const Matrix& mat, const double scale_x, const double scale_y, const double scale_z)
+Matrix scale(const Matrix& mat, const Vector3<float>& v)
 {
     Matrix result_mat(mat);
-    result_mat.m_[0][0] *= scale_x;
-    result_mat.m_[1][1] *= scale_y;
-    result_mat.m_[2][2] *= scale_z;
+    result_mat.m_[0][0] *= v.x_;
+    result_mat.m_[1][1] *= v.y_;
+    result_mat.m_[2][2] *= v.z_;
     return result_mat;
 }
 
 inline 
-Matrix translate(const Matrix& mat, const Vector3<double>& v)
+Matrix translate(const Matrix& mat, const Vector3<float>& v)
 {
     Matrix result_mat(mat);
     result_mat.m_[0][3] += v.x_;
@@ -160,14 +161,24 @@ Matrix translate(const Matrix& mat, const Vector3<double>& v)
     return result_mat;
 }
 
-inline 
-Matrix translate(const Matrix& mat, const Vector3<float>& v)
+// Euler Rotation Order: x->y->z->
+inline
+Matrix rotate(const Matrix& mat, const Vector3<float>& v)
 {
-    Matrix result_mat(mat);
-    result_mat.m_[0][3] += static_cast<double>(v.x_);
-    result_mat.m_[1][3] += static_cast<double>(v.y_);
-    result_mat.m_[2][3] += static_cast<double>(v.z_);
-    return result_mat;
+    float radian_x = v.x_ / 180.0 * PI, radian_y = v.y_ / 180.0 * PI, radian_z = v.z_ / 180.0 * PI;
+    Matrix RX_mat(1, 0, 0, 0, 
+                0, std::cos(radian_x), -std::sin(radian_x), 0, 
+                0, std::sin(radian_x), std::cos(radian_x), 0, 
+                0, 0, 0, 1);
+    Matrix RY_mat(std::cos(radian_y), 0, std::sin(radian_y), 0, 
+                0, 1, 0, 0, 
+                -std::sin(radian_y), 0, std::cos(radian_y), 0, 
+                0, 0, 0, 1);
+    Matrix RZ_mat(std::cos(radian_z), -std::sin(radian_z), 0, 0,
+                std::sin(radian_z), std::cos(radian_z), 0, 0, 
+                0, 0, 1, 0, 
+                0, 0, 0, 1);
+    return mat * RX_mat * RY_mat * RZ_mat;
 }
 
 // parameter near and far are coordinates

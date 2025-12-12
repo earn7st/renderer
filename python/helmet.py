@@ -4,11 +4,11 @@ import json
 
 WORKSPACE_PATH = "../"
 
-SCENE_NAME = MODEL_NAME = "bunny"
+SCENE_NAME = MODEL_NAME = "helmet"
 ASSET_PATH = WORKSPACE_PATH + "assets/" + SCENE_NAME + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-MODEL_FILEPATH = ASSET_PATH + "bunny.obj"
+MODEL_FILEPATH = ASSET_PATH + "helmet.obj"
 
 
 if __name__ == "__main__":
@@ -38,9 +38,9 @@ if __name__ == "__main__":
             "name" : MODEL_NAME,
             "filename": MODEL_NAME + ".json",
             "transform": {
-                "scale": [25.0, 25.0, 25.0],
-                "translation": [0.0, -3.0, 0.0],
-                "rotation": [0.0, 90.0, 0.0]
+                "scale": [2.0, 2.0, 2.0],
+                "translation": [0.0, 0.0, 0.0],
+                "rotation": [0.0, 0.0, 0.0]
             }
         }
         

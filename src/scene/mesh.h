@@ -5,7 +5,6 @@
 
 struct Mesh
 {
-
     uint32_t num_vertices = 0;
     std::vector<Vertex> vertices;
 

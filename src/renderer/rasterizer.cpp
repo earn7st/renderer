@@ -11,7 +11,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec4f v0_ndc_pos = v0.clip_pos / v0.clip_pos.w_;
     Vec4f v1_ndc_pos = v1.clip_pos / v1.clip_pos.w_;
     Vec4f v2_ndc_pos = v2.clip_pos / v2.clip_pos.w_;
-
+    
     uint32_t screen_width = fb->get_width();
     uint32_t screen_height = fb->get_height();
 
@@ -20,7 +20,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec2f v1_screen_pos = viewport_transform(v1_ndc_pos, screen_width, screen_height);
     Vec2f v2_screen_pos = viewport_transform(v2_ndc_pos, screen_width, screen_height);
 
-    if (render_state.polygon_mode == LINE)
+    if (render_state.polygon_mode == FILL)
     {
         draw_line(v0_screen_pos, v1_screen_pos, fb, shader);
         draw_line(v1_screen_pos, v2_screen_pos, fb, shader);

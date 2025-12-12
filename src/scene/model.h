@@ -9,7 +9,7 @@ struct SubMesh
 {
     uint32_t offset = 0;
     uint32_t size = 0;
-    uint32_t material_index = 0;
+    Material* pMaterial = nullptr;
     Transform local_transform;
 };
 
@@ -19,16 +19,15 @@ class Model
 public:
     Model() = default;
 
-    void set_pMesh(const Mesh& mesh);
-    void set_pMesh(const Mesh* mesh);
+    void set_mesh_weak(const std::shared_ptr<Mesh>& mesh);
 
-    const Mesh* get_pMesh() const;
-    const Mesh& get_mesh() const;
-    const Material* get_pMaterial(uint32_t index) const;
-    const Material& get_material(uint32_t index) const;
+    const std::weak_ptr<Mesh> mesh_weak() const;
 
     const SubMesh& get_sub_mesh(uint32_t index) const;
     const std::vector<SubMesh>& get_sub_meshes() const;
+
+    void set_transform(const Transform& transform);
+    const Transform& get_transform() const;
 
     void add_sub_mesh(SubMesh&);
 
@@ -37,9 +36,8 @@ public:
 private:
 
     // Pointer to Data (in ResourceManager)
-    const Mesh* pMesh_;
+    std::weak_ptr<Mesh> wpMesh_;
     Transform transform_;
-    std::vector<Material*> pMaterials_;
 
     std::vector<SubMesh> sub_meshes_;
 };

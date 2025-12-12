@@ -1,18 +1,9 @@
 #include "renderer/renderer.h"
 #include "renderer/shader.h"
+#include "scene/transform.h"
 #include "utils.hpp"
 
 uint32_t cnt = 0;
-
-bool Renderer::initialize(Framebuffer& fb) 
-{
-    if(!attach_framebuffer(fb))
-    {
-        std::cerr << "Renderer::initialize(): Failed while calling attach_framebuffer()\n";
-        return false;
-    }
-    return true;
-}
 
 bool Renderer::attach_framebuffer(Framebuffer& fb)
 {
@@ -24,7 +15,6 @@ bool Renderer::attach_framebuffer(Framebuffer& fb)
     return false;
 }
 
-// render scene from "camera"'s perspective (camera = scene.get_main_camera())
 void Renderer::render(const Scene& scene)
 {
     update_per_frame_uniform(scene);
@@ -40,9 +30,13 @@ void Renderer::render(const Scene& scene)
 
 void Renderer::draw_model(const Model& model)
 {
-    update_per_model_uniform(model);
+    const Transform& transform = model.get_transform();
+    update_per_model_uniform(transform);
 
-    const Mesh* pMesh = model.get_pMesh();
+    const std::weak_ptr wpMesh = model.mesh_weak();
+    const std::shared_ptr spMesh = wpMesh.lock();
+
+    const Mesh& mesh = *spMesh;
 
     const std::vector<SubMesh>& sub_meshes = model.get_sub_meshes();
     for(auto it = sub_meshes.begin(); it != sub_meshes.end(); ++it)
@@ -56,7 +50,7 @@ void Renderer::draw_model(const Model& model)
         // TODO: set per-sub_mesh material info to uniform;
         // uniform_ = update_uniform_material()...
 
-        draw_call(*pMesh, sub_mesh.offset, sub_mesh.size);
+        draw_call(mesh, sub_mesh.offset, sub_mesh.size);
     }
 
 }
@@ -67,7 +61,6 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
         return ;
     }
-
     for (uint32_t i = offset; i < offset + size; i += 3)
     {
         const Vertex& ori_v0 = mesh.vertices[mesh.indices[i]];
@@ -101,16 +94,12 @@ void Renderer::update_per_frame_uniform(const Scene& scene)
 
 }
 
-// model transform
-void Renderer::update_per_model_uniform(const Model& model)
+void Renderer::update_per_model_uniform(const Transform& t)
 {
-    // TODO
-    //uniform_.model_matrix = Matrix::Identity;
-    uniform_.model_matrix = Matrix(25, 0, 0, 0, 0, 25, 0, -2, 0, 0, 25, 0, 0, 0, 0, 1);
+    uniform_.model_matrix = transform(uniform_.model_matrix, t);
     uniform_.MVP_matrix = uniform_.VP_matrix * uniform_.model_matrix;
 }
 
-// sub-mesh local transform
 void Renderer::update_per_sub_mesh_uniform(const SubMesh& sub_mesh)
 {
     // TODO
