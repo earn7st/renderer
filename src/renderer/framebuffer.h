@@ -3,6 +3,10 @@
 
 #include "math/math_all.h"
 
+#ifdef _WIN32
+    #include <vector>
+#endif
+
 class Framebuffer
 {
 public:

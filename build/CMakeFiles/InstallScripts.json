@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/workspace/renderer/build/cmake_install.cmake",
+		"D:/workspace/renderer/build/vendored/SDL/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -4,6 +4,10 @@
 #include <iostream>
 #include <SDL3/SDL.h>
 
+#ifdef _WIN32
+    #include <unordered_map>
+#endif
+
 class InputHandler
 {
 public:

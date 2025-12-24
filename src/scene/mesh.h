@@ -1,6 +1,10 @@
 #ifndef __MESH_H__
 #define __MESH_H__
 
+#ifdef _WIN32
+    #include <vector>
+#endif
+
 #include "renderer/render_types.h"
 
 struct Mesh

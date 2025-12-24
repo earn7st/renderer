@@ -5,6 +5,11 @@
 #include "scene/mesh.h"
 #include "scene/texture.h"
 
+#ifdef _WIN32
+    #include <vector>
+    #include <memory>
+#endif
+
 class ResourceManager
 {
 public:

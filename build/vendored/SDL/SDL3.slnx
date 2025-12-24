@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="fde7a729-07b6-3291-8189-0e1ff02db7c3" DefaultStartup="true">
+		<BuildDependency Project="SDL3-shared.vcxproj"/>
+		<BuildDependency Project="SDL3_test.vcxproj"/>
+		<BuildDependency Project="SDL_uclibc.vcxproj"/>
+		<BuildDependency Project="../../ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="SDL3-shared.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b7cc7031-c03e-3670-8077-ae483f339bed">
+		<BuildDependency Project="SDL_uclibc.vcxproj"/>
+		<BuildDependency Project="../../ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="SDL3_test.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c52f4155-6232-3e3f-b7c1-37ef4612e35f">
+		<BuildDependency Project="../../ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="SDL_uclibc.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="050d36c9-b664-3579-bf31-0e593d2b09f9">
+		<BuildDependency Project="../../ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="../../ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="90383ac4-eee1-304d-8be4-8ba2d2be3254"/>
+</Solution>

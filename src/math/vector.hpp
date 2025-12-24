@@ -5,6 +5,10 @@
 #include <cmath>
 #include <iomanip>
 
+#ifdef _WIN32
+    #include <cstdint>
+#endif
+
 // Vector2
 template <typename T>
 class Vector2

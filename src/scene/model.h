@@ -5,6 +5,10 @@
 #include "scene/transform.h"
 #include "scene/material.h"
 
+#ifdef _WIN32
+    #include <memory>
+#endif
+
 struct SubMesh
 {
     uint32_t offset = 0;

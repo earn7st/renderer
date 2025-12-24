@@ -1,8 +1,11 @@
 #ifndef __TEXTURE_H__
 #define __TEXTURE_H__
 
-#include <string>
+#ifdef _WIN32
+    #include <vector>
+#endif
 
+#include <string>
 #include "math/math_all.h"
 
 class Texture
