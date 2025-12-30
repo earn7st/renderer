@@ -169,7 +169,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -408,7 +408,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -647,7 +647,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -886,7 +886,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -1125,7 +1125,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -1364,7 +1364,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -1603,7 +1603,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -1842,7 +1842,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -2081,7 +2081,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -2320,7 +2320,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -2559,7 +2559,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -2798,7 +2798,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -3037,7 +3037,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -3276,7 +3276,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -3515,7 +3515,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -3754,7 +3754,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -3993,7 +3993,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -4232,7 +4232,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -4470,7 +4470,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -4708,7 +4708,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -4946,7 +4946,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -5184,7 +5184,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -5423,7 +5423,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -5662,7 +5662,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -5901,7 +5901,7 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h

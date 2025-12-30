@@ -168,7 +168,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch: vendored/SDL/CMakeFiles
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  vendored/SDL/include-config-/build_config/SDL_build_config.h \
+  vendored/SDL/include-config-debug/build_config/SDL_build_config.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h \
@@ -449,7 +449,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.hxx.gch: vendored/SDL/CMakeFil
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  vendored/SDL/include-config-/build_config/SDL_build_config.h \
+  vendored/SDL/include-config-debug/build_config/SDL_build_config.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h \
@@ -2653,7 +2653,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dynapi/SDL_dynapi.c.obj: D:/workspac
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/winver.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/wnnc.h \
   C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/wow64apiset.h \
-  vendored/SDL/include-config-/build_config/SDL_build_config.h \
+  vendored/SDL/include-config-debug/build_config/SDL_build_config.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h \
   D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h \
@@ -13676,9 +13676,9 @@ D:/workspace/renderer/vendored/SDL/src/haptic/SDL_haptic_c.h:
 
 C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/wchar.h:
 
-vendored/SDL/include-config-/build_config/SDL_build_config.h:
+C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d10shader.h:
 
-C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc:
+vendored/SDL/include-config-debug/build_config/SDL_build_config.h:
 
 D:/workspace/renderer/vendored/SDL/src/render/gpu/shaders/texture_advanced.frag.spv.h:
 
@@ -13965,6 +13965,8 @@ D:/workspace/renderer/vendored/SDL/src/video/SDL_rotate.h:
 D:/workspace/renderer/vendored/SDL/src/joystick/windows/SDL_dinputjoystick_c.h:
 
 C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/poly_laguerre.tcc:
+
+C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc:
 
 C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tr1/special_function_util.h:
 
@@ -14775,8 +14777,6 @@ C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d10_1shader.h:
 C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d10effect.h:
 
 C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d10sdklayers.h:
-
-C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d10shader.h:
 
 C:/Program\ Files/mingw64/x86_64-w64-mingw32/include/d3d11sdklayers.h:
 

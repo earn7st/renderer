@@ -2,7 +2,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.hxx.gch: \
  D:\workspace\renderer\build\vendored\SDL\CMakeFiles\SDL3-shared.dir\cmake_pch.hxx.cxx \
  D:/workspace/renderer/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.hxx \
  D:/workspace/renderer/vendored/SDL/src/SDL_internal.h \
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h \
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h \
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_platform_defines.h \
  D:/workspace/renderer/vendored/SDL/src/dynapi/SDL_dynapi.h \
  D:/workspace/renderer/vendored/SDL/src/dynapi/SDL_dynapi_overrides.h \

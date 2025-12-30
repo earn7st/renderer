@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_RC
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_RC
+  "DEBUG"
   "DLL_EXPORT"
   "SDL_BUILD_MAJOR_VERSION=3"
   "SDL_BUILD_MICRO_VERSION=7"
@@ -22,7 +23,7 @@ set(CMAKE_TARGET_DEFINITIONS_RC
 
 # The include file search paths:
 set(CMAKE_RC_TARGET_INCLUDE_PATH
-  "vendored/SDL/include-config-/build_config"
+  "vendored/SDL/include-config-debug/build_config"
   "vendored/SDL/include-revision"
   "D:/workspace/renderer/vendored/SDL/include"
   "D:/workspace/renderer/vendored/SDL/src"

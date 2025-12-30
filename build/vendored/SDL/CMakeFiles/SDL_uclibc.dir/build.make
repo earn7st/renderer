@@ -76,375 +76,375 @@ vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj: vendored/SDL/CMak
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_atan2.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_atan2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_atan2.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_exp.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_exp.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_exp.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_fmod.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_fmod.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_fmod.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_log.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_log.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_log.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_log.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_log.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_log.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_log.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_log10.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_log10.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_log10.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_pow.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_pow.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_pow.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_rem_pio2.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_rem_pio2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_rem_pio2.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/e_sqrt.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c > CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\e_sqrt.c -o CMakeFiles\SDL_uclibc.dir\src\libm\e_sqrt.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/k_cos.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_cos.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_cos.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/k_rem_pio2.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_rem_pio2.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_rem_pio2.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/k_sin.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_sin.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_sin.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/k_tan.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c > CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\k_tan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\k_tan.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_atan.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_atan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_atan.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_copysign.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_copysign.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_copysign.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_cos.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_cos.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_cos.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_fabs.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_fabs.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_fabs.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_floor.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_floor.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_floor.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_isinf.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isinf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinf.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_isinff.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isinff.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isinff.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_isnan.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isnan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnan.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_isnanf.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_isnanf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_isnanf.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_modf.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_modf.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_modf.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_scalbn.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_scalbn.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_scalbn.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_sin.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_sin.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_sin.c.s
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/flags.make
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/includes_C.rsp
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj: D:/workspace/renderer/vendored/SDL/src/libm/s_tan.c
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj: vendored/SDL/CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.obj -MF CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.obj.d -o CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.obj -c D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.i
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c > CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.i
 
 vendored/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s"
-	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.s
+	cd /d D:\workspace\renderer\build\vendored\SDL && C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\workspace\renderer\vendored\SDL\src\libm\s_tan.c -o CMakeFiles\SDL_uclibc.dir\src\libm\s_tan.c.s
 
 # Object files for target SDL_uclibc
 SDL_uclibc_OBJECTS = \

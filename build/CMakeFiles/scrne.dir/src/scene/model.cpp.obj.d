@@ -196,6 +196,7 @@ CMakeFiles/scrne.dir/src/scene/model.cpp.obj: \
  D:/workspace/renderer/src/math/constant.h \
  D:/workspace/renderer/src/math/quaterions.hpp \
  D:/workspace/renderer/src/math/vector.hpp \
+ D:/workspace/renderer/src/scene/light.h \
  D:/workspace/renderer/src/scene/transform.h \
  D:/workspace/renderer/src/scene/material.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \

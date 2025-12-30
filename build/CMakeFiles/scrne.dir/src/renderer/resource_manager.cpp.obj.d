@@ -197,6 +197,7 @@ CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj: \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
  D:/workspace/renderer/src/renderer/render_types.h \
+ D:/workspace/renderer/src/scene/light.h \
  D:/workspace/renderer/src/scene/texture.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_raw_storage_iter.h \

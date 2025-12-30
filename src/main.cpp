@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     }
 
     std::string scene_name = argv[1];
-    
+
     Engine engine;
     if(engine.start_up(scene_name) < 0) return -1;
     engine.run();

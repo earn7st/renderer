@@ -10,7 +10,8 @@
 class Engine
 {
 public:
-    Engine(uint32_t w = DEFAULT_DISPLAYER_WIDTH, uint32_t h = DEFAULT_DISPLAYER_HEIGHT);
+    Engine(uint32_t w = DEFAULT_DISPLAYER_WIDTH, uint32_t h = DEFAULT_DISPLAYER_HEIGHT, 
+           PolygonMode pmode=FILL);
     int start_up(const std::string& scene_name);
     void run();
     int shut_down();

@@ -206,4 +206,6 @@ CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj: \
  D:/workspace/renderer/src/math/constant.h \
  D:/workspace/renderer/src/math/quaterions.hpp \
  D:/workspace/renderer/src/math/vector.hpp \
- D:/workspace/renderer/src/renderer/render_types.h
+ D:/workspace/renderer/src/renderer/render_types.h \
+ D:/workspace/renderer/src/scene/light.h \
+ D:/workspace/renderer/src/scene/material.h

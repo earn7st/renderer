@@ -67,6 +67,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake"
+  "D:/workspace/renderer/.git/modules/vendored/SDL/HEAD"
+  "D:/workspace/renderer/.git/modules/vendored/SDL/refs/heads/main"
   "D:/workspace/renderer/CMakeLists.txt"
   "CMakeFiles/4.2.1/CMakeCCompiler.cmake"
   "CMakeFiles/4.2.1/CMakeCXXCompiler.cmake"
@@ -76,8 +78,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/cmake.verify_globs"
   "vendored/SDL/CMakeFiles/SDL_build_config.h.intermediate"
   "vendored/SDL/CMakeFiles/git-data/grabRef.cmake"
-  "D:/workspace/renderer/vendored/SDL/.git/HEAD"
-  "D:/workspace/renderer/vendored/SDL/.git/refs/heads/main"
   "D:/workspace/renderer/vendored/SDL/CMakeLists.txt"
   "D:/workspace/renderer/vendored/SDL/cmake/3rdparty.cmake"
   "D:/workspace/renderer/vendored/SDL/cmake/FindLibUSB.cmake"
@@ -114,7 +114,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "vendored/SDL/include-revision/SDL3/SDL_revision.h"
   "vendored/SDL/SDL3Config.cmake"
   "vendored/SDL/SDL3ConfigVersion.cmake"
-  "vendored/SDL/include-config-/build_config/SDL_build_config.h"
+  "vendored/SDL/include-config-debug/build_config/SDL_build_config.h"
   "vendored/SDL/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

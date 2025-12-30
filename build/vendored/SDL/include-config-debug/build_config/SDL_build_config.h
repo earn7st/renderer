@@ -37,7 +37,7 @@
 #include "SDL_begin_config_private.h"
 #endif
 
-/* #undef HAVE_GCC_ATOMICS */
+#define HAVE_GCC_ATOMICS 1
 /* #undef HAVE_GCC_SYNC_LOCK_TEST_AND_SET */
 
 /* #undef SDL_DISABLE_ALLOCA */
@@ -54,7 +54,7 @@
 
 /* Useful headers */
 /* #undef HAVE_ALLOCA_H */
-/* #undef HAVE_ICONV_H */
+#define HAVE_ICONV_H 1
 #define HAVE_INTTYPES_H 1
 #define HAVE_LIMITS_H 1
 #define HAVE_MALLOC_H 1
@@ -63,7 +63,7 @@
 #define HAVE_SIGNAL_H 1
 #define HAVE_STDIO_H 1
 #define HAVE_STDLIB_H 1
-/* #undef HAVE_STRINGS_H */
+#define HAVE_STRINGS_H 1
 #define HAVE_STRING_H 1
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_WCHAR_H 1
@@ -104,7 +104,7 @@
 #define HAVE_STRRCHR 1
 #define HAVE_STRSTR 1
 /* #undef HAVE_STRNSTR */
-/* #undef HAVE_STRTOK_R */
+#define HAVE_STRTOK_R 1
 #define HAVE_ITOA 1
 #define HAVE__LTOA 1
 /* #undef HAVE__UITOA */
@@ -145,7 +145,7 @@
 #define HAVE_FLOORF 1
 #define HAVE_FMOD 1
 #define HAVE_FMODF 1
-#define HAVE_ISINF 1
+/* #undef HAVE_ISINF */
 /* #undef HAVE_ISINFF */
 #define HAVE_ISINF_FLOAT_MACRO 1
 #define HAVE_ISNAN 1
@@ -174,9 +174,9 @@
 #define HAVE_TRUNC 1
 #define HAVE_TRUNCF 1
 #define HAVE__FSEEKI64 1
-/* #undef HAVE_FOPEN64 */
-/* #undef HAVE_FSEEKO */
-/* #undef HAVE_FSEEKO64 */
+#define HAVE_FOPEN64 1
+#define HAVE_FSEEKO 1
+#define HAVE_FSEEKO64 1
 /* #undef HAVE_MEMFD_CREATE */
 /* #undef HAVE_POSIX_FALLOCATE */
 /* #undef HAVE_SIGACTION */
@@ -226,7 +226,7 @@
 #define HAVE_DINPUT_H 1
 #define HAVE_XINPUT_H 1
 #define HAVE_WINDOWS_GAMING_INPUT_H 1
-#define HAVE_GAMEINPUT_H 1
+/* #undef HAVE_GAMEINPUT_H */
 #define HAVE_DXGI_H 1
 #define HAVE_DXGI1_5_H 1
 #define HAVE_DXGI1_6_H 1
@@ -303,7 +303,7 @@
 #define SDL_JOYSTICK_DINPUT 1
 /* #undef SDL_JOYSTICK_DUMMY */
 /* #undef SDL_JOYSTICK_EMSCRIPTEN */
-#define SDL_JOYSTICK_GAMEINPUT 1
+/* #undef SDL_JOYSTICK_GAMEINPUT */
 /* #undef SDL_JOYSTICK_HAIKU */
 #define SDL_JOYSTICK_HIDAPI 1
 /* #undef SDL_JOYSTICK_IOKIT */
@@ -611,7 +611,7 @@ typedef unsigned int uintptr_t;
 /* #undef SDL_DISABLE_AVX */
 /* #undef SDL_DISABLE_AVX2 */
 /* #undef SDL_DISABLE_AVX512F */
-#define SDL_DISABLE_MMX 1
+/* #undef SDL_DISABLE_MMX */
 #define SDL_DISABLE_LSX 1
 #define SDL_DISABLE_LASX 1
 #define SDL_DISABLE_NEON 1

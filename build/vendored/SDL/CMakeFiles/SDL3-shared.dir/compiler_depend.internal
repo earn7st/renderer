@@ -169,7 +169,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -451,7 +451,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.hxx.gch
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/sys/types.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/vadefs.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h
@@ -2695,7 +2695,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dynapi/SDL_dynapi.c.obj
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/winver.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wnnc.h
  C:/Program Files/mingw64/x86_64-w64-mingw32/include/wow64apiset.h
- D:/workspace/renderer/build/vendored/SDL/include-config-/build_config/SDL_build_config.h
+ D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config/SDL_build_config.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_assert.h
  D:/workspace/renderer/vendored/SDL/include/SDL3/SDL_asyncio.h

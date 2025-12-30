@@ -1,10 +1,11 @@
 #include "renderer/engine.h"
+#include "renderer/render_types.h"
 #include "scene/scene_loader.h"
 
 #define SCENE_PATH  "../scenes/"
 
-Engine::Engine(uint32_t w, uint32_t h) 
-: displayer_(), input_handler_(), resource_manager_(), scene_(), renderer_(), main_framebuffer_(w, h){}
+Engine::Engine(uint32_t w, uint32_t h, PolygonMode pmode)  
+: displayer_(w, h), input_handler_(), resource_manager_(), scene_(), renderer_(RenderState{pmode}), main_framebuffer_(w, h){}
 
 int Engine::start_up(const std::string& scene_name)
 {   

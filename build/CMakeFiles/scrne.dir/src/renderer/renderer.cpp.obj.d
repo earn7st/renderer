@@ -208,14 +208,15 @@ CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj: \
  D:/workspace/renderer/src/math/quaterions.hpp \
  D:/workspace/renderer/src/math/vector.hpp \
  D:/workspace/renderer/src/renderer/render_types.h \
+ D:/workspace/renderer/src/scene/light.h \
  D:/workspace/renderer/src/renderer/shader.h \
+ D:/workspace/renderer/src/scene/material.h \
  D:/workspace/renderer/src/renderer/rasterizer.h \
  D:/workspace/renderer/src/scene/mesh.h \
  D:/workspace/renderer/src/scene/camera.h \
  D:/workspace/renderer/src/scene/scene.h \
  D:/workspace/renderer/src/scene/model.h \
  D:/workspace/renderer/src/scene/transform.h \
- D:/workspace/renderer/src/scene/material.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_raw_storage_iter.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/align.h \

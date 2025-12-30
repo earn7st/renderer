@@ -262,6 +262,7 @@ CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj: \
  D:/workspace/renderer/src/math/quaterions.hpp \
  D:/workspace/renderer/src/math/vector.hpp \
  D:/workspace/renderer/src/renderer/render_types.h \
+ D:/workspace/renderer/src/scene/light.h \
  D:/workspace/renderer/src/scene/scene_loader.h \
  D:/workspace/renderer/src/renderer/resource_manager.h \
  D:/workspace/renderer/src/scene/material.h \

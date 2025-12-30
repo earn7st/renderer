@@ -1,1 +1,1 @@
--I"D:/workspace/renderer/build/vendored/SDL/include-config-/build_config" -I"D:/workspace/renderer/build/vendored/SDL/include-revision" -ID:/workspace/renderer/vendored/SDL/include -ID:/workspace/renderer/vendored/SDL/src
+-I"D:/workspace/renderer/build/vendored/SDL/include-config-debug/build_config" -I"D:/workspace/renderer/build/vendored/SDL/include-revision" -ID:/workspace/renderer/vendored/SDL/include -ID:/workspace/renderer/vendored/SDL/src

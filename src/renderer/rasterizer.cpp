@@ -4,7 +4,7 @@
 void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& v2, 
                             Framebuffer* fb,
                             const Shader& shader, 
-                            const Uniform& uniform, 
+                            ShaderContext& shader_context,
                             const RenderState& render_state)
 {
     // Perspective Division
@@ -20,7 +20,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec2f v1_screen_pos = viewport_transform(v1_ndc_pos, screen_width, screen_height);
     Vec2f v2_screen_pos = viewport_transform(v2_ndc_pos, screen_width, screen_height);
 
-    if (render_state.polygon_mode == FILL)
+    if (render_state.polygon_mode == LINE)
     {
         draw_line(v0_screen_pos, v1_screen_pos, fb, shader);
         draw_line(v1_screen_pos, v2_screen_pos, fb, shader);
@@ -48,7 +48,6 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                     float alpha = bary.x_, beta = bary.y_, gamma = bary.z_;
                     // TODO : correct interpolation
                     
-
                 }
             }
         }
@@ -83,7 +82,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
     uint32_t screen_height = fb->get_height();
 
     FragmentIn dummy_fragin = FragmentIn();
-    Uniform dummy_uniform = Uniform();
+    ShaderContext dummy_shader_context = ShaderContext();
 
     int x0 = int(v0.x_), y0 = int(v0.y_);
     int x1 = int(v1.x_), y1 = int(v1.y_);
@@ -106,7 +105,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 y += cy;
                 cnt -= 2 * dx;
             }
-            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_uniform);
+            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_shader_context);
             fb->set_color(x, y, color);
         }
     } else {
@@ -119,7 +118,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 x += cx;
                 cnt -= 2 * dy;
             }
-            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_uniform);
+            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_shader_context);
             fb->set_color(x, y, color);
         }
     }

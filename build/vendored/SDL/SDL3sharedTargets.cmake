@@ -58,11 +58,11 @@ set_target_properties(SDL3::SDL3-shared PROPERTIES
   INTERFACE_SDL_VERSION "SDL3"
 )
 
-# Import target "SDL3::SDL3-shared" for configuration ""
-set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "SDL3::SDL3-shared" for configuration "Debug"
+set_property(TARGET SDL3::SDL3-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(SDL3::SDL3-shared PROPERTIES
-  IMPORTED_IMPLIB_NOCONFIG "D:/workspace/renderer/build/vendored/SDL/libSDL3.dll.a"
-  IMPORTED_LOCATION_NOCONFIG "D:/workspace/renderer/build/SDL3.dll"
+  IMPORTED_IMPLIB_DEBUG "D:/workspace/renderer/build/vendored/SDL/libSDL3.dll.a"
+  IMPORTED_LOCATION_DEBUG "D:/workspace/renderer/build/SDL3.dll"
   )
 
 # Make sure the targets which have been exported in some other

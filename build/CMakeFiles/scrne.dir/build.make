@@ -76,225 +76,225 @@ CMakeFiles/scrne.dir/src/main.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/main.cpp.obj: D:/workspace/renderer/src/main.cpp
 CMakeFiles/scrne.dir/src/main.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/scrne.dir/src/main.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/main.cpp.obj -MF CMakeFiles\scrne.dir\src\main.cpp.obj.d -o CMakeFiles\scrne.dir\src\main.cpp.obj -c D:\workspace\renderer\src\main.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/main.cpp.obj -MF CMakeFiles\scrne.dir\src\main.cpp.obj.d -o CMakeFiles\scrne.dir\src\main.cpp.obj -c D:\workspace\renderer\src\main.cpp
 
 CMakeFiles/scrne.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/main.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\main.cpp > CMakeFiles\scrne.dir\src\main.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\main.cpp > CMakeFiles\scrne.dir\src\main.cpp.i
 
 CMakeFiles/scrne.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/main.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\main.cpp -o CMakeFiles\scrne.dir\src\main.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\main.cpp -o CMakeFiles\scrne.dir\src\main.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj: D:/workspace/renderer/src/renderer/displayer.cpp
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\displayer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\displayer.cpp.obj -c D:\workspace\renderer\src\renderer\displayer.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/displayer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\displayer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\displayer.cpp.obj -c D:\workspace\renderer\src\renderer\displayer.cpp
 
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/displayer.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\displayer.cpp > CMakeFiles\scrne.dir\src\renderer\displayer.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\displayer.cpp > CMakeFiles\scrne.dir\src\renderer\displayer.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/displayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/displayer.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\displayer.cpp -o CMakeFiles\scrne.dir\src\renderer\displayer.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\displayer.cpp -o CMakeFiles\scrne.dir\src\renderer\displayer.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj: D:/workspace/renderer/src/renderer/engine.cpp
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\engine.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\engine.cpp.obj -c D:\workspace\renderer\src\renderer\engine.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\engine.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\engine.cpp.obj -c D:\workspace\renderer\src\renderer\engine.cpp
 
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/engine.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\engine.cpp > CMakeFiles\scrne.dir\src\renderer\engine.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\engine.cpp > CMakeFiles\scrne.dir\src\renderer\engine.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/engine.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\engine.cpp -o CMakeFiles\scrne.dir\src\renderer\engine.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\engine.cpp -o CMakeFiles\scrne.dir\src\renderer\engine.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj: D:/workspace/renderer/src/renderer/framebuffer.cpp
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.obj -c D:\workspace\renderer\src\renderer\framebuffer.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.obj -c D:\workspace\renderer\src\renderer\framebuffer.cpp
 
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\framebuffer.cpp > CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\framebuffer.cpp > CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/framebuffer.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\framebuffer.cpp -o CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\framebuffer.cpp -o CMakeFiles\scrne.dir\src\renderer\framebuffer.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj: D:/workspace/renderer/src/renderer/input_handler.cpp
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.obj -c D:\workspace\renderer\src\renderer\input_handler.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.obj -c D:\workspace\renderer\src\renderer\input_handler.cpp
 
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\input_handler.cpp > CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\input_handler.cpp > CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/input_handler.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\input_handler.cpp -o CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\input_handler.cpp -o CMakeFiles\scrne.dir\src\renderer\input_handler.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj: D:/workspace/renderer/src/renderer/rasterizer.cpp
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.obj -c D:\workspace\renderer\src\renderer\rasterizer.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.obj -c D:\workspace\renderer\src\renderer\rasterizer.cpp
 
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\rasterizer.cpp > CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\rasterizer.cpp > CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/rasterizer.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\rasterizer.cpp -o CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\rasterizer.cpp -o CMakeFiles\scrne.dir\src\renderer\rasterizer.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj: D:/workspace/renderer/src/renderer/renderer.cpp
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\renderer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\renderer.cpp.obj -c D:\workspace\renderer\src\renderer\renderer.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/renderer.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\renderer.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\renderer.cpp.obj -c D:\workspace\renderer\src\renderer\renderer.cpp
 
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/renderer.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\renderer.cpp > CMakeFiles\scrne.dir\src\renderer\renderer.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\renderer.cpp > CMakeFiles\scrne.dir\src\renderer\renderer.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/renderer.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\renderer.cpp -o CMakeFiles\scrne.dir\src\renderer\renderer.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\renderer.cpp -o CMakeFiles\scrne.dir\src\renderer\renderer.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj: D:/workspace/renderer/src/renderer/resource_manager.cpp
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.obj -c D:\workspace\renderer\src\renderer\resource_manager.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.obj -c D:\workspace\renderer\src\renderer\resource_manager.cpp
 
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\resource_manager.cpp > CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\resource_manager.cpp > CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/resource_manager.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\resource_manager.cpp -o CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\resource_manager.cpp -o CMakeFiles\scrne.dir\src\renderer\resource_manager.cpp.s
 
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj: D:/workspace/renderer/src/renderer/shader.cpp
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\shader.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\shader.cpp.obj -c D:\workspace\renderer\src\renderer\shader.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/renderer/shader.cpp.obj -MF CMakeFiles\scrne.dir\src\renderer\shader.cpp.obj.d -o CMakeFiles\scrne.dir\src\renderer\shader.cpp.obj -c D:\workspace\renderer\src\renderer\shader.cpp
 
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/renderer/shader.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\shader.cpp > CMakeFiles\scrne.dir\src\renderer\shader.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\renderer\shader.cpp > CMakeFiles\scrne.dir\src\renderer\shader.cpp.i
 
 CMakeFiles/scrne.dir/src/renderer/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/renderer/shader.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\shader.cpp -o CMakeFiles\scrne.dir\src\renderer\shader.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\renderer\shader.cpp -o CMakeFiles\scrne.dir\src\renderer\shader.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/camera.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/camera.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/camera.cpp.obj: D:/workspace/renderer/src/scene/camera.cpp
 CMakeFiles/scrne.dir/src/scene/camera.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/scrne.dir/src/scene/camera.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/camera.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\camera.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\camera.cpp.obj -c D:\workspace\renderer\src\scene\camera.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/camera.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\camera.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\camera.cpp.obj -c D:\workspace\renderer\src\scene\camera.cpp
 
 CMakeFiles/scrne.dir/src/scene/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/camera.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\camera.cpp > CMakeFiles\scrne.dir\src\scene\camera.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\camera.cpp > CMakeFiles\scrne.dir\src\scene\camera.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/camera.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\camera.cpp -o CMakeFiles\scrne.dir\src\scene\camera.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\camera.cpp -o CMakeFiles\scrne.dir\src\scene\camera.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/material.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/material.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/material.cpp.obj: D:/workspace/renderer/src/scene/material.cpp
 CMakeFiles/scrne.dir/src/scene/material.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/scrne.dir/src/scene/material.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/material.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\material.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\material.cpp.obj -c D:\workspace\renderer\src\scene\material.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/material.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\material.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\material.cpp.obj -c D:\workspace\renderer\src\scene\material.cpp
 
 CMakeFiles/scrne.dir/src/scene/material.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/material.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\material.cpp > CMakeFiles\scrne.dir\src\scene\material.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\material.cpp > CMakeFiles\scrne.dir\src\scene\material.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/material.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\material.cpp -o CMakeFiles\scrne.dir\src\scene\material.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\material.cpp -o CMakeFiles\scrne.dir\src\scene\material.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/model.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/model.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/model.cpp.obj: D:/workspace/renderer/src/scene/model.cpp
 CMakeFiles/scrne.dir/src/scene/model.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/scrne.dir/src/scene/model.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/model.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\model.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\model.cpp.obj -c D:\workspace\renderer\src\scene\model.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/model.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\model.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\model.cpp.obj -c D:\workspace\renderer\src\scene\model.cpp
 
 CMakeFiles/scrne.dir/src/scene/model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/model.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\model.cpp > CMakeFiles\scrne.dir\src\scene\model.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\model.cpp > CMakeFiles\scrne.dir\src\scene\model.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/model.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\model.cpp -o CMakeFiles\scrne.dir\src\scene\model.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\model.cpp -o CMakeFiles\scrne.dir\src\scene\model.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/scene.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/scene.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/scene.cpp.obj: D:/workspace/renderer/src/scene/scene.cpp
 CMakeFiles/scrne.dir/src/scene/scene.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/scrne.dir/src/scene/scene.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/scene.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\scene.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\scene.cpp.obj -c D:\workspace\renderer\src\scene\scene.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/scene.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\scene.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\scene.cpp.obj -c D:\workspace\renderer\src\scene\scene.cpp
 
 CMakeFiles/scrne.dir/src/scene/scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/scene.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\scene.cpp > CMakeFiles\scrne.dir\src\scene\scene.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\scene.cpp > CMakeFiles\scrne.dir\src\scene\scene.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/scene.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\scene.cpp -o CMakeFiles\scrne.dir\src\scene\scene.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\scene.cpp -o CMakeFiles\scrne.dir\src\scene\scene.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj: D:/workspace/renderer/src/scene/scene_loader.cpp
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.obj -c D:\workspace\renderer\src\scene\scene_loader.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.obj -c D:\workspace\renderer\src\scene\scene_loader.cpp
 
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\scene_loader.cpp > CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\scene_loader.cpp > CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/scene_loader.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\scene_loader.cpp -o CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\scene_loader.cpp -o CMakeFiles\scrne.dir\src\scene\scene_loader.cpp.s
 
 CMakeFiles/scrne.dir/src/scene/texture.cpp.obj: CMakeFiles/scrne.dir/flags.make
 CMakeFiles/scrne.dir/src/scene/texture.cpp.obj: CMakeFiles/scrne.dir/includes_CXX.rsp
 CMakeFiles/scrne.dir/src/scene/texture.cpp.obj: D:/workspace/renderer/src/scene/texture.cpp
 CMakeFiles/scrne.dir/src/scene/texture.cpp.obj: CMakeFiles/scrne.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\workspace\renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/scrne.dir/src/scene/texture.cpp.obj"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/texture.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\texture.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\texture.cpp.obj -c D:\workspace\renderer\src\scene\texture.cpp
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scrne.dir/src/scene/texture.cpp.obj -MF CMakeFiles\scrne.dir\src\scene\texture.cpp.obj.d -o CMakeFiles\scrne.dir\src\scene\texture.cpp.obj -c D:\workspace\renderer\src\scene\texture.cpp
 
 CMakeFiles/scrne.dir/src/scene/texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scrne.dir/src/scene/texture.cpp.i"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\texture.cpp > CMakeFiles\scrne.dir\src\scene\texture.cpp.i
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\workspace\renderer\src\scene\texture.cpp > CMakeFiles\scrne.dir\src\scene\texture.cpp.i
 
 CMakeFiles/scrne.dir/src/scene/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scrne.dir/src/scene/texture.cpp.s"
-	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\texture.cpp -o CMakeFiles\scrne.dir\src\scene\texture.cpp.s
+	C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\workspace\renderer\src\scene\texture.cpp -o CMakeFiles\scrne.dir\src\scene\texture.cpp.s
 
 # Object files for target scrne
 scrne_OBJECTS = \

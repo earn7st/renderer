@@ -16,6 +16,7 @@ class Renderer
 {
 public:
     Renderer() = default;
+    Renderer(RenderState rs);
 
     bool attach_framebuffer(Framebuffer&);
 

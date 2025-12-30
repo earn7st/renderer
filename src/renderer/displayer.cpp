@@ -33,7 +33,7 @@ int Displayer::init_SDL()
         return -1;
     }
 
-    window_ = SDL_CreateWindow("SCRNE_Displayer", width_, height_, SDL_WINDOW_RESIZABLE);
+    window_ = SDL_CreateWindow("Displayer", width_, height_, SDL_WINDOW_RESIZABLE);
     if (!window_)
     {
         SDL_Log("SDL Create Window Failed: %s\n", SDL_GetError());

@@ -1,7 +1,10 @@
 #ifndef __RENDER_TYPES_H__
 #define __RENDER_TYPES_H__
 
+#include <vector>
+
 #include "math/math_all.h"
+#include "scene/light.h"
 
 struct Vertex
 {
@@ -29,10 +32,12 @@ struct Uniform
     // per-submesh
     Matrix sub_mesh_matrix = Matrix::Identity;  // local transform
     Matrix MVP_matrix = Matrix::Identity;
+};
 
-    // material
-
-    // lighting
+struct LightUniform
+{
+    std::vector<DirectionalLight> directional_lights;
+    std::vector<PointLight> point_lights; 
 };
 
 struct Varying
@@ -44,23 +49,22 @@ struct Varying
     float clip_w;
 };
 
-enum PolygonMode {
-    POINT,
+enum PolygonMode
+{
     LINE,
     FILL
 };
 
-enum ShaderType
+enum CullMode
 {
-    BLINN_PHONG,
-    PBR
+    BACK
 };
 
 struct RenderState
 {
     PolygonMode polygon_mode = FILL;
-
-    ShaderType shader_type = BLINN_PHONG;
+    CullMode cull_mode = BACK;
+    bool depth_test = true;
 };
 
 struct ClearStates

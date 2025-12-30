@@ -188,7 +188,13 @@ CMakeFiles/scrne.dir/src/main.cpp.obj: D:\workspace\renderer\src\main.cpp \
  D:/workspace/renderer/src/math/quaterions.hpp \
  D:/workspace/renderer/src/math/vector.hpp \
  D:\workspace\renderer\src\renderer/render_types.h \
+ C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
+ C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
+ C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
+ C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
+ C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
  D:/workspace/renderer/src/math/math_all.h \
+ D:/workspace/renderer/src/scene/light.h \
  D:\workspace\renderer\src\renderer/renderer.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/functional \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/std_function.h \
@@ -200,23 +206,18 @@ CMakeFiles/scrne.dir/src/main.cpp.obj: D:\workspace\renderer\src\main.cpp \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/enable_special_members.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/node_handle.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/erase_if.h \
- C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
- C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
- C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
- C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
- C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/array \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/compare \
  D:/workspace/renderer/src/renderer/framebuffer.h \
  D:/workspace/renderer/src/renderer/render_types.h \
  D:/workspace/renderer/src/renderer/shader.h \
+ D:/workspace/renderer/src/scene/material.h \
  D:/workspace/renderer/src/renderer/rasterizer.h \
  D:/workspace/renderer/src/scene/mesh.h \
  D:/workspace/renderer/src/scene/camera.h \
  D:/workspace/renderer/src/scene/scene.h \
  D:/workspace/renderer/src/scene/model.h \
  D:/workspace/renderer/src/scene/transform.h \
- D:/workspace/renderer/src/scene/material.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_raw_storage_iter.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/align.h \

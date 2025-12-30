@@ -278,6 +278,7 @@ CMakeFiles/scrne.dir/src/renderer/engine.cpp.obj: \
  D:/workspace/renderer/src/scene/material.h \
  D:/workspace/renderer/src/scene/mesh.h \
  D:/workspace/renderer/src/renderer/render_types.h \
+ D:/workspace/renderer/src/scene/light.h \
  D:/workspace/renderer/src/scene/texture.h \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \
  C:/Program\ Files/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_raw_storage_iter.h \

@@ -5,6 +5,19 @@
 
 uint32_t cnt = 0;
 
+Renderer::Renderer(RenderState rs)
+{
+    render_state_.polygon_mode = rs.polygon_mode;
+
+    if (rs.polygon_mode == LINE)
+    {
+        shader_.set_fragment_shader(wireframe_fragment_shader);
+    } else if (rs.polygon_mode == FILL) 
+    {
+        
+    }
+}
+
 bool Renderer::attach_framebuffer(Framebuffer& fb)
 {
     if(fb.is_valid())
@@ -61,22 +74,26 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
         return ;
     }
+
+    ShaderContext shader_context;
     for (uint32_t i = offset; i < offset + size; i += 3)
     {
         const Vertex& ori_v0 = mesh.vertices[mesh.indices[i]];
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
         const Vertex& ori_v2 = mesh.vertices[mesh.indices[i + 2]];
+        
+        shader_context.set_uniform(&uniform_);
 
-        Varying v0 = shader_.execute_vertex_shader(ori_v0, uniform_);
-        Varying v1 = shader_.execute_vertex_shader(ori_v1, uniform_);
-        Varying v2 = shader_.execute_vertex_shader(ori_v2, uniform_);
+        Varying v0 = shader_.execute_vertex_shader(ori_v0, shader_context);
+        Varying v1 = shader_.execute_vertex_shader(ori_v1, shader_context);
+        Varying v2 = shader_.execute_vertex_shader(ori_v2, shader_context);
 
         // (Optional) Geometry Shading
         // (Optional) Culling
         // (Optional) Clipping
 
         // Rasterization : Perspective Division, Screen Mapping, rasterizing
-        rasterizer_.rasterize(v0, v1, v2, fb_, shader_, uniform_, render_state_);
+        rasterizer_.rasterize(v0, v1, v2, fb_, shader_, shader_context, render_state_);
 
     }
 }
