@@ -1,8 +1,0 @@
-D:/workspace/renderer/build/CMakeFiles/scrne.dir
-D:/workspace/renderer/build/CMakeFiles/edit_cache.dir
-D:/workspace/renderer/build/CMakeFiles/rebuild_cache.dir
-D:/workspace/renderer/build/vendored/SDL/CMakeFiles/SDL3-shared.dir
-D:/workspace/renderer/build/vendored/SDL/CMakeFiles/SDL3_test.dir
-D:/workspace/renderer/build/vendored/SDL/CMakeFiles/SDL_uclibc.dir
-D:/workspace/renderer/build/vendored/SDL/CMakeFiles/edit_cache.dir
-D:/workspace/renderer/build/vendored/SDL/CMakeFiles/rebuild_cache.dir
