@@ -76,13 +76,15 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
     }
 
     ShaderContext shader_context;
+    shader_context.set_uniform(&uniform_);
+
     for (uint32_t i = offset; i < offset + size; i += 3)
     {
         const Vertex& ori_v0 = mesh.vertices[mesh.indices[i]];
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
         const Vertex& ori_v2 = mesh.vertices[mesh.indices[i + 2]];
         
-        shader_context.set_uniform(&uniform_);
+        
 
         Varying v0 = shader_.execute_vertex_shader(ori_v0, shader_context);
         Varying v1 = shader_.execute_vertex_shader(ori_v1, shader_context);
