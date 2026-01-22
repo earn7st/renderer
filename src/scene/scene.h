@@ -4,6 +4,7 @@
 #include "scene/model.h"
 #include "scene/material.h"
 #include "scene/camera.h"
+#include "scene/light.h"
     
 class Scene
 {
@@ -11,6 +12,9 @@ public:
     Scene() = default;
 
     void add_model(const Model& model);
+    void add_light(const DirectionalLight);
+    void add_light(const PointLight);
+    void add_light(const SpotLight);
 
     const Camera& get_main_camera() const;
     const std::vector<Model>& get_models() const;
@@ -19,6 +23,7 @@ public:
 
 private:
     std::vector<Model> models_;
+    std::vector<Light> lights_;
     Camera main_camera_;
 };
 

@@ -170,5 +170,32 @@ Model JsonSceneLoader::load_model(const json& data, Scene& scene, ResourceManage
 
 int JsonSceneLoader::load_lights(const json& data, Scene& scene)
 { 
+    int num_lights = data.size();
+    for (int i = 0; i < num_lights; ++i)
+    {
+        json light_data = data.at(i);
+        std::string type = light_data.at("type");
+        if (type == "Directional")
+        {
+            std::vector<float> direction = light_data.at("direction").get<std::vector<float>>();
+            Vec3f direction_v(direction[0], direction[1], direction[2]);
+            std::vector<float> color = light_data.at("color").get<std::vector<float>>();
+            Vec3f color_v(color[0], color[1], color[2]);
+            float intensity = light_data.at("intensity");
+
+            DirectionalLight dl;
+            dl.direction = direction_v;
+            dl.color = color_v;
+            dl.intensity = intensity;
+            scene.add_directional_light(dl);
+            
+        } else if (type == "Point")
+        {
+
+        } else if (type == "Spot")
+        {
+
+        }
+    }
     return 0;
 }
