@@ -21,7 +21,20 @@
     "f_plane": 10.0
   },
   "lights": [
-    {}
+    {
+      "type": "Directional",
+      "direction": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        255,
+        255,
+        255
+      ],
+      "intensity": 1.0
+    }
   ],
   "object": {
     "name": "bunny",

@@ -1,6 +1,7 @@
 #ifndef __RASTERIZER_H__
 #define __RASTERIZER_H__
 
+#include "renderer/render_states.h"
 #include "renderer/render_types.h"
 #include "renderer/shader.h"
 #include "renderer/framebuffer.h"

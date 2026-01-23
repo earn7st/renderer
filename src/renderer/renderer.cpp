@@ -83,8 +83,6 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
         const Vertex& ori_v0 = mesh.vertices[mesh.indices[i]];
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
         const Vertex& ori_v2 = mesh.vertices[mesh.indices[i + 2]];
-        
-        
 
         Varying v0 = shader_.execute_vertex_shader(ori_v0, shader_context);
         Varying v1 = shader_.execute_vertex_shader(ori_v1, shader_context);

@@ -6,18 +6,6 @@
 #include "math/math_all.h"
 #include "scene/light.h"
 
-struct Vertex
-{
-    Vertex() = default;
-    Vertex(const Vec4f& _pos, const Vec4f& _normal, const Vec2f& _texcoord)
-    : pos(_pos), normal(_normal), texcoord(_texcoord) {}
-    Vertex(const Vertex& v) : pos(v.pos), normal(v.normal), texcoord(v.texcoord){}
-    
-    Vec4f pos;
-    Vec4f normal;
-    Vec2f texcoord;
-};
-
 struct Uniform
 {
     // per-frame
@@ -49,30 +37,16 @@ struct Varying
     float clip_w;
 };
 
-enum PolygonMode
+struct Vertex
 {
-    LINE,
-    FILL
-};
-
-enum CullMode
-{
-    BACK
-};
-
-struct RenderState
-{
-    PolygonMode polygon_mode = FILL;
-    CullMode cull_mode = BACK;
-    bool depth_test = true;
-};
-
-struct ClearStates
-{
-    bool color_flag = false;
-    bool depth_flag = false;
-    Vec3f clear_color = Vec3f(0.0f);
-    double clear_depth = 0.0f;
+    Vertex() = default;
+    Vertex(const Vec4f& _pos, const Vec4f& _normal, const Vec2f& _texcoord)
+    : pos(_pos), normal(_normal), texcoord(_texcoord) {}
+    Vertex(const Vertex& v) : pos(v.pos), normal(v.normal), texcoord(v.texcoord){}
+    
+    Vec4f pos;
+    Vec4f normal;
+    Vec2f texcoord;
 };
 
 #endif
