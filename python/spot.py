@@ -8,7 +8,7 @@ SCENE_NAME = MODEL_NAME = "spot"
 ASSET_PATH = WORKSPACE_PATH + "assets/" + SCENE_NAME + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-MODEL_FILEPATH = ASSET_PATH + "spot_control_mesh.obj"
+MODEL_FILEPATH = os.path.join(ASSET_PATH, "spot_control_mesh.obj")
 
 
 if __name__ == "__main__":
@@ -41,9 +41,16 @@ if __name__ == "__main__":
             "name" : MODEL_NAME,
             "filename": MODEL_NAME + ".json",
             "transform": {
-                "scale": [25.0, 25.0, 25.0],
-                "translation": [0.0, -3.0, 0.0],
-                "rotation": [0.0, 90.0, 0.0]
+                "scale": [2.0, 2.0, 2.0],
+                "translation": [0.0, 0.0, 0.0],
+                "rotation": [0.0, 45.0, 0.0]
+            },
+            "material" : {
+                "type" : "Phong",
+                "ambient" : [0.0, 0.0, 0.0],
+                "diffuse" : [0.5, 0.5, 0.5],
+                "specular" : [1.0, 1.0, 1.0],
+                "shininess" : 32.0
             }
         }
         

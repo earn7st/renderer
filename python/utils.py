@@ -4,7 +4,7 @@ import json
 
 def read_model_write_json(model_filepath, scene_context_path):
 
-    MODEL_NAME = os.path.splitext(os.path.basename(model_filepath))[0]
+    MODEL_NAME = os.path.splitext(os.path.basename(os.path.normpath(scene_context_path)))[0]
 
     mesh = trimesh.load(model_filepath)
 
@@ -22,6 +22,9 @@ def read_model_write_json(model_filepath, scene_context_path):
         "faces" : faces.tolist()
     }
 
+    if not os.path.exists(scene_context_path):
+        os.makedirs(scene_context_path)
+        print("Context path folder \"" + MODEL_NAME + "\" created.")
     output_file = os.path.join(scene_context_path, f"{MODEL_NAME}.json")
     
     with open(output_file, "w") as f:

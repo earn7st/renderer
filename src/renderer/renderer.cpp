@@ -9,13 +9,6 @@ Renderer::Renderer(RenderState rs)
 {
     render_state_.polygon_mode = rs.polygon_mode;
 
-    if (rs.polygon_mode == LINE)
-    {
-        shader_.set_fragment_shader(wireframe_fragment_shader);
-    } else if (rs.polygon_mode == FILL) 
-    {
-        
-    }
 }
 
 bool Renderer::attach_framebuffer(Framebuffer& fb)
@@ -57,13 +50,12 @@ void Renderer::draw_model(const Model& model)
         const SubMesh& sub_mesh = *it;
         update_per_sub_mesh_uniform(sub_mesh);
 
-        // TODO: Material
-        // const Material* pMaterial = model.get_pMaterial(sub_mesh.material_index);
-        
-        // TODO: set per-sub_mesh material info to uniform;
-        // uniform_ = update_uniform_material()...
+        // Material
+        const std::weak_ptr wpMaterial = sub_mesh.wpMaterial;
+        const std::shared_ptr spMaterial = wpMaterial.lock(); 
 
         draw_call(mesh, sub_mesh.offset, sub_mesh.size);
+        // TODO: extract submesh's material->shader, shader as draw_call parameter
     }
 
 }

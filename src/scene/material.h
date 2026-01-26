@@ -7,25 +7,25 @@ class Material
 {
 public:
     Material() = default;
+    
 };
 
 class BlinnPhongMaterial : public Material
 {
 public:
     BlinnPhongMaterial() = default;  
+    BlinnPhongMaterial(const Vec3f&, const Vec3f&, const Vec3f&, const float&);
 
-private:
-    Vec3f ambient_;
-    Vec3f diffuse_;
-    Vec3f specular_;
-    float shininess_;
+    Vec3f ambient;
+    Vec3f diffuse;
+    Vec3f specular;
+    float shininess;
 };
 
 class PBRMaterial : public Material
 {
 public:
-    
-private:
+    PBRMaterial() = default;
 
 };
 

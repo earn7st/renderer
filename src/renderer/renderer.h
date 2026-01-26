@@ -35,6 +35,7 @@ private:
     RenderState render_state_;
     Framebuffer* fb_;
     Uniform uniform_;
+    LightUniform light_uniform_;
     Shader shader_;
     Rasterizer rasterizer_;
 };

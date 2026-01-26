@@ -155,11 +155,38 @@ Model JsonSceneLoader::load_model(const json& data, Scene& scene, ResourceManage
         r_manager.load_mesh(new_mesh_ptr);
         model.set_mesh_weak(new_mesh_ptr);
         
+        // TODO : Multiple submeshes with different materials
         SubMesh sub_mesh0;
         sub_mesh0.offset = 0;
         sub_mesh0.size = num_faces * 3;
-        // TODO: material
-        sub_mesh0.pMaterial = nullptr;
+        if (data.contains("material"))
+        {
+            json material_data = data.at("material");
+            
+            std::string material_type = material_data.at("type").get<std::string>();
+            if (material_type == "BlinnPhong")
+            {
+                std::vector<float> ambient = material_data.at("ambient").get<std::vector<float>>();
+                Vec3f ambient_v(ambient[0], ambient[1], ambient[2]);
+                
+                std::vector<float> diffuse = material_data.at("diffuse").get<std::vector<float>>();
+                Vec3f diffuse_v(diffuse[0], diffuse[1], diffuse[2]);
+                
+                std::vector<float> specular = material_data.at("specular").get<std::vector<float>>();
+                Vec3f specular_v(specular[0], specular[1], specular[2]);
+
+                float shininess = material_data.at("shininess").get<float>();
+
+                BlinnPhongMaterial material(ambient_v, diffuse_v, specular_v, shininess);
+                std::shared_ptr<BlinnPhongMaterial> new_material_ptr = std::make_shared<BlinnPhongMaterial>();
+                r_manager.load_material(new_material_ptr);
+                sub_mesh0.wpMaterial = new_material_ptr;
+            }
+            else if(material_type == "PBR")
+            {
+                // ...
+            }
+        }
 
         model.add_sub_mesh(sub_mesh0);
         
@@ -175,23 +202,25 @@ int JsonSceneLoader::load_lights(const json& data, Scene& scene)
     {
         json light_data = data.at(i);
         std::string type = light_data.at("type");
+
+        std::vector<float> color = light_data.at("color").get<std::vector<float>>();
+        Vec3f color_v(color[0], color[1], color[2]);
+        float intensity = light_data.at("intensity");
+
         if (type == "Directional")
         {
             std::vector<float> direction = light_data.at("direction").get<std::vector<float>>();
             Vec3f direction_v(direction[0], direction[1], direction[2]);
-            std::vector<float> color = light_data.at("color").get<std::vector<float>>();
-            Vec3f color_v(color[0], color[1], color[2]);
-            float intensity = light_data.at("intensity");
 
             DirectionalLight dl;
             dl.direction = direction_v;
             dl.color = color_v;
             dl.intensity = intensity;
-            scene.add_directional_light(dl);
-            
+            scene.add_light(dl);
+
         } else if (type == "Point")
         {
-
+            
         } else if (type == "Spot")
         {
 

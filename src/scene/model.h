@@ -13,7 +13,7 @@ struct SubMesh
 {
     uint32_t offset = 0;
     uint32_t size = 0;
-    Material* pMaterial = nullptr;
+    std::weak_ptr<Material> wpMaterial;
     Transform local_transform;
 };
 
