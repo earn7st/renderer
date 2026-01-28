@@ -30,14 +30,15 @@ struct ShaderContext
 typedef std::function<VertexOut(const Vertex&, const ShaderContext&)> VertexShader;
 typedef std::function<RGBA(const FragmentIn&, const ShaderContext&)> FragmentShader;
 
-VertexOut default_vertex_shader(const Vertex& input, const ShaderContext& shader_context);
+VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shader_context);
 RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
 RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
+RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
 
 class Shader
 {
 public:
-    Shader(VertexShader vs = default_vertex_shader, FragmentShader fs = blinn_phong_fragment_shader)
+    Shader(VertexShader vs = standard_vertex_shader, FragmentShader fs = blinn_phong_fragment_shader)
     : vertex_shader_(vs), fragment_shader_(fs) {}
 
     void set_vertex_shader(VertexShader vs) { vertex_shader_ = vs; }

@@ -8,21 +8,9 @@
 #include "scene/mesh.h"
 #include "scene/camera.h"
 
-int main(int argc, char* argv[])
+RenderState parse_parameters(int argc, char* argv[])
 {
-
-    if(argc < 2)
-    {
-        std::cerr << "Usage: " << argv[0] << "<scene_name> " << "<args>" << std::endl;
-        // TODO : list all possible test scenes
-        // TODO : --help
-        return 0;
-    }
-
-    std::string scene_name = argv[1];
-    
     RenderState render_state;
-    
     for(int i = 2; i < argc; ++i)
     {
         if(argv[i] == "--line")
@@ -35,9 +23,25 @@ int main(int argc, char* argv[])
         }
         // TODO: CullMode, DepthTest...
     }
+    return render_state;
+}
 
+int main(int argc, char* argv[])
+{
+
+    if(argc < 2)
+    {
+        std::cerr << "Usage: " << argv[0] << "<scene_name> " << "<args>" << std::endl;
+        // TODO : list all possible test scenes
+        // TODO : --help
+        return 0;
+    }
+
+    std::string scene_name = argv[1];
+    RenderState render_state = parse_parameters(argc, argv);
+    
     Engine engine;
-    if(engine.start_up(scene_name) < 0) return -1;
+    if(engine.start_up(scene_name, render_state) < 0) return -1;
     engine.run();
 
     return 0;

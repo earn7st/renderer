@@ -11,14 +11,19 @@ Renderer::Renderer(RenderState rs)
 
 }
 
-bool Renderer::attach_framebuffer(Framebuffer& fb)
+bool Renderer::attach_framebuffer(Framebuffer* fb)
 {
-    if(fb.is_valid())
+    if(fb->is_valid())
     {
-        fb_ = &fb;
+        fb_ = fb;
         return true;
     }
     return false;
+}
+
+void Renderer::set_render_state(const RenderState& render_state)
+{
+    render_state_ = render_state;
 }
 
 void Renderer::render(const Scene& scene)
@@ -50,17 +55,16 @@ void Renderer::draw_model(const Model& model)
         const SubMesh& sub_mesh = *it;
         update_per_sub_mesh_uniform(sub_mesh);
 
-        // Material
         const std::weak_ptr wpMaterial = sub_mesh.wpMaterial;
         const std::shared_ptr spMaterial = wpMaterial.lock(); 
+        const Shader* shader = spMaterial->shader;
 
-        draw_call(mesh, sub_mesh.offset, sub_mesh.size);
-        // TODO: extract submesh's material->shader, shader as draw_call parameter
+        draw_call(mesh, sub_mesh.offset, sub_mesh.size, shader);
     }
 
 }
 
-void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
+void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader)
 {
     if(size % 3 != 0){
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
@@ -76,16 +80,16 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
         const Vertex& ori_v2 = mesh.vertices[mesh.indices[i + 2]];
 
-        Varying v0 = shader_.execute_vertex_shader(ori_v0, shader_context);
-        Varying v1 = shader_.execute_vertex_shader(ori_v1, shader_context);
-        Varying v2 = shader_.execute_vertex_shader(ori_v2, shader_context);
+        Varying v0 = shader->execute_vertex_shader(ori_v0, shader_context);
+        Varying v1 = shader->execute_vertex_shader(ori_v1, shader_context);
+        Varying v2 = shader->execute_vertex_shader(ori_v2, shader_context);
 
         // (Optional) Geometry Shading
         // (Optional) Culling
         // (Optional) Clipping
 
         // Rasterization : Perspective Division, Screen Mapping, rasterizing
-        rasterizer_.rasterize(v0, v1, v2, fb_, shader_, shader_context, render_state_);
+        rasterizer_.rasterize(v0, v1, v2, fb_, shader, shader_context, render_state_);
 
     }
 }
@@ -93,14 +97,10 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size)
 void Renderer::update_per_frame_uniform(const Scene& scene)
 {
     const Camera& camera = scene.get_main_camera();
-
     uniform_.view_matrix = lookAt(camera.get_pos(), camera.get_center(), camera.get_up());
     uniform_.projection_matrix = perspective(camera.get_fovy(), camera.get_aspect(), -camera.get_near_plane(), -camera.get_far_plane());
     uniform_.VP_matrix = uniform_.projection_matrix * uniform_.view_matrix;
     uniform_.world_camera_position = camera.get_pos();
-
-    // TODO: lighting
-
 }
 
 void Renderer::update_per_model_uniform(const Transform& t)
@@ -111,7 +111,6 @@ void Renderer::update_per_model_uniform(const Transform& t)
 
 void Renderer::update_per_sub_mesh_uniform(const SubMesh& sub_mesh)
 {
-    // TODO
     uniform_.sub_mesh_matrix = Matrix::Identity;
     //uniform_.MVP_matrix = uniform_.sub_mesh_matrix * uniform_.MVP_matrix;
 }

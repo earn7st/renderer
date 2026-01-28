@@ -11,7 +11,7 @@ class Engine
 {
 public:
     Engine(uint32_t w = DEFAULT_DISPLAYER_WIDTH, uint32_t h = DEFAULT_DISPLAYER_HEIGHT);
-    int start_up(const std::string& scene_name);
+    int start_up(const std::string& scene_name, const RenderState& render_state);
     void run();
     int shut_down();
 

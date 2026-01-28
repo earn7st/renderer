@@ -1,4 +1,4 @@
-from utils import read_model_write_json
+from utils import export_to_json
 import os
 import json
 
@@ -14,7 +14,7 @@ MODEL_FILEPATH = os.path.join(ASSET_PATH, "spot_control_mesh.obj")
 if __name__ == "__main__":
 
     # 1. Load Model Mesh to {MODEL_NAME}.json
-    read_model_write_json(MODEL_FILEPATH, SCENE_CONTEXT_PATH)
+    export_to_json(MODEL_FILEPATH, SCENE_CONTEXT_PATH)
     
     # 2. Build scene.json in SCENE_CONTEXT_PATH
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")

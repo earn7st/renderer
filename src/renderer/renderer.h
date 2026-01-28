@@ -18,7 +18,8 @@ public:
     Renderer() = default;
     Renderer(RenderState rs);
 
-    bool attach_framebuffer(Framebuffer&);
+    bool attach_framebuffer(Framebuffer*);
+    void set_render_state(const RenderState&);
 
     void render(const Scene&);
     void draw_model(const Model&);   // For Test
@@ -29,14 +30,13 @@ public:
     void update_per_sub_mesh_uniform(const SubMesh&);
 
     // pipeline
-    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size);
+    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader);
 
 private:
     RenderState render_state_;
     Framebuffer* fb_;
     Uniform uniform_;
     LightUniform light_uniform_;
-    Shader shader_;
     Rasterizer rasterizer_;
 };
 

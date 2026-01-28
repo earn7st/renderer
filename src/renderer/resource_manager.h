@@ -15,6 +15,9 @@ class ResourceManager
 public:
     ResourceManager() = default;
     
+    void init_shaders();
+    void register_shader(const std::string&, const Shader&);
+    
     void load_mesh(const std::shared_ptr<Mesh>);
     void load_material(const std::shared_ptr<Material>);
 
@@ -24,6 +27,8 @@ private:
     std::vector<std::shared_ptr<Mesh>> spMeshes_;
     std::vector<std::shared_ptr<Material>> spMaterials_;
     std::vector<std::shared_ptr<Texture>> spTextures_;
+    
+    std::unordered_map<std::string, Shader> shader_pool_;
 };
 
 #endif

@@ -7,6 +7,7 @@ class Material
 {
 public:
     Material() = default;
+    const Shader* shader; 
     
 };
 

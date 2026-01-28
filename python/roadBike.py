@@ -1,20 +1,20 @@
-from utils import read_model_write_json
+from utils import export_to_json
 import os
 import json
 
 WORKSPACE_PATH = "../"
 
-SCENE_NAME = MODEL_NAME = "helmet"
+SCENE_NAME = MODEL_NAME = "roadBike"
 ASSET_PATH = WORKSPACE_PATH + "assets/" + SCENE_NAME + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-MODEL_FILEPATH = ASSET_PATH + "helmet.obj"
+MODEL_FILEPATH = ASSET_PATH + "roadBike.obj"
 
 
 if __name__ == "__main__":
 
     # 1. Load Model Mesh to {MODEL_NAME}.json
-    read_model_write_json(MODEL_FILEPATH, SCENE_CONTEXT_PATH)
+    export_to_json(MODEL_FILEPATH, SCENE_CONTEXT_PATH)
     
     # 2. Build scene.json in SCENE_CONTEXT_PATH
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")
@@ -41,9 +41,9 @@ if __name__ == "__main__":
             "name" : MODEL_NAME,
             "filename": MODEL_NAME + ".json",
             "transform": {
-                "scale": [2.0, 2.0, 2.0],
-                "translation": [0.0, 0.0, 0.0],
-                "rotation": [0.0, 0.0, 0.0]
+                "scale": [25.0, 25.0, 25.0],
+                "translation": [0.0, -3.0, 0.0],
+                "rotation": [0.0, 90.0, 0.0]
             }
         }
         

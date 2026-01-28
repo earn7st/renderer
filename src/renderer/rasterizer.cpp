@@ -3,7 +3,7 @@
 
 void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& v2, 
                             Framebuffer* fb,
-                            const Shader& shader, 
+                            const Shader* shader, 
                             ShaderContext& shader_context,
                             const RenderState& render_state)
 {
@@ -69,14 +69,14 @@ Vec2f Rasterizer::viewport_transform(const Vec4f& v, uint32_t screen_width, uint
     return Vec2f(screen_x, screen_y);
 }
 
-void Rasterizer::draw_line(const Vec2f& v0, const Vec2f& v1, Framebuffer* fb, const Shader& shader)
+void Rasterizer::draw_line(const Vec2f& v0, const Vec2f& v1, Framebuffer* fb, const Shader* shader)
 {
     _draw_line_bresenham(v0, v1, fb, shader);
     //_draw_line_DDA(v0, v1, shader, render_state);
     return ;
 }
 
-void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuffer* fb, const Shader& shader)
+void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuffer* fb, const Shader* shader)
 {
     uint32_t screen_width = fb->get_width();
     uint32_t screen_height = fb->get_height();
@@ -105,7 +105,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 y += cy;
                 cnt -= 2 * dx;
             }
-            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_shader_context);
+            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_context);
             fb->set_color(x, y, color);
         }
     } else {
@@ -118,7 +118,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 x += cx;
                 cnt -= 2 * dy;
             }
-            RGBA color = shader.execute_fragment_shader(dummy_fragin, dummy_shader_context);
+            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_context);
             fb->set_color(x, y, color);
         }
     }

@@ -1,4 +1,5 @@
 #include "renderer/engine.h"
+#include "renderer/render_states.h"
 #include "renderer/render_types.h"
 #include "scene/scene_loader.h"
 
@@ -7,13 +8,18 @@
 Engine::Engine(uint32_t w, uint32_t h)  
 : displayer_(w, h), input_handler_(), resource_manager_(), scene_(), renderer_(), main_framebuffer_(w, h){}
 
-int Engine::start_up(const std::string& scene_name)
+int Engine::start_up(const std::string& scene_name, const RenderState& render_state)
 {   
-    if (!renderer_.attach_framebuffer(main_framebuffer_))
-    {
-        std::cerr << "Engint::start_up(): Failed to Attach Framebuffer" << std::endl;
-    }
+    // 1. Attach Framebuffer
+    if (!renderer_.attach_framebuffer(&main_framebuffer_)) { std::cerr << "Engint::start_up(): Failed to Attach Framebuffer" << std::endl; }
+
+    // 2. Set Render States
+    renderer_.set_render_state(render_state);
     
+    // 3. Shader Registration
+    resource_manager_.init_shaders();
+
+    // 4. Load Scene
     std::string scene_context_path = SCENE_PATH + scene_name + "/";
     std::unique_ptr<ISceneLoader> scene_loader = std::make_unique<JsonSceneLoader>();
     if(scene_loader->load_scene(scene_context_path, scene_, resource_manager_))
