@@ -3,6 +3,21 @@ import json
 import os
 import numpy as np
 
+global_vertices = []
+global_indices = []
+vertex_map = {}
+
+def get_vertex_index(pos, norm, uv):
+    key = (tuple(pos), tuple(norm), tuple(uv))
+    if key not in vertex_map:
+        vertex_map[key] = len(global_vertices)
+        global_vertices.append({
+            "p": pos,
+            "n": norm,
+            "t": uv
+        })
+    return vertex_map[key]
+
 def export_to_json(model_name, obj_filepath, scene_context_path):
     if not os.path.exists(scene_context_path):
         os.makedirs(scene_context_path)
@@ -46,54 +61,61 @@ def export_to_json(model_name, obj_filepath, scene_context_path):
     print(f"Materials for {model_name} (with textures) exported.")
 
     # 2. Load Mesh
-    global_vertices = [] 
-
     submeshes_info = []
-    vertex_to_index = {}
     submesh_cnt = 0
 
     for mat_name, mat in scene.materials.items():
-        #mesh_name = getattr(mesh, 'name', 'default_mesh')
-        mat_name = getattr(mat, 'name', 'default_material')
-
-        print("yeah")
+        start_index = len(global_indices)
 
         v_data = mat.vertices
         v_format = mat.vertex_format
-        has_uv = 'T2F' in v_format
-        has_norm = 'N3F' in v_format
-        stride = (2 if has_uv else 0) + (3 if has_norm else 0) + 3
-        v_cnt = len(v_data) // stride
-        
-        for i in range(v_cnt):
-            start = i * stride
-            curr_offset = 0
-            
-            u, v = (0.0, 0.0)
-            if has_uv:
-                u, v = mat.vertices[start : start+2]
-                curr_offset += 2
-            
-            nx, ny, nz = (0.0, 0.0, 0.0)
-            if has_norm:
-                nx, ny, nz = mat.vertices[start+curr_offset : start+curr_offset+3]
-                curr_offset += 3
-            
-            x, y, z = mat.vertices[start+curr_offset : start+curr_offset+3]
-            
-            pos_t = list(np.round([x, y, z], 6))
-            norm_t = list(np.round([nx, ny, nz], 6))
-            uv_t = list(np.round([u, v], 6))
-            global_vertices.append({
-                "p": pos_t, 
-                "n": norm_t,
-                "t": uv_t                
-            })
 
+        elements = v_format.split('_')
+        stride = 0
+        for e in elements:
+            if e == 'T2F': stride += 2
+            elif e == 'N3F': stride += 3
+            elif e == 'V3F': stride += 3
+
+        for i in range(0, len(v_data), stride):
+            offset = 0
+
+            if 'T2F' in elements:
+                u, v = v_data[i+offset:i+offset+2]
+                offset += 2
+            else:
+                u, v = 0.0, 0.0
+
+            if 'N3F' in elements:
+                nx, ny, nz = v_data[i+offset:i+offset+3]
+                offset += 3
+            else:
+                nx, ny, nz = 0.0, 0.0, 0.0
+
+            x, y, z = v_data[i+offset:i+offset+3]
+
+            idx = get_vertex_index(
+                [x, y, z],
+                [nx, ny, nz],
+                [u, v]
+            )
+
+            global_indices.append(idx)
+
+        index_count = len(global_indices) - start_index
+
+        if index_count > 0:
+            submeshes_info.append({
+                "material": mat_name,
+                "offset": start_index,
+                "size": index_count
+            }) 
+            submesh_cnt += 1
 
     model_info = {
         "name": model_name,
         "vertices": global_vertices,
+        "indices": global_indices,
         "submeshes": submeshes_info
     }
 

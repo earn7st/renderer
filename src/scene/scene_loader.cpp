@@ -4,7 +4,6 @@
 #include "renderer/render_types.h"
 #include "scene/scene_loader.h"
 
-
 using json = nlohmann::json;
 
 int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)

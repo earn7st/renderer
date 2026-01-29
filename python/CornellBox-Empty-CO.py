@@ -4,11 +4,11 @@ import json
 
 WORKSPACE_PATH = "../"
 
-SCENE_NAME = MODEL_NAME = "rock"
-ASSET_PATH = WORKSPACE_PATH + "assets/" + SCENE_NAME + "/"
+SCENE_NAME = MODEL_NAME = "CornellBox-Empty-CO"
+ASSET_PATH = WORKSPACE_PATH + "assets/" + "CornellBox" + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-OBJ_FILEPATH = os.path.join(ASSET_PATH, "rock.obj")
+OBJ_FILEPATH = os.path.join(ASSET_PATH, "CornellBox-Empty-CO.obj")
 
 if __name__ == "__main__":
 
