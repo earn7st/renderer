@@ -8,7 +8,6 @@ uint32_t cnt = 0;
 Renderer::Renderer(RenderState rs)
 {
     render_state_.polygon_mode = rs.polygon_mode;
-
 }
 
 bool Renderer::attach_framebuffer(Framebuffer* fb)
