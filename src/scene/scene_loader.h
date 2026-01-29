@@ -19,10 +19,13 @@ class JsonSceneLoader : public ISceneLoader
 {
 public:
     int load_scene(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager);
-    int load_camera(const json& data, Scene& scene);
     int load_object(const json& objects_data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager);
-    Model load_model(const json& data, Scene& scene, ResourceManager& r_manager);
+    
+    int load_camera(const json& data, Scene& scene);
     int load_lights(const json& data, Scene& scene);
+
+    Model load_model(const json& data, ResourceManager& r_manager);
+    void load_materials(const json& data, ResourceManager& r_manager);
 };
 
 

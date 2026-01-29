@@ -5,10 +5,11 @@ import json
 WORKSPACE_PATH = "../"
 
 SCENE_NAME = MODEL_NAME = "sponza"
-ASSET_PATH = WORKSPACE_PATH + "assets/" + SCENE_NAME + "/"
-SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
+ASSET_PATH = WORKSPACE_PATH + "assets/" + "sponza" + "/"
+SCENE_CONTEXT_PATH   = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-OBJ_FILEPATH = os.path.join(ASSET_PATH, "sponza.obj")
+OBJ_FILENAME = "sponza.obj"
+OBJ_FILEPATH = os.path.join(ASSET_PATH, OBJ_FILENAME)
 
 if __name__ == "__main__":
 
@@ -38,7 +39,7 @@ if __name__ == "__main__":
         ],
         "object" : {
             "name" : MODEL_NAME,
-            "filename": MODEL_NAME + ".json",
+            "filename": OBJ_FILENAME,
             "transform": {
                 "scale": [1.0, 1.0, 1.0],
                 "translation": [0.0, 0.0, 0.0],

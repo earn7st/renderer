@@ -84,7 +84,7 @@ def export_to_json(model_name, obj_filepath, scene_context_path):
                 u, v = v_data[i+offset:i+offset+2]
                 offset += 2
             else:
-                u, v = 0.0, 0.0
+                u, v = -1.0, -1.0
 
             if 'N3F' in elements:
                 nx, ny, nz = v_data[i+offset:i+offset+3]

@@ -39,7 +39,6 @@ void Engine::run()
 
     while(running)
     {
-        // Handle Input
         while(input_handler_.poll_event())
         {
             if(!input_handler_.handle_event())
@@ -52,7 +51,7 @@ void Engine::run()
         {
             frame_cnt--;
             main_framebuffer_.clear();
-
+            
             renderer_.render(scene_);
         }
 

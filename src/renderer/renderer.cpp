@@ -58,14 +58,14 @@ void Renderer::draw_model(const Model& model)
         const std::shared_ptr spMaterial = wpMaterial.lock(); 
         const Shader* shader = spMaterial->shader;
 
-        draw_call(mesh, sub_mesh.offset, sub_mesh.size, shader);
+        draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, shader);
     }
 
 }
 
-void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader)
+void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader)
 {
-    if(size % 3 != 0){
+    if(count % 3 != 0){
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
         return ;
     }
@@ -73,7 +73,7 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const
     ShaderContext shader_context;
     shader_context.set_uniform(&uniform_);
 
-    for (uint32_t i = offset; i < offset + size; i += 3)
+    for (uint32_t i = offset; i < offset + count; i += 3)
     {
         const Vertex& ori_v0 = mesh.vertices[mesh.indices[i]];
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
