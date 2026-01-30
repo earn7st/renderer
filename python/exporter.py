@@ -39,10 +39,10 @@ def export_to_json(model_name, obj_filepath, scene_context_path):
             "diffuse":   getattr(mat, 'diffuse', [0.8, 0.8, 0.8]),   # Kd
             "specular":  getattr(mat, 'specular', [1.0, 1.0, 1.0]),  # Ks
             
-            "shininess":        getattr(mat, 'shininess', 32.0),     # Ns: 高光指数
-            "optical_density":  getattr(mat, 'optical_density', 1.0),# Ni: 折射率 (默认1.0空气)
-            "transparency":     getattr(mat, 'transparency', 1.0),   # d/Tr: 1.0是不透明
-            "illumination_model": getattr(mat, 'illumination', 2),   # illum: 默认Blinn-Phong
+            "shininess":        getattr(mat, 'shininess', 32.0),     # Ns
+            "optical_density":  getattr(mat, 'optical_density', 1.0),# Ni
+            "transparency":     getattr(mat, 'transparency', 1.0),   # d/Tr
+            "illumination_model": getattr(mat, 'illumination', 2),   # illum
             
             "textures": {
                 "diffuse_map":  get_tex_name(getattr(mat, 'texture', None)),

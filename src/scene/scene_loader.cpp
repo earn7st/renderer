@@ -52,13 +52,13 @@ int JsonSceneLoader::load_object(const json& object_data, const std::string& sce
 
     std::string materials_filename = object_name + "_material.json";
     std::string materials_filepath = scene_context_path + materials_filename;
-    std::ifstream f(materials_filepath);
-    json materials_data = json::parse(f);
+    std::ifstream f_material(materials_filepath);
+    json materials_data = json::parse(f_material);
     load_materials(materials_data, r_manager);
 
     std::string model_filepath = scene_context_path + object_filename;
-    std::ifstream f(model_filepath);
-    json model_data = json::parse(f);
+    std::ifstream f_model(model_filepath);
+    json model_data = json::parse(f_model);
     Model model = load_model(model_data, r_manager);
 
     if (object_data.contains("transform"))
@@ -144,8 +144,8 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
 {
     Model model;
 
-    std::string model_name = data.at('name').get<std::string>();
-    json vertices_data = data.at('vertices');
+    std::string model_name = data.at("name").get<std::string>();
+    const json& vertices_data = data.at("vertices");
     size_t num_vertices = vertices_data.size();
     std::shared_ptr<Mesh> new_mesh_ptr = std::make_shared<Mesh>();
 
@@ -154,20 +154,20 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
     {
         json vertex_data = vertices_data.at(i);
 
-        std::vector<float> pos = vertex_data.at('p').get<std::vector<float>>();
+        std::vector<float> pos = vertex_data.at("p").get<std::vector<float>>();
         Vec4f pos_v(pos[0], pos[1], pos[2], 1.0f);
         
-        std::vector<float> norm = vertex_data.at('n').get<std::vector<float>>();
+        std::vector<float> norm = vertex_data.at("n").get<std::vector<float>>();
         Vec4f norm_v(norm[0], norm[1], norm[2], 0.0f);
 
-        std::vector<float> texcoord = vertex_data.at('t').get<std::vector<float>>();
+        std::vector<float> texcoord = vertex_data.at("t").get<std::vector<float>>();
         Vec2f texcoord_v(texcoord[0], texcoord[1]);
 
         Vertex vertex(pos_v, norm_v, texcoord_v);
         new_mesh_ptr->vertices.push_back(vertex);
     }
 
-    json indices_data = data.at('indices');
+    const json& indices_data = data.at("indices");
     size_t num_indices = indices_data.size();
     new_mesh_ptr->num_faces = uint32_t(num_indices / 3);
     for (int i = 0; i < num_indices; ++i)
@@ -176,16 +176,16 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
         new_mesh_ptr->indices.push_back(index);
     }
 
-    json submeshes_data = data.at('submeshes');
+    const json& submeshes_data = data.at("submeshes");
     size_t num_submeshes = submeshes_data.size();
     for (int i = 0; i < num_submeshes; ++i)
     {
         SubMesh submesh;
         json submesh_data = submeshes_data.at(i);
         
-        std::string material_name = submesh_data.at('material').get<std::string>();
-        uint32_t submesh_offset = submesh_data.at('offset').get<uint32_t>();
-        uint32_t submesh_size = submesh_data.at('size').get<uint32_t>();
+        std::string material_name = submesh_data.at("material").get<std::string>();
+        uint32_t submesh_offset = submesh_data.at("offset").get<uint32_t>();
+        uint32_t submesh_size = submesh_data.at("size").get<uint32_t>();
 
         submesh.index_offset = submesh_offset;
         submesh.index_count = submesh_size; 
@@ -199,5 +199,36 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
 
 void JsonSceneLoader::load_materials(const json& data, ResourceManager& r_manager)
 {
-    
+    for (auto it = data.begin(); it != data.end(); ++it)
+    {
+        BlinnPhongMaterial mat;
+        mat.name = it.key();
+        
+        std::vector<float> ambient_v = it->at("ambient").get<std::vector<float>>();
+        mat.ambient = Vec4f(ambient_v[0], ambient_v[1], ambient_v[2], ambient_v[3]);
+        std::vector<float> diffuse_v = it->at("diffuse").get<std::vector<float>>();
+        mat.diffuse = Vec4f(diffuse_v[0], diffuse_v[1], diffuse_v[2], diffuse_v[3]);     
+        std::vector<float> specular_v = it->at("specular").get<std::vector<float>>();
+        mat.specular = Vec4f(specular_v[0], specular_v[1], specular_v[2], specular_v[3]);
+        mat.shininess = it->at("shininess").get<float>();
+        mat.optical_density = it->at("optical_density").get<float>();
+        mat.illumination_model =it->at("illumination_model").get<uint8_t>();
+
+        const json& textures = it->at("textures");
+        if (!textures.at("diffuse_map").is_null())
+        {
+            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+            std::shared_ptr<Texture> spTexture = load_texture();
+        }
+            
+        if (!textures.at("diffuse_map").is_null())
+            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+        if (!textures.at("diffuse_map").is_null())
+            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+        if (!textures.at("diffuse_map").is_null())
+            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+            std::string specular_map_filename = textures.at("specular_map").get<std::string>();
+        std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+        std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+    }
 }
