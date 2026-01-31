@@ -6,6 +6,8 @@
 #include "renderer/shader.h"
 #include "renderer/framebuffer.h"
 
+#include <algorithm>
+
 class Rasterizer
 {
 public:

@@ -1,9 +1,7 @@
 #ifndef __TEXTURE_H__
 #define __TEXTURE_H__
 
-#ifdef _WIN32
-    #include <vector>
-#endif
+#include <vector>
 
 #include <string>
 #include "math/math_all.h"

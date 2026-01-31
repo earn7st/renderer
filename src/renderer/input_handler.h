@@ -3,10 +3,8 @@
 
 #include <iostream>
 #include <SDL3/SDL.h>
+#include <unordered_map>
 
-#ifdef _WIN32
-    #include <unordered_map>
-#endif
 
 class InputHandler
 {

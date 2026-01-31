@@ -46,7 +46,7 @@ void Model::print() const
     {
         SubMesh sub_mesh = sub_meshes_[i];
         std::cout << "SubMesh " << i << ":" << std::endl;
-        std::cout << "Offset: " << sub_mesh.offset << " Size:" << sub_mesh.size << std::endl;
+        std::cout << "Offset: " << sub_mesh.index_offset << " Size:" << sub_mesh.index_count << std::endl;
     }
 
 }

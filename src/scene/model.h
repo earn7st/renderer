@@ -5,9 +5,8 @@
 #include "scene/transform.h"
 #include "scene/material.h"
 
-#ifdef _WIN32
-    #include <memory>
-#endif
+#include <memory>
+
 
 struct SubMesh
 {

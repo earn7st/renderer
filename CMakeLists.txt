@@ -19,7 +19,7 @@ if(WIN32)
     set(SDL3_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendored/SDL/include")
     target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)
 
-elseif(MACOS)
+elseif(APPLE)
     find_package(SDL3 REQUIRED)
     target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)   
 

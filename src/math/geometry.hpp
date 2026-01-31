@@ -1,11 +1,9 @@
 #ifndef __GEOMETRY_HPP__
 #define __GEOMETRY_HPP__
 
-#include "vector.hpp"
+#include <algorithm>
 
-#ifdef _WIN32
-    #include <algorithm>
-#endif
+#include "vector.hpp"
 
 inline
 bool inside_triangle(const Vec2f& p, const Vec2f& v_a, const Vec2f& v_b, const Vec2f& v_c)

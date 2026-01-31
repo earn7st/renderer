@@ -5,6 +5,7 @@
 #include <cassert>
 #include <stdexcept>
 #include <cmath>
+#include <cstring>
 
 #include "constant.h"
 #include "vector.hpp"

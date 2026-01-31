@@ -5,10 +5,9 @@
 #include "scene/mesh.h"
 #include "scene/texture.h"
 
-#ifdef _WIN32
-    #include <vector>
-    #include <memory>
-#endif
+#include <vector>
+#include <memory>
+#include <unordered_map>
 
 class ResourceManager
 {

@@ -2,14 +2,18 @@
 #define __MATERIAL_H__
 
 #include "math/math_all.h"
-#include "renderer/shader.h"
+#include "scene/texture.h"
+
+#include <memory>
+
+class Shader;
 
 class Material
 {
 public:
     Material() = default;
     std::string name;
-    Shader* shader; 
+    Shader* shader = nullptr; 
 };
 
 class BlinnPhongMaterial : public Material

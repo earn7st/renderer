@@ -1,11 +1,9 @@
 #ifndef __FRAMEBUFFER_H__
 #define __FRAMEBUFFER_H__
 
-#include "math/math_all.h"
+#include <vector>
 
-#ifdef _WIN32
-    #include <vector>
-#endif
+#include "math/math_all.h"
 
 class Framebuffer
 {
