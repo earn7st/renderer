@@ -11,7 +11,7 @@ RGBA Shader::execute_fragment_shader(const FragmentIn& input, const ShaderContex
     return fragment_shader_(input, shader_context);
 }
 
-VertexOut default_vertex_shader(const Vertex& input, const ShaderContext& shader_context)
+VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shader_context)
 {
     VertexOut out;
     const Uniform& context_uniform = *shader_context.uniform;
@@ -25,6 +25,11 @@ VertexOut default_vertex_shader(const Vertex& input, const ShaderContext& shader
 }
 
 RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
+{
+    return RGBA(0, 0, 255, 255);
+}
+
+RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
 {
     return RGBA(0, 0, 255, 255);
 }

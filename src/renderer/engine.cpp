@@ -22,7 +22,7 @@ int Engine::start_up(const std::string& scene_name, const RenderState& render_st
     // 4. Load Scene
     std::string scene_context_path = SCENE_PATH + scene_name + "/";
     std::unique_ptr<ISceneLoader> scene_loader = std::make_unique<JsonSceneLoader>();
-    if(scene_loader->load_scene(scene_context_path, scene_, resource_manager_))
+    if(scene_loader->load_scene_from_context_path(scene_context_path, scene_, resource_manager_))
     {
         std::cerr << "Engine::start_up(): Failed to load scene" << std::endl;
         return -1; 

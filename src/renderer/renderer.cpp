@@ -54,11 +54,13 @@ void Renderer::draw_model(const Model& model)
         const SubMesh& sub_mesh = *it;
         update_per_sub_mesh_uniform(sub_mesh);
 
-        const std::weak_ptr wpMaterial = sub_mesh.wpMaterial;
-        const std::shared_ptr spMaterial = wpMaterial.lock(); 
-        const Shader* shader = spMaterial->shader;
+        std::shared_ptr<Material> spMaterial = sub_mesh.wpMaterial.lock();
+        if (!spMaterial) continue;
 
-        draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, shader);
+        std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
+        if (!spShader) continue;
+
+        draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, spShader.get());
     }
 
 }

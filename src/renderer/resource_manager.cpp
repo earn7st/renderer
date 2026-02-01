@@ -3,22 +3,32 @@
 
 void ResourceManager::init_shaders()
 {
-    register_shader("blinn_phong", Shader(standard_vertex_shader, blinn_phong_fragment_shader));
-    register_shader("wireframe", Shader(standard_vertex_shader, wireframe_fragment_shader));
-    register_shader("flat", Shader(standard_vertex_shader, flat_fragment_shader));
+    register_shader("blinn_phong", std::make_shared<Shader>(standard_vertex_shader, blinn_phong_fragment_shader));
+    register_shader("wireframe", std::make_shared<Shader>(standard_vertex_shader, wireframe_fragment_shader));
+    register_shader("flat", std::make_shared<Shader>(standard_vertex_shader, flat_fragment_shader));
 }
 
-void ResourceManager::register_shader(const std::string& name, const Shader& shader)
+const std::shared_ptr<Shader>& ResourceManager::register_shader(const std::string& name, const std::shared_ptr<Shader> shader)
 {
-    shader_pool_[name] = shader;
+    shaders_.insert({name, shader});
+    return shaders_[name];
 }
 
-void ResourceManager::load_mesh(const std::shared_ptr<Mesh> mesh)
+const std::shared_ptr<Mesh>& ResourceManager::load_mesh(const std::shared_ptr<Mesh> mesh)
 {
-    spMeshes_.push_back(mesh);
+    meshes_.push_back(mesh);
+    return meshes_.back();
 }
 
-void ResourceManager::load_material(const std::shared_ptr<Material> material)
+const std::shared_ptr<Material>& ResourceManager::load_material(const std::string& name, const std::shared_ptr<Material> material)
 {
-    spMaterials_.push_back(material);
+    materials_.insert({name, material});
+    return materials_[name];
 }
+
+const std::shared_ptr<Texture>& ResourceManager::load_texture(const std::string& name, const std::shared_ptr<Texture> texture)
+{
+    textures_.insert({name, texture});
+    return textures_[name];
+}
+

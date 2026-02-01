@@ -1,12 +1,34 @@
-#include <fstream>
-#include "json.hpp"
 #include "math/math_all.h"
 #include "renderer/render_types.h"
 #include "scene/scene_loader.h"
 
+#include <fstream>
+
+#include "thirdparty/json.hpp"
+#define STB_IMAGE_IMPLEMENTATION
+#include "thirdparty/stb_image.h"
+
 using json = nlohmann::json;
 
-int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
+std::shared_ptr<Texture> TextureLoader::load_texture_from_file(const std::string& filepath)
+{
+    int w, h, channels;
+    unsigned char* data = stbi_load(filepath.c_str(), &w, &h, &channels, 4);
+    if (!data)
+    {
+        throw std::runtime_error("Failed to load image:" + filepath);
+    }
+
+    std::filesystem::path p(filepath);
+    std::string name = p.filename().string();
+
+    std::shared_ptr<Texture> spTexture = std::make_shared<Texture>(data, w, h, name);
+    stbi_image_free(data);
+
+    return spTexture;
+}
+
+int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
 {
     std::string scene_filepath = scene_context_path + "scene.json";
 
@@ -15,8 +37,8 @@ int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& sc
 
     if (data.contains("camera")) 
     {
-        json& camera = data.at("camera");
-        if (load_camera(camera, scene) != 0)
+        json& camera_data = data.at("camera");
+        if (load_camera_from_json(camera_data, scene) != 0)
         {
             std::cerr << "JsonSceneLoader::load_scene : Failed Loading Camera Data\n";
         }   
@@ -25,7 +47,7 @@ int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& sc
     if (data.contains("object")) 
     {
         json& object_data = data.at("object");
-        if (load_object(object_data, scene_context_path, scene, r_manager) != 0)
+        if (load_object_from_json(object_data, scene_context_path, scene, r_manager) != 0)
         {
             std::cerr << "JsonSceneLoader::load_objects : Failed Loading Objects Data\n";
             return -1;
@@ -34,8 +56,8 @@ int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& sc
     
     if (data.contains("lights")) 
     {
-        json& lights = data.at("lights");
-        if (load_lights(lights, scene) != 0)
+        json& lights_data = data.at("lights");
+        if (load_lights_from_json(lights_data, scene) != 0)
         {
             std::cerr << "JsonSceneLoader::load_lights : Failed Loading Lights Data\n";
             return -1;
@@ -45,25 +67,25 @@ int JsonSceneLoader::load_scene(const std::string& scene_context_path, Scene& sc
     return 0;
 }
 
-int JsonSceneLoader::load_object(const json& object_data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
+int JsonSceneLoader::load_object_from_json(const json& data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
 {
-    std::string object_name = object_data.at('name').get<std::string>();
-    std::string object_filename = object_data.at("filename").get<std::string>();
+    std::string object_name = data.at("name").get<std::string>();
+    std::string object_filename = data.at("filename").get<std::string>();
 
     std::string materials_filename = object_name + "_material.json";
     std::string materials_filepath = scene_context_path + materials_filename;
     std::ifstream f_material(materials_filepath);
     json materials_data = json::parse(f_material);
-    load_materials(materials_data, r_manager);
+    load_materials_from_json(materials_data, r_manager);
 
     std::string model_filepath = scene_context_path + object_filename;
     std::ifstream f_model(model_filepath);
     json model_data = json::parse(f_model);
-    Model model = load_model(model_data, r_manager);
+    Model model = load_model_from_json(model_data, r_manager);
 
-    if (object_data.contains("transform"))
+    if (data.contains("transform"))
     {
-        json transform_data = object_data.at("transform");
+        json transform_data = data.at("transform");
 
         std::vector<float> scale = transform_data.at("scale").get<std::vector<float>>();
         Vec3f scale_v(scale[0], scale[1], scale[2]);
@@ -83,7 +105,7 @@ int JsonSceneLoader::load_object(const json& object_data, const std::string& sce
     return 0;
 }
 
-int JsonSceneLoader::load_camera(const json& data, Scene& scene)
+int JsonSceneLoader::load_camera_from_json(const json& data, Scene& scene)
 {
 
     std::vector<float> position_arr = data.at("position").get<std::vector<float>>();
@@ -106,7 +128,7 @@ int JsonSceneLoader::load_camera(const json& data, Scene& scene)
     return 0;
 }
 
-int JsonSceneLoader::load_lights(const json& data, Scene& scene)
+int JsonSceneLoader::load_lights_from_json(const json& data, Scene& scene)
 { 
     int num_lights = data.size();
     for (int i = 0; i < num_lights; ++i)
@@ -140,7 +162,7 @@ int JsonSceneLoader::load_lights(const json& data, Scene& scene)
     return 0;
 }
 
-Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
+Model JsonSceneLoader::load_model_from_json(const json& data, ResourceManager& r_manager)
 {
     Model model;
 
@@ -187,6 +209,7 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
         uint32_t submesh_offset = submesh_data.at("offset").get<uint32_t>();
         uint32_t submesh_size = submesh_data.at("size").get<uint32_t>();
 
+        submesh.wpMaterial = r_manager.get_material(material_name);
         submesh.index_offset = submesh_offset;
         submesh.index_count = submesh_size; 
     }
@@ -197,12 +220,15 @@ Model JsonSceneLoader::load_model(const json& data, ResourceManager& r_manager)
     return model;
 }    
 
-void JsonSceneLoader::load_materials(const json& data, ResourceManager& r_manager)
+void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager& r_manager)
 {
     for (auto it = data.begin(); it != data.end(); ++it)
     {
         BlinnPhongMaterial mat;
         mat.name = it.key();
+
+        // Shader should be set later
+        // mat.shader = ....
         
         std::vector<float> ambient_v = it->at("ambient").get<std::vector<float>>();
         mat.ambient = Vec4f(ambient_v[0], ambient_v[1], ambient_v[2], ambient_v[3]);
@@ -215,20 +241,39 @@ void JsonSceneLoader::load_materials(const json& data, ResourceManager& r_manage
         mat.illumination_model =it->at("illumination_model").get<uint8_t>();
 
         const json& textures = it->at("textures");
+        std::string asset_root_path = r_manager.get_asset_root();
         if (!textures.at("diffuse_map").is_null())
         {
-            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = load_texture();
+            std::string filename = textures.at("diffuse_map").get<std::string>();
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            r_manager.load_texture(spTexture->get_name(), spTexture);
+            mat.wpDiffuse_map = spTexture;
         }
             
-        if (!textures.at("diffuse_map").is_null())
-            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
-        if (!textures.at("diffuse_map").is_null())
-            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
-        if (!textures.at("diffuse_map").is_null())
-            std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
-            std::string specular_map_filename = textures.at("specular_map").get<std::string>();
-        std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
-        std::string diffuse_map_filename = textures.at("diffuse_map").get<std::string>();
+        if (!textures.at("specular_map").is_null())
+        {
+            std::string filename = textures.at("specular_map").get<std::string>();
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            r_manager.load_texture(spTexture->get_name(), spTexture);
+            mat.wpSpecular_map = spTexture;
+        }
+            
+        if (!textures.at("bump_map").is_null())
+        {
+            std::string filename = textures.at("bump_map").get<std::string>();
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            r_manager.load_texture(spTexture->get_name(), spTexture);
+            mat.wpBump_map = spTexture;
+        }
+
+        if (!textures.at("alpha_map").is_null())
+        {
+            std::string filename = textures.at("alpha_map").get<std::string>();
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            r_manager.load_texture(spTexture->get_name(), spTexture);
+            mat.wpAlpha_map = spTexture;
+        }
+
+        r_manager.load_material(mat.name, std::make_shared<Material>(mat));
     }
 }

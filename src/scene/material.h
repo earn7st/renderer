@@ -13,13 +13,14 @@ class Material
 public:
     Material() = default;
     std::string name;
-    Shader* shader = nullptr; 
+    std::weak_ptr<Shader> wpShader; 
 };
 
 class BlinnPhongMaterial : public Material
 {
 public:
     BlinnPhongMaterial() = default;
+    BlinnPhongMaterial(BlinnPhongMaterial& mat);
 
     Vec4f ambient;
     Vec4f diffuse;
