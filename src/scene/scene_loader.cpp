@@ -72,8 +72,10 @@ int JsonSceneLoader::load_object_from_json(const json& data, const std::string& 
     std::string object_name = data.at("name").get<std::string>();
     std::string object_filename = data.at("filename").get<std::string>();
 
-    std::string materials_filename = object_name + "_material.json";
+    std::string materials_filename = object_name + "_materials.json";
     std::string materials_filepath = scene_context_path + materials_filename;
+    const std::string& scene_assets_root_path = r_manager.concatenate_to_scene_assets_root(object_name + "/");
+
     std::ifstream f_material(materials_filepath);
     json materials_data = json::parse(f_material);
     load_materials_from_json(materials_data, r_manager);
@@ -241,11 +243,11 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         mat.illumination_model =it->at("illumination_model").get<uint8_t>();
 
         const json& textures = it->at("textures");
-        std::string asset_root_path = r_manager.get_asset_root();
+        std::string scene_assets_root_path = r_manager.get_scene_assets_root();
         if (!textures.at("diffuse_map").is_null())
         {
             std::string filename = textures.at("diffuse_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
             r_manager.load_texture(spTexture->get_name(), spTexture);
             mat.wpDiffuse_map = spTexture;
         }
@@ -253,7 +255,7 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         if (!textures.at("specular_map").is_null())
         {
             std::string filename = textures.at("specular_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
             r_manager.load_texture(spTexture->get_name(), spTexture);
             mat.wpSpecular_map = spTexture;
         }
@@ -261,7 +263,7 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         if (!textures.at("bump_map").is_null())
         {
             std::string filename = textures.at("bump_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
             r_manager.load_texture(spTexture->get_name(), spTexture);
             mat.wpBump_map = spTexture;
         }
@@ -269,7 +271,7 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         if (!textures.at("alpha_map").is_null())
         {
             std::string filename = textures.at("alpha_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(asset_root_path + filename);
+            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
             r_manager.load_texture(spTexture->get_name(), spTexture);
             mat.wpAlpha_map = spTexture;
         }

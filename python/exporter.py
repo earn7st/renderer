@@ -31,7 +31,10 @@ def export_to_json(model_name, obj_filepath, scene_context_path):
 
         def get_tex_name(texture_obj):
             if texture_obj and hasattr(texture_obj, 'file_name'):
-                return os.path.basename(texture_obj.file_name)
+                name = os.path.basename(texture_obj.file_name)
+                name = name.strip()
+                name = name.split()[-1]
+                return name
             return None
 
         mat_info = {
