@@ -34,7 +34,7 @@ public:
 
     void add_sub_mesh(SubMesh&);
 
-    void print() const;
+    void print_info() const;
 
 private:
 

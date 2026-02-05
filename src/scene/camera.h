@@ -34,7 +34,7 @@ public:
     float get_near_plane() const { return near_plane_; }
     float get_far_plane() const { return far_plane_; }
 
-    void print() const;
+    void print_info() const;
 
 private:
     Vec3f pos_ ;

@@ -148,6 +148,7 @@ int JsonSceneLoader::load_lights_from_json(const json& data, Scene& scene)
             Vec3f direction_v(direction[0], direction[1], direction[2]);
 
             DirectionalLight dl;
+            dl.type = DIRECTIONAL;
             dl.direction = direction_v;
             dl.color = color_v;
             dl.intensity = intensity;
@@ -214,6 +215,8 @@ Model JsonSceneLoader::load_model_from_json(const json& data, ResourceManager& r
         submesh.wpMaterial = r_manager.get_material(material_name);
         submesh.index_offset = submesh_offset;
         submesh.index_count = submesh_size; 
+
+        model.add_sub_mesh(submesh);
     }
 
     r_manager.load_mesh(new_mesh_ptr);
@@ -229,8 +232,7 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         BlinnPhongMaterial mat;
         mat.name = it.key();
 
-        // Shader should be set later
-        // mat.shader = ....
+        mat.wpShader = r_manager.get_shader("blinn_phong");
         
         std::vector<float> ambient_v = it->at("ambient").get<std::vector<float>>();
         mat.ambient = Vec4f(ambient_v[0], ambient_v[1], ambient_v[2], ambient_v[3]);
@@ -276,6 +278,6 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
             mat.wpAlpha_map = spTexture;
         }
 
-        r_manager.load_material(mat.name, std::make_shared<Material>(mat));
+        r_manager.load_material(mat.name, std::make_shared<BlinnPhongMaterial>(mat));
     }
 }

@@ -37,12 +37,14 @@ void Model::add_sub_mesh(SubMesh& submesh)
     sub_meshes_.push_back(submesh);
 }
 
-void Model::print() const 
+void Model::print_info() const 
 {
+    std::cout << "---- Model ----" << std::endl;
+    
     std::shared_ptr<Mesh> spMesh = wpMesh_.lock();
     const Mesh& mesh = *spMesh;
-    std::cout << mesh.vertices.size() << " " << mesh.indices.size() << std::endl;
-    for(int i = 0; i < sub_meshes_.size(); ++i)
+    std::cout << "Num Vertices: " << mesh.vertices.size() << " Num Indices: " << mesh.indices.size() << std::endl;
+    for(size_t i = 0; i < sub_meshes_.size(); ++i)
     {
         SubMesh sub_mesh = sub_meshes_[i];
         std::cout << "SubMesh " << i << ":" << std::endl;

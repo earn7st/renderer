@@ -143,7 +143,7 @@ template <typename T>
 inline 
 std::ostream& operator << (std::ostream& os, Vector3<T> v)
 { 
-    return os << "(" << std::setw(4) << v.x_ << ", " << std::setw(4) << v.y_ << ", " << std::setw(4) << v.z_ << ")" << std::endl;
+    return os << "(" << std::setw(4) << v.x_ << ", " << std::setw(4) << v.y_ << ", " << std::setw(4) << v.z_ << ")";
 }
 
 typedef Vector3<int> Vec3i;
@@ -185,7 +185,7 @@ template <typename T>
 inline
 std::ostream& operator << (std::ostream& os, Vector4<T> v)
 { 
-    return os << "(" << std::setw(4) << v.x_ << ", " << std::setw(4) << v.y_ << ", " << std::setw(4) << v.z_ << ", " << std::setw(4) << v.w_ << ")" << std::endl;
+    return os << "(" << std::setw(4) << v.x_ << ", " << std::setw(4) << v.y_ << ", " << std::setw(4) << v.z_ << ", " << std::setw(4) << v.w_ << ")";
 }
 
 typedef Vector4<int> Vec4i;

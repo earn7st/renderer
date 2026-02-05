@@ -5,3 +5,9 @@ Texture::Texture(unsigned char* data, uint32_t width, uint32_t height, const std
 {
     pixels_.assign(data, data + width * height * 4);
 }
+
+void Texture::print_info() const
+{
+    std::cout << "Name: " << name_ << std::endl;
+    std::cout << "Width: " << width_ << " Height: " <<  height_ << std::endl;
+}

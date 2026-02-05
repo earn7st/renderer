@@ -8,8 +8,8 @@
 
 #include "renderer/framebuffer.h"
 
-#define DEFAULT_DISPLAYER_WIDTH 800
-#define DEFAULT_DISPLAYER_HEIGHT 600
+#define DEFAULT_DISPLAYER_WIDTH 1600
+#define DEFAULT_DISPLAYER_HEIGHT 900
 
 class Displayer
 {

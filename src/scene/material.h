@@ -2,16 +2,18 @@
 #define __MATERIAL_H__
 
 #include "math/math_all.h"
+#include "renderer/shader.h"
 #include "scene/texture.h"
 
 #include <memory>
-
-class Shader;
 
 class Material
 {
 public:
     Material() = default;
+    Material(const Material&);
+    virtual void print_info() const = 0;
+
     std::string name;
     std::weak_ptr<Shader> wpShader; 
 };
@@ -20,7 +22,9 @@ class BlinnPhongMaterial : public Material
 {
 public:
     BlinnPhongMaterial() = default;
-    BlinnPhongMaterial(BlinnPhongMaterial& mat);
+    BlinnPhongMaterial(const BlinnPhongMaterial& mat);
+
+    void print_info() const override;
 
     Vec4f ambient;
     Vec4f diffuse;

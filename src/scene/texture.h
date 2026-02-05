@@ -14,6 +14,8 @@ public:
 
     const std::string& get_name() const { return name_; }
 
+    void print_info() const;
+
 private:
     std::string name_;
     uint32_t width_, height_;

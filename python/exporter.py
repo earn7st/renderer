@@ -22,6 +22,8 @@ def export_to_json(model_name, obj_filepath, scene_context_path):
     if not os.path.exists(scene_context_path):
         os.makedirs(scene_context_path)
 
+    print("Exporting Model from" + obj_filepath)
+
     scene = pywavefront.Wavefront(obj_filepath, collect_faces=True, cache=False)
     
     # 1. Load Materials

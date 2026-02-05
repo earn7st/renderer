@@ -28,7 +28,7 @@ RenderState parse_parameters(int argc, char* argv[])
 
 int main(int argc, char* argv[])
 {
-
+    printf("running\n");
     if(argc < 2)
     {
         std::cerr << "Usage: " << argv[0] << "<scene_name> " << "<args>" << std::endl;
@@ -42,6 +42,9 @@ int main(int argc, char* argv[])
     
     Engine engine;
     if(engine.start_up(scene_name, render_state) < 0) return -1;
+
+    //engine.print_info();
+
     engine.run();
 
     return 0;

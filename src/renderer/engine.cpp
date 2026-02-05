@@ -65,3 +65,14 @@ int Engine::shut_down()
 
     return 0;
 }
+
+void Engine::print_info() const
+{
+    const ResourceManager& r_manager = resource_manager_;
+    r_manager.print_resources();
+
+    const Scene& scene = scene_;
+    scene.print_info();
+
+    return;
+}

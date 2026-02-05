@@ -12,18 +12,18 @@ public:
     Scene() = default;
 
     void add_model(const Model& model);
-    void add_light(const DirectionalLight);
-    void add_light(const PointLight);
-    void add_light(const SpotLight);
+    void add_light(const DirectionalLight&);
 
     const Camera& get_main_camera() const;
     const std::vector<Model>& get_models() const;
 
-    void set_main_camera(Camera& camera);
+    void set_main_camera(const Camera& camera);
+
+    void print_info() const;
 
 private:
     std::vector<Model> models_;
-    std::vector<Light> lights_;
+    std::vector<std::shared_ptr<Light>> lights_;
     Camera main_camera_;
 };
 

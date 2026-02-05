@@ -29,6 +29,8 @@ public:
     const std::shared_ptr<Material>& get_material(const std::string& name) { return materials_[name]; }
     const std::shared_ptr<Texture>& get_texture(const std::string& name) { return textures_[name]; }
 
+    void print_resources() const;
+
 
 private:
     std::string scene_assets_root_ = "../assets/";

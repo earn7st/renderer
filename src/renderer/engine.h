@@ -15,6 +15,8 @@ public:
     void run();
     int shut_down();
 
+    void print_info() const;
+
 private:
     Displayer displayer_;
     InputHandler input_handler_;

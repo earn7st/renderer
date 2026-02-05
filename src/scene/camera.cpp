@@ -3,7 +3,7 @@
 #include <iostream>
 #include "math/math_all.h"
 
-void Camera::print() const
+void Camera::print_info() const
 {
     std::cout << "pos: " << pos_ << std::endl;
     std::cout << "center: " << center_ << std::endl;
