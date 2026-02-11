@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "math/math_all.h"
+#include "renderer/render_types.hpp"
 
 class Framebuffer
 {
@@ -18,9 +19,12 @@ public:
     uint32_t get_height() const { return height_; }
     uint32_t get_size() const { return width_ * height_; }
     const uint32_t* get_pixels() const;
+    RGBA get_color(uint32_t x, uint32_t y) const;
+    float get_depth(uint32_t x, uint32_t y) const;
 
     bool set_color(uint32_t x, uint32_t y, RGBA color);
-    RGBA get_color(uint32_t x, uint32_t y);
+    
+    bool depth_test(uint32_t x, uint32_t y, float d) const;
 
     void print();
 
@@ -28,7 +32,7 @@ private:
     bool initialized = false;
     uint32_t width_, height_;
     std::vector<RGBA> color_buffer_;
-    std::vector<double> depth_buffer_;
+    std::vector<float> depth_buffer_;
 };
 
 #endif

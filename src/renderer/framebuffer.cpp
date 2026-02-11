@@ -25,6 +25,16 @@ const uint32_t* Framebuffer::get_pixels() const
     return reinterpret_cast<const uint32_t*> (color_buffer_.data());
 }
 
+RGBA Framebuffer::get_color(uint32_t x, uint32_t y) const
+{
+    return color_buffer_[y * width_ + x];
+}
+
+float Framebuffer::get_depth(uint32_t x, uint32_t y) const
+{
+    return depth_buffer_[y * width_ + x];
+} 
+
 bool Framebuffer::set_color(uint32_t x, uint32_t y, RGBA color)
 {
     if(x < width_ && y < height_)
@@ -35,9 +45,9 @@ bool Framebuffer::set_color(uint32_t x, uint32_t y, RGBA color)
     return false;
 }
 
-RGBA Framebuffer::get_color(uint32_t x, uint32_t y)
+bool Framebuffer::depth_test(uint32_t x, uint32_t y, float d) const
 {
-    return color_buffer_[y * width_ + x];
+    return get_depth(x, y) > d;
 }
 
 void Framebuffer::print()

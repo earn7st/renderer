@@ -3,7 +3,7 @@
 #ifndef __UTILS_HPP__
 #define __UTILS_HPP__
 
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
 #include "scene/mesh.h"
 
 

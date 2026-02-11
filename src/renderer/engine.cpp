@@ -1,6 +1,6 @@
 #include "renderer/engine.h"
 #include "renderer/render_states.h"
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
 #include "scene/scene_loader.h"
 
 #define SCENE_PATH  "../scenes/"

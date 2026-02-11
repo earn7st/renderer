@@ -1,7 +1,7 @@
 #ifndef __SHADER_CONTEXT_H__
 #define __SHADER_CONTEXT_H__
 
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
 
 class Material;
 

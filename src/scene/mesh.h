@@ -5,7 +5,7 @@
     #include <vector>
 #endif
 
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
 
 struct Mesh
 {

@@ -16,7 +16,6 @@ bool inside_triangle(const Vec2f& p, const Vec2f& v_a, const Vec2f& v_b, const V
     Vec2f bp = p - v_b;
     Vec2f cp = p - v_c;
 
-    // TODO: test top-left rule correct
     float cross_product_a = cross(e_ab, ap);
     if(cross_product_a == 0) 
         if(e_ab.y_ < 0 || (e_ab.y_ == 0 && max_y == v_a.y_))
@@ -72,6 +71,32 @@ Vec3f compute_barycentric_coord_2D(const Vec2f& v, const Vec2f& v_a, const Vec2f
     float alpha = 1 - gamma - beta;
 
     return Vec3f(alpha, beta, gamma);
+}
+inline
+Vec2f interpolate(const Vec2f& v0, const Vec2f& v1, const Vec2f& v2, float alpha, float beta, float gamma)
+{
+    return Vec2f(
+        v0.x_ * alpha + v1.x_ * beta + v2.x_ * gamma,
+        v0.y_ * alpha + v1.y_ * beta + v2.y_ * gamma);
+}
+
+inline
+Vec3f interpolate(const Vec3f& v0, const Vec3f& v1, const Vec3f& v2, float alpha, float beta, float gamma)
+{
+    return Vec3f(
+        v0.x_ * alpha + v1.x_ * beta + v2.x_ * gamma,
+        v0.y_ * alpha + v1.y_ * beta + v2.y_ * gamma,
+        v0.z_ * alpha + v1.z_ * beta + v2.z_ * gamma);
+}
+
+inline
+Vec4f interpolate(const Vec4f& v0, const Vec4f& v1, const Vec4f& v2, float alpha, float beta, float gamma)
+{
+    return Vec4f(
+        v0.x_ * alpha + v1.x_ * beta + v2.x_ * gamma,
+        v0.y_ * alpha + v1.y_ * beta + v2.y_ * gamma,
+        v0.z_ * alpha + v1.z_ * beta + v2.z_ * gamma,
+        1.0f);
 }
 
 #endif

@@ -29,16 +29,19 @@ void Renderer::render(const Scene& scene)
 {
     update_per_frame_uniform(scene);
 
+    ShaderContext shader_context;
+    // set Light Uniform
+
     const std::vector<Model>& models = scene.get_models();
     for(auto it = models.begin(); it != models.end(); ++it)
     {
         const Model& model = *it;
-        draw_model(model);
+        draw_model(model, shader_context);
     }
     
 }
 
-void Renderer::draw_model(const Model& model)
+void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
 {
     const Transform& transform = model.get_transform();
     update_per_model_uniform(transform);
@@ -53,27 +56,28 @@ void Renderer::draw_model(const Model& model)
     {
         const SubMesh& sub_mesh = *it;
         update_per_sub_mesh_uniform(sub_mesh);
+        shader_context.set_uniform(&uniform_);
 
         std::shared_ptr<Material> spMaterial = sub_mesh.wpMaterial.lock();
-        if (!spMaterial) continue;
-
-        std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
-        if (!spShader) continue;
-
-        draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, spShader.get());
+        if (spMaterial)
+        {
+            shader_context.material = spMaterial.get();
+            std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
+            if(spShader)
+            {
+                draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, spShader.get(), shader_context);
+            }
+        }
     }
 
 }
 
-void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader)
+void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader, const ShaderContext& shader_context)
 {
     if(count % 3 != 0){
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
         return ;
     }
-
-    ShaderContext shader_context;
-    shader_context.set_uniform(&uniform_);
 
     for (uint32_t i = offset; i < offset + count; i += 3)
     {
@@ -91,7 +95,6 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, cons
 
         // Rasterization : Perspective Division, Screen Mapping, rasterizing
         rasterizer_.rasterize(v0, v1, v2, fb_, shader, shader_context, render_state_);
-
     }
 }
 

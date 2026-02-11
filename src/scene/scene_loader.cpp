@@ -1,5 +1,5 @@
 #include "math/math_all.h"
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
 #include "scene/scene_loader.h"
 
 #include <fstream>

@@ -4,7 +4,7 @@
 void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& v2, 
                             Framebuffer* fb,
                             const Shader* shader, 
-                            ShaderContext& shader_context,
+                            const ShaderContext& shader_context,
                             const RenderState& render_state)
 {
     // Perspective Division
@@ -20,7 +20,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec2f v1_screen_pos = viewport_transform(v1_ndc_pos, screen_width, screen_height);
     Vec2f v2_screen_pos = viewport_transform(v2_ndc_pos, screen_width, screen_height);
 
-    if (render_state.polygon_mode == FILL)
+    if (render_state.polygon_mode == LINE)
     {
         draw_line(v0_screen_pos, v1_screen_pos, fb, shader);
         draw_line(v1_screen_pos, v2_screen_pos, fb, shader);
@@ -46,8 +46,18 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                 {
                     Vec3f bary = compute_barycentric_coord_2D(Vec2f(cx, cy), v0_screen_pos, v1_screen_pos, v2_screen_pos, edge_func_result_v1, edge_func_result_v2);
                     float alpha = bary.x_, beta = bary.y_, gamma = bary.z_;
-                    // TODO : correct interpolation
-                    
+                    float Z =  alpha * v1.clip_w * v2.clip_w + beta * v0.clip_w * v2.clip_w + gamma * v0.clip_w * v1.clip_w;
+                    float alpha_corrected = (alpha * v1.clip_w * v2.clip_w) / Z, beta_corrected = (beta * v0.clip_w * v2.clip_w) / Z, gamma_corrected = (gamma * v0.clip_w * v1.clip_w) / Z;
+
+                    Varying point = interpolate(v0, v1, v2, alpha_corrected, beta_corrected, gamma_corrected);
+
+                    float d = interpolate(v0_ndc_pos, v1_ndc_pos, v2_ndc_pos, alpha, beta, gamma).z_;
+                    //TODO: TEST
+                    if (fb->depth_test(x, y, d))
+                    {
+                        RGBA color = shader->execute_fragment_shader(point, shader_context);
+                        fb->set_color(x, y, color);
+                    }
                 }
             }
         }

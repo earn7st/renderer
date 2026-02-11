@@ -1,5 +1,7 @@
+#include "math/vector.hpp"
 #include "renderer/shader.h"
-#include "renderer/render_types.h"
+#include "renderer/render_types.hpp"
+#include "scene/material.h"
 
 VertexOut Shader::execute_vertex_shader(const Vertex& input, const ShaderContext& shader_context) const
 {
@@ -26,7 +28,11 @@ VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shade
 
 RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
 {
-    return RGBA(0, 0, 255, 255);
+    const BlinnPhongMaterial* mat = dynamic_cast<const BlinnPhongMaterial*>(shader_context.material);
+
+    //Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
+    
+    return RGBA(mat->diffuse.x_ * 255, mat->diffuse.y_ * 255, mat->diffuse.z_ * 255, 255.);
 }
 
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)

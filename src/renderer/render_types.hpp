@@ -37,6 +37,18 @@ struct Varying
     float clip_w;
 };
 
+inline
+Varying interpolate(const Varying& v0, const Varying& v1, const Varying& v2, float alpha, float beta, float gamma)
+{
+    Varying result;
+    
+    result.world_pos = interpolate(v0.world_pos, v1.world_pos, v2.world_pos, alpha, beta, gamma);
+    result.world_normal = interpolate(v0.world_normal, v1.world_normal, v2.world_normal, alpha, beta, gamma);
+    result.texcoord = interpolate(v0.texcoord, v1.texcoord, v2.texcoord, alpha, beta, gamma);
+
+    return result;
+}
+
 struct Vertex
 {
     Vertex() = default;
