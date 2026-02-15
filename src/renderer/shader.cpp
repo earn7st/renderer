@@ -31,7 +31,7 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& s
     const BlinnPhongMaterial* mat = dynamic_cast<const BlinnPhongMaterial*>(shader_context.material);
 
     //Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
-    
+
     return RGBA(mat->diffuse.x_ * 255, mat->diffuse.y_ * 255, mat->diffuse.z_ * 255, 255.);
 }
 

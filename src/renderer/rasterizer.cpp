@@ -51,8 +51,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
 
                     Varying point = interpolate(v0, v1, v2, alpha_corrected, beta_corrected, gamma_corrected);
 
-                    float d = interpolate(v0_ndc_pos, v1_ndc_pos, v2_ndc_pos, alpha, beta, gamma).z_;
-                    //TODO: TEST
+                    float d = interpolate(v0.clip_pos, v1.clip_pos, v2.clip_pos, alpha, beta, gamma).z_;
                     if (fb->depth_test(x, y, d))
                     {
                         RGBA color = shader->execute_fragment_shader(point, shader_context);

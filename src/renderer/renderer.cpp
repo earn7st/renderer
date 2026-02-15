@@ -65,6 +65,9 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
+                std::cout << sub_mesh.index_offset << " " << sub_mesh.index_count << std::endl;
+                shader_context.material->print_info();
+                std::cout << std::endl;
                 draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, spShader.get(), shader_context);
             }
         }

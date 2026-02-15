@@ -43,7 +43,7 @@ if __name__ == "__main__":
             "transform": {
                 "scale": [1.0, 1.0, 1.0],
                 "translation": [0.0, -1.0, 0.0],
-                "rotation": [0.0, 135.0, 0.0]
+                "rotation": [0.0, 90.0, 0.0]
             }
         }
         

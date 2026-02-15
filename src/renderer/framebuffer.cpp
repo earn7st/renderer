@@ -18,7 +18,7 @@ void Framebuffer::resize(uint32_t w, uint32_t h)
 void Framebuffer::clear()
 {
     std::fill(color_buffer_.begin(), color_buffer_.end(), RGBA(255, 0, 255, 255));
-    std::fill(depth_buffer_.begin(), depth_buffer_.end(), std::numeric_limits<double>::lowest());
+    std::fill(depth_buffer_.begin(), depth_buffer_.end(), std::numeric_limits<float>::max());
 }
 const uint32_t* Framebuffer::get_pixels() const 
 {
