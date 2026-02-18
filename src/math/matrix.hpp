@@ -182,31 +182,29 @@ Matrix rotate(const Matrix& mat, const Vector3<float>& v)
     return mat * RX_mat * RY_mat * RZ_mat;
 }
 
-// parameter near and far are coordinates
-// since we look at -z, 0 > near > far
+// parameter near and far are positive
 inline 
 Matrix ortho(float width, float height, float near, float far)
 {
-    // frustum is always centered : r = -l = width/2, t = -b = height/2s
+    // frustum is always centered : r = -l = width/2, t = -b = height/2
     Matrix ortho_translate_mat
     {
         1, 0, 0, 0,
         0, 1, 0, 0,
-        0, 0, 1, -(near + far)/2,
+        0, 0, 1, (near + far)/2,    // since coordinates of near and far planes are negative
         0, 0, 0, 1
     };
     Matrix ortho_scale_mat
     {
         2/ width, 0, 0, 0,
         0, 2 / height, 0, 0,
-        0, 0, 2 / (near - far), 0,
+        0, 0, 2 / (near - far), 0, 
         0, 0, 0, 1
     };
     return ortho_scale_mat * ortho_translate_mat;
 }
 
-// parameter near and far are coordinates
-// negative since we look at -z
+// parameter near and far are positive
 inline
 Matrix perspective(float fovy, float aspect, float near, float far)
 {
@@ -214,12 +212,12 @@ Matrix perspective(float fovy, float aspect, float near, float far)
     {
         near, 0, 0, 0,
         0, near, 0, 0,
-        0, 0, near + far, -near * far,
-        0, 0, 1, 0
+        0, 0, near + far, near * far,
+        0, 0, -1, 0
     };
 
     float radian_fovy = fovy * PI / 180.0;
-    float height = -near * tan(radian_fovy / 2) * 2;
+    float height = near * tan(radian_fovy / 2) * 2;
 
     Matrix ortho_mat = ortho(height * aspect, height, near, far);
 

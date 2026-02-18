@@ -18,10 +18,8 @@ public:
     Displayer(uint32_t w, uint32_t h);
     ~Displayer();
 
-    int init_SDL();    
-    bool present(const Framebuffer&);
-
-    bool check_framebuffer_size(const Framebuffer&);
+    int init_SDL();
+    bool present(const Framebuffer& fb);
 
 private:
     uint32_t width_ = DEFAULT_DISPLAYER_WIDTH;
@@ -29,6 +27,8 @@ private:
     SDL_Window* window_ = NULL;
     SDL_Renderer* renderer_ = NULL;
     SDL_Texture* texture_ = NULL;
+
+    std::vector<uint32_t> display_buffer_;
 };
 
 #endif

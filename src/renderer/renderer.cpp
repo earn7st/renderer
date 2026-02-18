@@ -105,7 +105,7 @@ void Renderer::update_per_frame_uniform(const Scene& scene)
 {
     const Camera& camera = scene.get_main_camera();
     uniform_.view_matrix = lookAt(camera.get_pos(), camera.get_center(), camera.get_up());
-    uniform_.projection_matrix = perspective(camera.get_fovy(), camera.get_aspect(), -camera.get_near_plane(), -camera.get_far_plane());
+    uniform_.projection_matrix = perspective(camera.get_fovy(), camera.get_aspect(), camera.get_near_plane(), camera.get_far_plane());
     uniform_.VP_matrix = uniform_.projection_matrix * uniform_.view_matrix;
     uniform_.world_camera_position = camera.get_pos();
 }

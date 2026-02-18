@@ -191,7 +191,7 @@ std::ostream& operator << (std::ostream& os, Vector4<T> v)
 typedef Vector4<int> Vec4i;
 typedef Vector4<unsigned int> Vec4u;
 typedef Vector4<float> Vec4f;
+typedef Vector4<float> RGBA;
 typedef Vector4<double> Vec4d;
-typedef Vector4<uint8_t> RGBA;
 
 #endif

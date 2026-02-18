@@ -32,15 +32,15 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& s
 
     //Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
 
-    return RGBA(mat->diffuse.x_ * 255, mat->diffuse.y_ * 255, mat->diffuse.z_ * 255, 255.);
+    return RGBA(mat->diffuse.x_, mat->diffuse.y_, mat->diffuse.z_, 1.f);
 }
 
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
 {
-    return RGBA(0, 0, 255, 255);
+    return RGBA(0.f, 0.f, 1.f, 1.f);
 }
 
 RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
 {
-    return RGBA(0, 0, 0, 255); // Black
+    return RGBA(0.f, 0.f, 0.f, 1.f); // Black
 }

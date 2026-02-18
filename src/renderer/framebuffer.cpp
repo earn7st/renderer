@@ -4,25 +4,21 @@ Framebuffer::Framebuffer(uint32_t w, uint32_t h)
 {
     initialized = true;
     width_ = w, height_ = h;
-    color_buffer_.resize(w * h, RGBA(255, 0, 255, 255));
-    depth_buffer_.resize(w * h, 0.0f);
+    color_buffer_.resize(w * h, RGBA(1.f, 0, 1.f, 1.f));
+    depth_buffer_.resize(w * h, std::numeric_limits<float>::max());
 }
 
 void Framebuffer::resize(uint32_t w, uint32_t h)
 {
     width_ = w, height_ = h;
-    color_buffer_.resize(w * h, RGBA(255, 0, 255, 255));
-    depth_buffer_.resize(w * h, 0.0f);
+    color_buffer_.resize(w * h, RGBA(1.f, 0.f, 1.f, 1.f));
+    depth_buffer_.resize(w * h, std::numeric_limits<float>::max());
 }
 
 void Framebuffer::clear()
 {
-    std::fill(color_buffer_.begin(), color_buffer_.end(), RGBA(255, 0, 255, 255));
+    std::fill(color_buffer_.begin(), color_buffer_.end(), RGBA(1.f, 0, 1.f, 1.f));
     std::fill(depth_buffer_.begin(), depth_buffer_.end(), std::numeric_limits<float>::max());
-}
-const uint32_t* Framebuffer::get_pixels() const 
-{
-    return reinterpret_cast<const uint32_t*> (color_buffer_.data());
 }
 
 RGBA Framebuffer::get_color(uint32_t x, uint32_t y) const
@@ -45,12 +41,18 @@ bool Framebuffer::set_color(uint32_t x, uint32_t y, RGBA color)
     return false;
 }
 
+bool Framebuffer::set_depth(uint32_t x, uint32_t y, float d)
+{
+    depth_buffer_[y * width_ + x] = d;
+    return true;
+}
+
 bool Framebuffer::depth_test(uint32_t x, uint32_t y, float d) const
 {
     return get_depth(x, y) > d;
 }
 
-void Framebuffer::print()
+void Framebuffer::printinfo() const
 {
     std::cout << "Framebuffer Info:" << std::endl;
     std::cout << width_ << " " << height_ << std::endl;

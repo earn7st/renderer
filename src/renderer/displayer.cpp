@@ -59,25 +59,29 @@ int Displayer::init_SDL()
 
 bool Displayer::present(const Framebuffer& fb)
 {
-    if(!check_framebuffer_size(fb))
-    {
-        std::cerr << "Displayer::present(): Main Framebuffer size doesn't match displayer's size\n";
-        return false;
-    }
-    const uint32_t* pixels = fb.get_pixels();
-    if (!pixels || !texture_ || !renderer_) {
+    const std::vector<RGBA> float_pixels = fb.get_color_data();
+
+    display_buffer_.resize(float_pixels.size());    
+
+    if (!texture_ || !renderer_) {
         SDL_Log("Displayer::present(): SDL::Invalid pixel data or SDL objects.");
         return false;
     }
 
-    SDL_UpdateTexture(texture_, nullptr, pixels, fb.get_width() * sizeof(uint32_t));
+    for (int i = 0; i < float_pixels.size(); ++i)
+    {
+        RGBA c = float_pixels[i];
+        uint8_t r = static_cast<uint8_t>(std::clamp(c.x_, 0.f, 1.f) * 255.f);
+        uint8_t g = static_cast<uint8_t>(std::clamp(c.y_, 0.f, 1.f) * 255.f);
+        uint8_t b = static_cast<uint8_t>(std::clamp(c.z_, 0.f, 1.f) * 255.f);
+        uint8_t a = static_cast<uint8_t>(std::clamp(c.w_, 0.f, 1.f) * 255.f);
+
+        display_buffer_[i] = (a << 24) | (b << 16) | (g << 8) | (r);
+    }
+
+    SDL_UpdateTexture(texture_, nullptr, display_buffer_.data(), width_ * sizeof(uint32_t));
     SDL_RenderTexture(renderer_, texture_, nullptr, nullptr);
     SDL_RenderPresent(renderer_);
 
     return true;
-}
-
-bool Displayer::check_framebuffer_size(const Framebuffer& fb)
-{
-    return (width_ == fb.get_width() && height_ == fb.get_height());
 }

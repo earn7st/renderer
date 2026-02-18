@@ -34,7 +34,6 @@ int Engine::start_up(const std::string& scene_name, const RenderState& render_st
 void Engine::run()
 {
     int frame_cnt = 1;
-    // Main Loop!
     bool running = true;
 
     while(running)
