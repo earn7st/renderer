@@ -20,8 +20,6 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec2f v1_screen_pos = viewport_transform(v1_ndc_pos, screen_width, screen_height);
     Vec2f v2_screen_pos = viewport_transform(v2_ndc_pos, screen_width, screen_height);
 
-    bool f = false;
-
     if (render_state.polygon_mode == LINE)
     {
         draw_line(v0_screen_pos, v1_screen_pos, fb, shader);
@@ -59,13 +57,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                         fb->set_depth(x, y, d);
 
                         RGBA color = shader->execute_fragment_shader(point, shader_context);
-                        fb->set_color(x, y, color);
-                        if (!f)
-                        {
-                            std::cout << x << " " << y << " " << d << std::endl;
-                            std::cout << color << std::endl;
-                            f = true;
-                        }   
+                        fb->set_color(x, y, color); 
                     }
                 }
             }

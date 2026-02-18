@@ -108,15 +108,15 @@ Matrix operator * (const Matrix& mat1, const Matrix& mat2)
     return result_mat;
 }
 
-// LH -> RH
+// RH -> RH
 template <typename T>
 inline 
 Matrix lookAt(const Vector3<T>& eye, const Vector3<T>& center, const Vector3<T>& up)
 {
     Vector3<T> f = normalize(center - eye);
 
-    Vector3<T> s = normalize(cross(up, f));
-    Vector3<T> u = cross(f, s);
+    Vector3<T> s = normalize(cross(f, up));
+    Vector3<T> u = cross(s, f);
     
     Matrix result_mat(
         s.x_, s.y_, s.z_, -dot(s, eye),

@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     scene_info = {
         "camera" : {
-            "position" : [0.0, 0.0, -3.0],
+            "position" : [0.0, 0.0, 3.0],
             "center" : [0.0, 0.0, 0.0],
             "world_up" : [0.0, 1.0, 0.0],
             "aspect" : float(4/3),
@@ -43,7 +43,7 @@ if __name__ == "__main__":
             "transform": {
                 "scale": [1.0, 1.0, 1.0],
                 "translation": [0.0, -1.0, 0.0],
-                "rotation": [0.0, 90.0, 0.0]
+                "rotation": [0.0, 0.0, 0.0]
             }
         }
         
