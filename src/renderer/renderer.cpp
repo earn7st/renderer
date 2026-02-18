@@ -25,12 +25,35 @@ void Renderer::set_render_state(const RenderState& render_state)
     render_state_ = render_state;
 }
 
+void Renderer::initialize_lights(const Scene& scene)
+{
+    const std::vector<std::shared_ptr<Light>>& lights = scene.get_lights();
+    for (int i = 0; i < lights.size(); ++i)
+    {
+        const std::shared_ptr<Light>& light = lights[i];
+        if (light->get_type() == DIRECTIONAL)
+        {
+            auto light_ptr = std::dynamic_pointer_cast<DirectionalLight>(light);
+            if (light_ptr)
+            {
+                light_uniform_.directional_lights.push_back(*light_ptr);
+            }
+        } else if (light->get_type() == POINT)
+        {
+
+        } else if (light->get_type() == SPOT)
+        {
+
+        }
+    }
+}
+
 void Renderer::render(const Scene& scene)
 {
     update_per_frame_uniform(scene);
 
     ShaderContext shader_context;
-    // set Light Uniform
+    shader_context.set_light_uniform(&light_uniform_);
 
     const std::vector<Model>& models = scene.get_models();
     for(auto it = models.begin(); it != models.end(); ++it)
@@ -51,24 +74,21 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
 
     const Mesh& mesh = *spMesh;
 
-    const std::vector<SubMesh>& sub_meshes = model.get_sub_meshes();
-    for(auto it = sub_meshes.begin(); it != sub_meshes.end(); ++it)
+    const std::vector<SubMesh>& submeshes = model.get_submeshes();
+    for(auto it = submeshes.begin(); it != submeshes.end(); ++it)
     {
-        const SubMesh& sub_mesh = *it;
-        update_per_sub_mesh_uniform(sub_mesh);
+        const SubMesh& submesh = *it;
+        update_per_submesh_uniform(submesh);
         shader_context.set_uniform(&uniform_);
 
-        std::shared_ptr<Material> spMaterial = sub_mesh.wpMaterial.lock();
+        std::shared_ptr<Material> spMaterial = submesh.wpMaterial.lock();
         if (spMaterial)
         {
             shader_context.material = spMaterial.get();
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
-                std::cout << sub_mesh.index_offset << " " << sub_mesh.index_count << std::endl;
-                shader_context.material->print_info();
-                std::cout << std::endl;
-                draw_call(mesh, sub_mesh.index_offset, sub_mesh.index_count, spShader.get(), shader_context);
+                draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_context);
             }
         }
     }
@@ -112,12 +132,14 @@ void Renderer::update_per_frame_uniform(const Scene& scene)
 
 void Renderer::update_per_model_uniform(const Transform& t)
 {
-    uniform_.model_matrix = transform(uniform_.model_matrix, t);
-    uniform_.MVP_matrix = uniform_.VP_matrix * uniform_.model_matrix;
+    uniform_.model_matrix = transform(Matrix::Identity, t);
 }
 
-void Renderer::update_per_sub_mesh_uniform(const SubMesh& sub_mesh)
+void Renderer::update_per_submesh_uniform(const SubMesh& submesh)
 {
-    uniform_.sub_mesh_matrix = Matrix::Identity;
-    //uniform_.MVP_matrix = uniform_.sub_mesh_matrix * uniform_.MVP_matrix;
+    uniform_.submesh_matrix = transform(Matrix::Identity, submesh.local_transform);
+
+    Matrix combined_matrix = uniform_.model_matrix * uniform_.submesh_matrix;
+    uniform_.normal_matrix = get_normal_matrix(combined_matrix);
+    uniform_.MVP_matrix = uniform_.VP_matrix * combined_matrix;
 }

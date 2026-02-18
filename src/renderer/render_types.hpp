@@ -18,7 +18,8 @@ struct Uniform
     Matrix model_matrix = Matrix::Identity;
 
     // per-submesh
-    Matrix sub_mesh_matrix = Matrix::Identity;  // local transform
+    Matrix submesh_matrix = Matrix::Identity;  // local transform
+    Matrix normal_matrix = Matrix::Identity;
     Matrix MVP_matrix = Matrix::Identity;
 };
 

@@ -28,6 +28,9 @@ int Engine::start_up(const std::string& scene_name, const RenderState& render_st
         return -1; 
     }
 
+    // 5. Initialize Lights for renderer
+    renderer_.initialize_lights(scene_);
+
     return 0;
 }
 

@@ -11,6 +11,8 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
     Vec4f v0_ndc_pos = v0.clip_pos / v0.clip_pos.w_;
     Vec4f v1_ndc_pos = v1.clip_pos / v1.clip_pos.w_;
     Vec4f v2_ndc_pos = v2.clip_pos / v2.clip_pos.w_;
+
+    // std::cout << v0_ndc_pos << " " << v1_ndc_pos << " " << v2_ndc_pos << std::endl;
     
     uint32_t screen_width = fb->get_width();
     uint32_t screen_height = fb->get_height();
@@ -42,6 +44,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
             {
                 float cx = x + 0.5;
                 float cy = y + 0.5;
+
                 if(inside_triangle(Vec2f(cx, cy), v0_screen_pos, v1_screen_pos, v2_screen_pos))
                 {
                     Vec3f bary = compute_barycentric_coord_2D(Vec2f(cx, cy), v0_screen_pos, v1_screen_pos, v2_screen_pos, edge_func_result_v1, edge_func_result_v2);
@@ -50,12 +53,12 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                     float alpha_corrected = (alpha * v1.clip_w * v2.clip_w) / Z, beta_corrected = (beta * v0.clip_w * v2.clip_w) / Z, gamma_corrected = (gamma * v0.clip_w * v1.clip_w) / Z;
 
                     Varying point = interpolate(v0, v1, v2, alpha_corrected, beta_corrected, gamma_corrected);
-
+                    
                     float d = interpolate(v0_ndc_pos, v1_ndc_pos, v2_ndc_pos, alpha, beta, gamma).z_;
                     if (fb->depth_test(x, y, d))
                     {
                         fb->set_depth(x, y, d);
-
+                        
                         RGBA color = shader->execute_fragment_shader(point, shader_context);
                         fb->set_color(x, y, color); 
                     }

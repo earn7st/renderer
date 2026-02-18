@@ -19,6 +19,11 @@ const std::vector<Model>& Scene::get_models() const
     return models_;
 }
 
+const std::vector<std::shared_ptr<Light>>& Scene::get_lights() const
+{
+    return lights_;
+}
+
 void Scene::set_main_camera(const Camera& camera) 
 {
     main_camera_ = camera;

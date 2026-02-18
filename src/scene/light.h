@@ -14,6 +14,7 @@ struct Light
     Vec3f color;
     float intensity;
 
+    virtual LightType get_type() const { return type; }
     virtual void print_info() const = 0;
     virtual ~Light() = default;
 };

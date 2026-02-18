@@ -216,7 +216,7 @@ Model JsonSceneLoader::load_model_from_json(const json& data, ResourceManager& r
         submesh.index_offset = submesh_offset;
         submesh.index_count = submesh_size; 
 
-        model.add_sub_mesh(submesh);
+        model.add_submesh(submesh);
     }
 
     r_manager.load_mesh(new_mesh_ptr);

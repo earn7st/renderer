@@ -16,6 +16,7 @@ public:
 
     const Camera& get_main_camera() const;
     const std::vector<Model>& get_models() const;
+    const std::vector<std::shared_ptr<Light>>& get_lights() const;
 
     void set_main_camera(const Camera& camera);
 

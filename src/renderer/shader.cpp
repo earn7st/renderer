@@ -20,7 +20,7 @@ VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shade
     out.clip_pos = context_uniform.MVP_matrix * input.pos;
     out.clip_w = out.clip_pos.w_;
     out.world_pos = context_uniform.model_matrix * input.pos;
-    // out.world_normal = 
+    out.world_normal = context_uniform.normal_matrix * input.normal; 
     out.texcoord = input.texcoord;
 
     return out;
@@ -28,11 +28,21 @@ VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shade
 
 RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
 {
-    const BlinnPhongMaterial* mat = dynamic_cast<const BlinnPhongMaterial*>(shader_context.material);
+    // TODO : Extract to ShaderConstants, Do *ptr before drawcall()
+    /*
+    const BlinnPhongMaterial* mat_ptr = dynamic_cast<const BlinnPhongMaterial*>(shader_context.material);
+    const BlinnPhongMaterial& mat = *mat_ptr;
 
-    //Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
+    const Uniform& uniform = *shader_context.uniform;
 
-    return RGBA(mat->diffuse.x_, mat->diffuse.y_, mat->diffuse.z_, 1.f);
+    const LightUniform& light_uniform = *shader_context.light_uniform;
+    const std::vector<DirectionalLight>& directional_lights = light_uniform.directional_lights;
+    const std::vector<PointLight>& point_lights = light_uniform.point_lights;
+    */
+
+    Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
+    
+    // return RGBA(mat->diffuse.x_, mat->diffuse.y_, mat->diffuse.z_, 1.f);
 }
 
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)

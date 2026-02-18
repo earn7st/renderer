@@ -224,6 +224,38 @@ Matrix perspective(float fovy, float aspect, float near, float far)
     return ortho_mat * perspective_to_ortho_mat;
 }
 
+inline 
+Matrix get_normal_matrix(const Matrix& mat)
+{
+    Matrix res;
+
+    float a = mat.m_[0][0], b = mat.m_[0][1], c = mat.m_[0][2];
+    float d = mat.m_[1][0], e = mat.m_[1][1], f = mat.m_[1][2];
+    float g = mat.m_[2][0], h = mat.m_[2][1], i = mat.m_[2][2];
+
+    float A = e * i - f * h;
+    float B = -(d * i - f * g);
+    float C = d * h - e * g;
+    float D = -(b * i - c * h);
+    float E = a * i - c * g;
+    float F = -(a * h - b * g);
+    float G = b * f - c * e;
+    float H = -(a * f - c * d);
+    float I = a * e - b * d;
+
+    float det = a * A + b * B + c * C;
+
+    if (std::abs(det) < 1e-6f) return res;
+
+    float invDet = 1.0f / det;
+
+    res.m_[0][0] = A * invDet; res.m_[0][1] = B * invDet; res.m_[0][2] = C * invDet;
+    res.m_[1][0] = D * invDet; res.m_[1][1] = E * invDet; res.m_[1][2] = F * invDet;
+    res.m_[2][0] = G * invDet; res.m_[2][1] = H * invDet; res.m_[2][2] = I * invDet;
+    
+    return res;
+}
+
 typedef Matrix Mat4;
 
 

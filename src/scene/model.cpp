@@ -10,16 +10,16 @@ const std::weak_ptr<Mesh> Model::mesh_weak() const
     return wpMesh_;
 }
 
-const SubMesh& Model::get_sub_mesh(uint32_t index) const 
+const SubMesh& Model::get_submesh(uint32_t index) const 
 {
-    assert(index < sub_meshes_.size() &&
-            "Model::get_sub_mesh() : Index out of sub_meshes_ bounds");
-    return sub_meshes_[index];
+    assert(index < submeshes_.size() &&
+            "Model::get_submesh() : Index out of submeshes_ bounds");
+    return submeshes_[index];
 }
 
-const std::vector<SubMesh>& Model::get_sub_meshes() const
+const std::vector<SubMesh>& Model::get_submeshes() const
 {
-    return sub_meshes_;
+    return submeshes_;
 }
 
 void Model::set_transform(const Transform& transform)
@@ -32,9 +32,9 @@ const Transform& Model::get_transform() const
     return transform_;
 }
 
-void Model::add_sub_mesh(SubMesh& submesh)
+void Model::add_submesh(SubMesh& submesh)
 {
-    sub_meshes_.push_back(submesh);
+    submeshes_.push_back(submesh);
 }
 
 void Model::print_info() const 
@@ -44,11 +44,11 @@ void Model::print_info() const
     std::shared_ptr<Mesh> spMesh = wpMesh_.lock();
     const Mesh& mesh = *spMesh;
     std::cout << "Num Vertices: " << mesh.vertices.size() << " Num Indices: " << mesh.indices.size() << std::endl;
-    for(size_t i = 0; i < sub_meshes_.size(); ++i)
+    for(size_t i = 0; i < submeshes_.size(); ++i)
     {
-        SubMesh sub_mesh = sub_meshes_[i];
+        SubMesh submesh = submeshes_[i];
         std::cout << "SubMesh " << i << ":" << std::endl;
-        std::cout << "Offset: " << sub_mesh.index_offset << " Size:" << sub_mesh.index_count << std::endl;
+        std::cout << "Offset: " << submesh.index_offset << " Size:" << submesh.index_count << std::endl;
     }
 
 }
