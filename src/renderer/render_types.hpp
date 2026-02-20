@@ -6,7 +6,7 @@
 #include "math/math_all.h"
 #include "scene/light.h"
 
-struct Uniform
+struct Uniform 
 {
     // per-frame
     Matrix view_matrix = Matrix::Identity;  

@@ -7,14 +7,22 @@
 
 #include <memory>
 
+enum MaterialType
+{
+    BLINN_PHONG_MAT,
+    PBR_MAT
+};
+
 class Material
 {
 public:
     Material() = default;
     Material(const Material&);
     virtual void print_info() const = 0;
+    MaterialType get_type() const { return type; }
 
     std::string name;
+    MaterialType type;
     std::weak_ptr<Shader> wpShader; 
 };
 

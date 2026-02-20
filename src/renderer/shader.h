@@ -5,7 +5,8 @@
 
 #include "math/math_all.h"
 #include "renderer/render_types.hpp"
-#include "renderer/shader_context.h"
+
+struct ShaderConstants;
 
 typedef Varying VertexOut;
 typedef Varying FragmentIn;
@@ -16,13 +17,13 @@ enum ShaderType
     PBR
 };
 
-typedef std::function<VertexOut(const Vertex&, const ShaderContext&)> VertexShader;
-typedef std::function<RGBA(const FragmentIn&, const ShaderContext&)> FragmentShader;
+typedef std::function<VertexOut(const Vertex&, const ShaderConstants&)> VertexShader;
+typedef std::function<RGBA(const FragmentIn&, const ShaderConstants&)> FragmentShader;
 
-VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shader_context);
-RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
-RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
-RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context);
+VertexOut standard_vertex_shader(const Vertex& input, const ShaderConstants& shader_constants);
+RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
+RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
+RGBA flat_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
 
 class Shader
 {
@@ -35,8 +36,8 @@ public:
     void set_vertex_shader(VertexShader vs) { vertex_shader_ = vs; }
     void set_fragment_shader(FragmentShader fs) { fragment_shader_ = fs; }
     
-    VertexOut execute_vertex_shader(const Vertex& input, const ShaderContext& shader_context) const;
-    RGBA execute_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context) const;
+    VertexOut execute_vertex_shader(const Vertex& input, const ShaderConstants& shader_constants) const;
+    RGBA execute_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants) const;
 
     const std::string& get_name() const { return name_; }
 

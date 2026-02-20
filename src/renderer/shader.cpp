@@ -3,17 +3,17 @@
 #include "renderer/render_types.hpp"
 #include "scene/material.h"
 
-VertexOut Shader::execute_vertex_shader(const Vertex& input, const ShaderContext& shader_context) const
+VertexOut Shader::execute_vertex_shader(const Vertex& input, const ShaderConstants& shader_constants) const
 {
     return vertex_shader_(input, shader_context);
 }
 
-RGBA Shader::execute_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context) const
+RGBA Shader::execute_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants) const
 {
     return fragment_shader_(input, shader_context);
 }
 
-VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shader_context)
+VertexOut standard_vertex_shader(const Vertex& input, const ShaderConstants& shader_constants)
 {
     VertexOut out;
     const Uniform& context_uniform = *shader_context.uniform;
@@ -26,7 +26,7 @@ VertexOut standard_vertex_shader(const Vertex& input, const ShaderContext& shade
     return out;
 }
 
-RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
+RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)
 {
     // TODO : Extract to ShaderConstants, Do *ptr before drawcall()
     /*
@@ -45,12 +45,12 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderContext& s
     // return RGBA(mat->diffuse.x_, mat->diffuse.y_, mat->diffuse.z_, 1.f);
 }
 
-RGBA flat_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
+RGBA flat_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)
 {
     return RGBA(0.f, 0.f, 1.f, 1.f);
 }
 
-RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderContext& shader_context)
+RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)
 {
     return RGBA(0.f, 0.f, 0.f, 1.f); // Black
 }

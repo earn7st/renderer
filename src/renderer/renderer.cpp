@@ -88,14 +88,15 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
-                draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_context);
+                ShaderConstants shader_constants = prepare_shader_constants(shader_context);
+                draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
             }
         }
     }
 
 }
 
-void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader, const ShaderContext& shader_context)
+void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader, const ShaderConstants& shader_constants)
 {
     if(count % 3 != 0){
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
@@ -108,16 +109,16 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, cons
         const Vertex& ori_v1 = mesh.vertices[mesh.indices[i + 1]];
         const Vertex& ori_v2 = mesh.vertices[mesh.indices[i + 2]];
 
-        Varying v0 = shader->execute_vertex_shader(ori_v0, shader_context);
-        Varying v1 = shader->execute_vertex_shader(ori_v1, shader_context);
-        Varying v2 = shader->execute_vertex_shader(ori_v2, shader_context);
+        Varying v0 = shader->execute_vertex_shader(ori_v0, shader_constants);
+        Varying v1 = shader->execute_vertex_shader(ori_v1, shader_constants);
+        Varying v2 = shader->execute_vertex_shader(ori_v2, shader_constants);
 
         // (Optional) Geometry Shading
         // (Optional) Culling
         // (Optional) Clipping
 
         // Rasterization : Perspective Division, Screen Mapping, rasterizing
-        rasterizer_.rasterize(v0, v1, v2, fb_, shader, shader_context, render_state_);
+        rasterizer_.rasterize(v0, v1, v2, fb_, shader, shader_constants, render_state_);
     }
 }
 
@@ -142,4 +143,25 @@ void Renderer::update_per_submesh_uniform(const SubMesh& submesh)
     Matrix combined_matrix = uniform_.model_matrix * uniform_.submesh_matrix;
     uniform_.normal_matrix = get_normal_matrix(combined_matrix);
     uniform_.MVP_matrix = uniform_.VP_matrix * combined_matrix;
+}
+
+void Renderer::prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context)
+{
+    const Uniform& uniform = *(shader_context.uniform);
+    shader_constants.uniform = uniform;
+
+    const LightUniform& light_uniform = *(shader_context.light_uniform);
+    shader_constants.light_uniform = light_uniform;
+
+    const Material* pMat = shader_context.material;
+    MaterialData& mat_data = shader_constants.mat_data;
+    if (pMat->get_type() == BLINN_PHONG_MAT)
+    {
+        const BlinnPhongMaterial& mat = *(static_cast<BlinnPhongMaterial*>(pMat));
+        shader_constants.mat_data = MaterialData(mat);
+        
+    } else if(pMat->get_type() == PBR_MAT)
+    {
+
+    }
 }

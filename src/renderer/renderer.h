@@ -7,6 +7,8 @@
 #include "renderer/render_types.hpp"
 #include "renderer/shader.h"
 #include "renderer/rasterizer.h"
+#include "renderer/shader_context.h"
+#include "renderer/shader_constants.h"
 
 #include "scene/mesh.h"
 #include "scene/camera.h"
@@ -31,7 +33,7 @@ public:
     void update_per_submesh_uniform(const SubMesh&);
 
     // pipeline
-    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader, const ShaderContext& shader_context);
+    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader, const ShaderConstants& shader_constants);
 
 private:
     RenderState render_state_;

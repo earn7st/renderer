@@ -4,7 +4,7 @@
 void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& v2, 
                             Framebuffer* fb,
                             const Shader* shader, 
-                            const ShaderContext& shader_context,
+                            const ShaderConstants& shader_constants,
                             const RenderState& render_state)
 {
     // Perspective Division
@@ -59,7 +59,7 @@ void Rasterizer::rasterize(const Varying& v0, const Varying& v1, const Varying& 
                     {
                         fb->set_depth(x, y, d);
                         
-                        RGBA color = shader->execute_fragment_shader(point, shader_context);
+                        RGBA color = shader->execute_fragment_shader(point, shader_constants);
                         fb->set_color(x, y, color); 
                     }
                 }
@@ -96,7 +96,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
     uint32_t screen_height = fb->get_height();
 
     FragmentIn dummy_fragin = FragmentIn();
-    ShaderContext dummy_shader_context = ShaderContext();
+    ShaderConstants dummy_shader_constants = ShaderConstants();
 
     int x0 = int(v0.x_), y0 = int(v0.y_);
     int x1 = int(v1.x_), y1 = int(v1.y_);
@@ -119,7 +119,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 y += cy;
                 cnt -= 2 * dx;
             }
-            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_context);
+            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_constants);
             fb->set_color(x, y, color);
         }
     } else {
@@ -132,7 +132,7 @@ void Rasterizer::_draw_line_bresenham(const Vec2f& v0, const Vec2f& v1, Framebuf
                 x += cx;
                 cnt -= 2 * dy;
             }
-            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_context);
+            RGBA color = shader->execute_fragment_shader(dummy_fragin, dummy_shader_constants);
             fb->set_color(x, y, color);
         }
     }

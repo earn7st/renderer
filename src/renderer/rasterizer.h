@@ -5,6 +5,7 @@
 #include "renderer/render_types.hpp"
 #include "renderer/shader.h"
 #include "renderer/framebuffer.h"
+#include "renderer/shader_constants.h"
 
 #include <algorithm>
 
@@ -14,7 +15,7 @@ public:
     void rasterize(const Varying& v0, const Varying& v1, const Varying& v2, 
                             Framebuffer* fb,
                             const Shader* shader, 
-                            const ShaderContext& shader_context,
+                            const ShaderConstants& shader_constants,
                             const RenderState& render_state);
     void draw_line(const Vec2f& v0, const Vec2f& v1, Framebuffer* fb, const Shader* shader);
     Vec2f viewport_transform(const Vec4f&, uint32_t screen_width, uint32_t screen_height);
