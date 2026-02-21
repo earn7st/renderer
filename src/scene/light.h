@@ -37,12 +37,12 @@ struct DirectionalLight : public Light
 
 struct PointLight : public Light
 {
-
+    void print_info() const override {}
 };
 
 struct SpotLight : public Light
 {
-
+    void print_info() const override {}
 };
 
 #endif

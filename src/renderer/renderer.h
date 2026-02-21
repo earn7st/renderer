@@ -32,15 +32,18 @@ public:
     void update_per_model_uniform(const Transform&);    // call when drawing model
     void update_per_submesh_uniform(const SubMesh&);
 
-    // pipeline
-    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader, const ShaderConstants& shader_constants);
-
 private:
     RenderState render_state_;
     Framebuffer* fb_;
     Uniform uniform_;
     LightUniform light_uniform_;
     Rasterizer rasterizer_;
+
+    void prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context) const;
+    void prepare_mat_data(MaterialData& mat_data, const BlinnPhongMaterial& mat) const;
+    void prepare_mat_data(MaterialData& mat_data, const PBRMaterial& mat) const;
+
+    void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader, const ShaderConstants& shader_constants);
 };
 
 #endif

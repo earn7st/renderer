@@ -81,6 +81,8 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
         update_per_submesh_uniform(submesh);
         shader_context.set_uniform(&uniform_);
 
+        ShaderConstants shader_constants;
+
         std::shared_ptr<Material> spMaterial = submesh.wpMaterial.lock();
         if (spMaterial)
         {
@@ -88,7 +90,8 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
-                ShaderConstants shader_constants = prepare_shader_constants(shader_context);
+                prepare_shader_constants(shader_constants, shader_context);
+
                 draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
             }
         }
@@ -145,7 +148,7 @@ void Renderer::update_per_submesh_uniform(const SubMesh& submesh)
     uniform_.MVP_matrix = uniform_.VP_matrix * combined_matrix;
 }
 
-void Renderer::prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context)
+void Renderer::prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context) const
 {
     const Uniform& uniform = *(shader_context.uniform);
     shader_constants.uniform = uniform;
@@ -157,11 +160,27 @@ void Renderer::prepare_shader_constants(ShaderConstants& shader_constants, const
     MaterialData& mat_data = shader_constants.mat_data;
     if (pMat->get_type() == BLINN_PHONG_MAT)
     {
-        const BlinnPhongMaterial& mat = *(static_cast<BlinnPhongMaterial*>(pMat));
-        shader_constants.mat_data = MaterialData(mat);
+        const BlinnPhongMaterial& mat = *(static_cast<const BlinnPhongMaterial*>(pMat));
+        prepare_mat_data(mat_data, mat);
         
     } else if(pMat->get_type() == PBR_MAT)
     {
 
     }
+}
+
+void Renderer::prepare_mat_data(MaterialData& mat_data, const BlinnPhongMaterial& mat) const
+{
+    mat_data.ambient = mat.ambient;
+    mat_data.diffuse = mat.diffuse;
+    mat_data.specular = mat.specular;
+    mat_data.shininess = mat.shininess;
+    mat_data.optical_density = mat.optical_density;
+    mat_data.transparency = mat.transparency;
+    mat_data.illumination_model = mat.illumination_model;
+    
+    mat_data.pDiffuse_map = mat.wpDiffuse_map.lock().get();
+    mat_data.pSpecular_map = mat.wpSpecular_map.lock().get();
+    mat_data.pBump_map = mat.wpBump_map.lock().get();
+    mat_data.pAlpha_map = mat.wpAlpha_map.lock().get();
 }

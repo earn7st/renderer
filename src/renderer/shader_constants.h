@@ -4,14 +4,12 @@
 #include "math/vector.hpp"
 
 #include "renderer/render_types.hpp"
+#include "renderer/shader_context.h"
 
-#include "scene/material.h"
 #include "scene/texture.h"
 
 struct MaterialData
 {
-    MaterialType type;
-
     // Blinn-Phong's
     Vec4f ambient;
     Vec4f diffuse;

@@ -5,8 +5,7 @@
 
 #include "math/math_all.h"
 #include "renderer/render_types.hpp"
-
-struct ShaderConstants;
+#include "renderer/shader_constants.h"
 
 typedef Varying VertexOut;
 typedef Varying FragmentIn;
