@@ -17,6 +17,7 @@ class Material
 {
 public:
     Material() = default;
+    Material(MaterialType _type) : type(_type) {}
     Material(const Material&);
     virtual void print_info() const = 0;
     MaterialType get_type() const { return type; }
@@ -29,7 +30,7 @@ public:
 class BlinnPhongMaterial : public Material
 {
 public:
-    BlinnPhongMaterial() = default;
+    BlinnPhongMaterial() : Material(BLINN_PHONG_MAT) {}
     BlinnPhongMaterial(const BlinnPhongMaterial& mat);
 
     void print_info() const override;

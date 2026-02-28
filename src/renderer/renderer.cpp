@@ -50,21 +50,21 @@ void Renderer::initialize_lights(const Scene& scene)
 
 void Renderer::render(const Scene& scene)
 {
+    ShaderConstants shader_constants;
+    shader_constants.light_uniform = light_uniform_;
+    
     update_per_frame_uniform(scene);
-
-    ShaderContext shader_context;
-    shader_context.set_light_uniform(&light_uniform_);
 
     const std::vector<Model>& models = scene.get_models();
     for(auto it = models.begin(); it != models.end(); ++it)
     {
         const Model& model = *it;
-        draw_model(model, shader_context);
+        draw_model(model, shader_constants);
     }
     
 }
 
-void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
+void Renderer::draw_model(const Model& model, ShaderConstants& shader_constants)
 {
     const Transform& transform = model.get_transform();
     update_per_model_uniform(transform);
@@ -75,33 +75,29 @@ void Renderer::draw_model(const Model& model, ShaderContext& shader_context)
     const Mesh& mesh = *spMesh;
 
     const std::vector<SubMesh>& submeshes = model.get_submeshes();
-    for(auto it = submeshes.begin(); it != submeshes.end(); ++it)
+    for (auto it = submeshes.begin(); it != submeshes.end(); ++it)
     {
         const SubMesh& submesh = *it;
         update_per_submesh_uniform(submesh);
-        shader_context.set_uniform(&uniform_);
-
-        ShaderConstants shader_constants;
+        shader_constants.uniform = uniform_;
 
         std::shared_ptr<Material> spMaterial = submesh.wpMaterial.lock();
         if (spMaterial)
         {
-            shader_context.material = spMaterial.get();
+            prepare_mat_data(shader_constants, spMaterial.get());
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
-                prepare_shader_constants(shader_constants, shader_context);
-
-                draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
+               draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
             }
         }
     }
-
+    
 }
 
 void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader, const ShaderConstants& shader_constants)
 {
-    if(count % 3 != 0){
+    if (count % 3 != 0){
         std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
         return ;
     }
@@ -148,39 +144,32 @@ void Renderer::update_per_submesh_uniform(const SubMesh& submesh)
     uniform_.MVP_matrix = uniform_.VP_matrix * combined_matrix;
 }
 
-void Renderer::prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context) const
+void Renderer::prepare_mat_data(ShaderConstants& shader_constants, const Material* pMat) const
 {
-    const Uniform& uniform = *(shader_context.uniform);
-    shader_constants.uniform = uniform;
-
-    const LightUniform& light_uniform = *(shader_context.light_uniform);
-    shader_constants.light_uniform = light_uniform;
-
-    const Material* pMat = shader_context.material;
     MaterialData& mat_data = shader_constants.mat_data;
     if (pMat->get_type() == BLINN_PHONG_MAT)
     {
         const BlinnPhongMaterial& mat = *(static_cast<const BlinnPhongMaterial*>(pMat));
-        prepare_mat_data(mat_data, mat);
-        
-    } else if(pMat->get_type() == PBR_MAT)
-    {
 
-    }
-}
-
-void Renderer::prepare_mat_data(MaterialData& mat_data, const BlinnPhongMaterial& mat) const
-{
-    mat_data.ambient = mat.ambient;
-    mat_data.diffuse = mat.diffuse;
-    mat_data.specular = mat.specular;
-    mat_data.shininess = mat.shininess;
-    mat_data.optical_density = mat.optical_density;
-    mat_data.transparency = mat.transparency;
-    mat_data.illumination_model = mat.illumination_model;
+        mat_data.ambient = mat.ambient;
+        mat_data.diffuse = mat.diffuse;
+        mat_data.specular = mat.specular;
+        mat_data.shininess = mat.shininess;
+        mat_data.optical_density = mat.optical_density;
+        mat_data.transparency = mat.transparency;
+        mat_data.illumination_model = mat.illumination_model;
     
-    mat_data.pDiffuse_map = mat.wpDiffuse_map.lock().get();
-    mat_data.pSpecular_map = mat.wpSpecular_map.lock().get();
-    mat_data.pBump_map = mat.wpBump_map.lock().get();
-    mat_data.pAlpha_map = mat.wpAlpha_map.lock().get();
+        mat_data.pDiffuse_map = mat.wpDiffuse_map.lock().get();
+        mat_data.pSpecular_map = mat.wpSpecular_map.lock().get();
+        mat_data.pBump_map = mat.wpBump_map.lock().get();
+        mat_data.pAlpha_map = mat.wpAlpha_map.lock().get();
+    }
+    else if (pMat->get_type() == PBR_MAT)
+    {
+        //
+    } else 
+    {
+        std::cout << "Invalid Mat Type" << std::endl;
+    }
+    
 }

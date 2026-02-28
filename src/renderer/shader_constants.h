@@ -4,7 +4,6 @@
 #include "math/vector.hpp"
 
 #include "renderer/render_types.hpp"
-#include "renderer/shader_context.h"
 
 #include "scene/texture.h"
 
@@ -27,7 +26,7 @@ struct MaterialData
     const Texture* pSpecular_map = nullptr;
     const Texture* pBump_map = nullptr;
     const Texture* pAlpha_map = nullptr;
-
+    
 };
 
 struct ShaderConstants

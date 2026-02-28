@@ -7,7 +7,6 @@
 #include "renderer/render_types.hpp"
 #include "renderer/shader.h"
 #include "renderer/rasterizer.h"
-#include "renderer/shader_context.h"
 #include "renderer/shader_constants.h"
 
 #include "scene/mesh.h"
@@ -25,8 +24,8 @@ public:
     void initialize_lights(const Scene&);
 
     void render(const Scene&);
-    void draw_model(const Model&, ShaderContext&);
-    void draw_submesh(const SubMesh&, ShaderContext&);
+    void draw_model(const Model&, ShaderConstants&);
+    void draw_submesh(const SubMesh&, ShaderConstants&);
 
     void update_per_frame_uniform(const Scene&);   // call when frame start
     void update_per_model_uniform(const Transform&);    // call when drawing model
@@ -39,9 +38,7 @@ private:
     LightUniform light_uniform_;
     Rasterizer rasterizer_;
 
-    void prepare_shader_constants(ShaderConstants& shader_constants, const ShaderContext& shader_context) const;
-    void prepare_mat_data(MaterialData& mat_data, const BlinnPhongMaterial& mat) const;
-    void prepare_mat_data(MaterialData& mat_data, const PBRMaterial& mat) const;
+    void prepare_mat_data(ShaderConstants& shader_constants, const Material* pMat) const;
 
     void draw_call(const Mesh& mesh, uint32_t offset, uint32_t size, const Shader* shader, const ShaderConstants& shader_constants);
 };

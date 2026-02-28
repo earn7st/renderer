@@ -13,6 +13,8 @@ public:
     Texture(unsigned char* data, uint32_t width, uint32_t height, const std::string& name);
 
     const std::string& get_name() const { return name_; }
+    
+    RGBA texture2D(float x, float y);
 
     void print_info() const;
 

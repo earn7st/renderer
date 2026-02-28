@@ -11,7 +11,7 @@ enum LightType
 struct Light
 {
     LightType type;
-    Vec3f color;
+    Vec3f color = Vec3f(1.f);
     float intensity;
 
     virtual LightType get_type() const { return type; }

@@ -101,7 +101,9 @@ public:
     Vector3<T> operator + (const Vector3<T>& v) const { return Vector3<T>(x_ + v.x_, y_ + v.y_, z_ + v.z_); }
     Vector3<T>& operator += (const Vector3<T>& v) {  x_ += v.x_, y_ += v.y_, z_ += v.z_; return *this; }
     Vector3<T> operator - (const Vector3<T>& v) const { return Vector3<T>(x_ - v.x_, y_ - v.y_, z_ - v.z_); }
+    Vector3<T> operator - () const { return Vector3<T>(-x_, -y_, -z_); }
     Vector3<T>& operator -= (const Vector3<T>& v) {  x_ -= v.x_, y_ -= v.y_, z_ -= v.z_; return *this; }
+    Vector3<T> operator * (const Vector3<T>& v) const { return Vector3<T>(x_ * v.x_, y_ * v.y_, z_ * v.z_); }
     template <typename U>
     Vector3<T> operator * (const U& v) const { return Vector3<T>(x_ * v, y_ * v, z_ * v); }
     template <typename U>

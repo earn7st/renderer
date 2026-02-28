@@ -1,7 +1,7 @@
 #include "scene/material.h"
 
 Material::Material(const Material& mat)
-    : name(mat.name), wpShader(mat.wpShader) {}
+    : type(mat.type), name(mat.name), wpShader(mat.wpShader) {}
 
 BlinnPhongMaterial::BlinnPhongMaterial(const BlinnPhongMaterial& mat)
     : Material(mat), 
@@ -19,6 +19,7 @@ BlinnPhongMaterial::BlinnPhongMaterial(const BlinnPhongMaterial& mat)
 
 void BlinnPhongMaterial::print_info() const
 {
+    std::cout << "type: " << type << std::endl;
     std::cout << "name: " << name << std::endl;
     std::cout << "shader: ";
     if (!wpShader.expired())
