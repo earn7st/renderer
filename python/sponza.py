@@ -31,8 +31,8 @@ if __name__ == "__main__":
         "lights": [
             {
                 "type" : "Directional",
-                "direction" : [1, 1, 1],
-                "color" : [255, 255, 255],
+                "direction" : [-1, -1, -1],
+                "color" : [1, 1, 1],
                 "intensity" : 1.0
             }
         ],

@@ -4,11 +4,11 @@ import json
 
 WORKSPACE_PATH = "../"
 
-SCENE_NAME = MODEL_NAME = "CornellBox_Normal"
+SCENE_NAME = MODEL_NAME = "CornellBox-Normal"
 ASSET_PATH = WORKSPACE_PATH + "assets/" + "CornellBox" + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-OBJ_FILENAME = "CornellBox_Normal.obj"
+OBJ_FILENAME = "CornellBox-Normal.obj"
 OBJ_FILEPATH = os.path.join(ASSET_PATH, OBJ_FILENAME)
 
 if __name__ == "__main__":
@@ -32,8 +32,8 @@ if __name__ == "__main__":
         "lights": [
             {
                 "type" : "Directional",
-                "direction" : [1, 1, 1],
-                "color" : [255, 255, 255],
+                "direction" : [-1, -1, -1],
+                "color" : [1, 1, 1],
                 "intensity" : 1.0
             }
         ],

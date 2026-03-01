@@ -104,14 +104,10 @@ public:
     Vector3<T> operator - () const { return Vector3<T>(-x_, -y_, -z_); }
     Vector3<T>& operator -= (const Vector3<T>& v) {  x_ -= v.x_, y_ -= v.y_, z_ -= v.z_; return *this; }
     Vector3<T> operator * (const Vector3<T>& v) const { return Vector3<T>(x_ * v.x_, y_ * v.y_, z_ * v.z_); }
-    template <typename U>
-    Vector3<T> operator * (const U& v) const { return Vector3<T>(x_ * v, y_ * v, z_ * v); }
-    template <typename U>
-    Vector3<T>& operator *= (const U& v) { x_ *= v, y_ *= v, z_ *= v; return *this; }
-    template <typename U>
-    Vector3<T> operator / (const U& v) const { return Vector3<T>(x_ / v, y_ / v, z_ / v); }
-    template <typename U>
-    Vector3<T>& operator /= (const U& v) { x_ /= v, y_ /= v, z_ /= v; return *this; }
+    Vector3<T> operator * (const T& v) const { return Vector3<T>(x_ * v, y_ * v, z_ * v); }
+    Vector3<T>& operator *= (const T& v) { x_ *= v, y_ *= v, z_ *= v; return *this; }
+    Vector3<T> operator / (const T& v) const { return Vector3<T>(x_ / v, y_ / v, z_ / v); }
+    Vector3<T>& operator /= (const T& v) { x_ /= v, y_ /= v, z_ /= v; return *this; }
 
     double length2() const { return x_ * x_ + y_ * y_ + z_ * z_; }
     double length() const { return sqrt(length2()); }
@@ -178,8 +174,7 @@ public:
     Vector4<T> operator + (const Vector4<T>& v) { return Vector4<T>(x_ + v.x_, y_ + v.y_, z_ + v.z_, w_ + v.w_); }
     Vector4<T>& operator += (const Vector4<T>& v) { x_ += v.x_, y_ += v.y_, z_ += v.z_, w_ += v.w_; return *this; }
 
-    template <typename U>
-    Vector4<T> operator / (const U& v) const { return Vector4<T>(x_/v, y_/v, z_/v, w_/v); }
+    Vector4<T> operator / (const T& v) const { return Vector4<T>(x_/v, y_/v, z_/v, w_/v); }
 
 };
 

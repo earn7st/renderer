@@ -33,7 +33,7 @@ if __name__ == "__main__":
             {
                 "type" : "Directional",
                 "direction" : [1, 1, 1],
-                "color" : [255, 255, 255],
+                "color" : [1, 1, 1],
                 "intensity" : 1.0
             }
         ],

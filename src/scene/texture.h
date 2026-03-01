@@ -14,7 +14,8 @@ public:
 
     const std::string& get_name() const { return name_; }
     
-    RGBA texture2D(float x, float y);
+    RGBA textureRGBA(float x, float y) const;
+    Vec3f textureRGB(float x, float y) const;
 
     void print_info() const;
 

@@ -25,6 +25,8 @@ struct Uniform
 
 struct LightUniform
 {
+    float ambient_intensity = 0.1f;
+    Vec3f ambient_light_color = Vec3f(1.0, 1.0, 1.0);
     std::vector<DirectionalLight> directional_lights;
     std::vector<PointLight> point_lights; 
 };

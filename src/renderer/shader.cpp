@@ -38,9 +38,15 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
     Vec3f view_dir = normalize(camera_pos - frag_pos); 
     Vec3f normal = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
 
-    Vec3f ambient = Vec3f(mat_data.ambient.x_, mat_data.ambient.y_, mat_data.ambient.z_);
-    Vec3f diffuse_total;
-    Vec3f specular_total;
+    Vec3f ambient = Vec3f(mat_data.ambient.x_, mat_data.ambient.y_, mat_data.ambient.z_) * light_uniform.ambient_light_color * light_uniform.ambient_intensity;
+    Vec3f diffuse_total(0.f);
+    Vec3f specular_total(0.f);
+
+    // Textures
+    const Texture* diffuse_tex = mat_data.pDiffuse_map;
+    const Texture* specular_tex = mat_data.pSpecular_map;
+    const Texture* bump_tex = mat_data.pBump_map;
+    const Texture* alpha_tex = mat_data.pAlpha_map;
 
     // Directional Lights
     for (const auto& light:light_uniform.directional_lights)
@@ -48,8 +54,17 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
         Vec3f light_dir = normalize(-light.direction);
         
         // Diffuse
+        Vec3f albedo(0.f);
         float diff = std::max(dot(normal, light_dir), 0.f);
-        diffuse_total += Vec3f(mat_data.diffuse.x_, mat_data.diffuse.y_, mat_data.diffuse.z_) * light.color * diff;
+        if (diffuse_tex)
+        {
+            Vec3f diffuse_tex_color = diffuse_tex->textureRGB(input.texcoord.x_, input.texcoord.y_);
+            albedo = diffuse_tex_color * Vec3f(mat_data.diffuse.x_, mat_data.diffuse.y_, mat_data.diffuse.z_);
+        } else 
+        {
+            albedo = Vec3f(mat_data.diffuse.x_, mat_data.diffuse.y_, mat_data.diffuse.z_); 
+        }
+        diffuse_total += albedo * light.color * diff;
 
         // Specular
         Vec3f halfway_dir = normalize(view_dir + light_dir);
@@ -63,7 +78,7 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
     final_color.y_ = std::min(1.f, final_color.y_);
     final_color.z_ = std::min(1.f, final_color.z_);
 
-    return RGBA(final_color, 1.f);
+    return RGBA(ambient + diffuse_total + specular_total, 1.f);
 }
 
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)
