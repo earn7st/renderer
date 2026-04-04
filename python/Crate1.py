@@ -4,11 +4,11 @@ import json
 
 WORKSPACE_PATH = "../"
 
-SCENE_NAME = MODEL_NAME = "CornellBox-Original"
-ASSET_PATH = WORKSPACE_PATH + "assets/" + "CornellBox" + "/"
+SCENE_NAME = MODEL_NAME = "Crate1"
+ASSET_PATH = WORKSPACE_PATH + "assets/" + "Crate" + "/"
 SCENE_CONTEXT_PATH = WORKSPACE_PATH + "scenes/" + SCENE_NAME + "/"
 
-OBJ_FILENAME = "CornellBox-Original.obj"
+OBJ_FILENAME = "Crate1.obj"
 OBJ_FILEPATH = os.path.join(ASSET_PATH, OBJ_FILENAME)
 
 if __name__ == "__main__":
@@ -20,6 +20,7 @@ if __name__ == "__main__":
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")
 
     scene_info = {
+        "asset_path" : ASSET_PATH,
         "camera" : {
             "position" : [0.0, 0.0, 3.0],
             "center" : [0.0, 0.0, 0.0],
@@ -32,7 +33,13 @@ if __name__ == "__main__":
         "lights": [
             {
                 "type" : "Directional",
-                "direction" : [1, 1, 1],
+                "direction" : [-1, -1, -1],
+                "color" : [1, 1, 1],
+                "intensity" : 1.0
+            },
+            {
+                "type" : "Directional",
+                "direction" : [1, -1, -1],
                 "color" : [1, 1, 1],
                 "intensity" : 1.0
             }
@@ -42,8 +49,8 @@ if __name__ == "__main__":
             "filename": MODEL_NAME + ".json",
             "transform": {
                 "scale": [1.0, 1.0, 1.0],
-                "translation": [0.0, -1.0, 0.0],
-                "rotation": [0.0, 0.0, 0.0]
+                "translation": [0.0, 0.0, 0.0],
+                "rotation": [30.0, 60.0, 0.0]
             }
         }
         

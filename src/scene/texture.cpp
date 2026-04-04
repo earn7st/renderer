@@ -3,7 +3,16 @@
 Texture::Texture(unsigned char* data, uint32_t width, uint32_t height, const std::string& name)
 : width_(width), height_(height), name_(name)
 {
-    pixels_.assign(data, data + width * height * 4);
+    pixels_.resize(width * height);
+    for (uint32_t i = 0; i < width * height; ++i)
+    {
+        uint32_t offset = i * 4;
+        float r = data[offset] / 255.0f;
+        float g = data[offset + 1] / 255.0f;
+        float b = data[offset + 2] / 255.0f;
+        float a = data[offset + 3] / 255.0f;
+        pixels_[i] = RGBA(r, g, b, a);
+    }
 }
 
 Vec3f Texture::textureRGB(float x, float y) const

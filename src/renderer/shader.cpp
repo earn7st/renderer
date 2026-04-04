@@ -48,6 +48,8 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
     const Texture* bump_tex = mat_data.pBump_map;
     const Texture* alpha_tex = mat_data.pAlpha_map;
 
+    Vec3f difff;
+ 
     // Directional Lights
     for (const auto& light:light_uniform.directional_lights)
     {
@@ -60,11 +62,12 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
         {
             Vec3f diffuse_tex_color = diffuse_tex->textureRGB(input.texcoord.x_, input.texcoord.y_);
             albedo = diffuse_tex_color * Vec3f(mat_data.diffuse.x_, mat_data.diffuse.y_, mat_data.diffuse.z_);
+            difff = albedo;
         } else 
         {
             albedo = Vec3f(mat_data.diffuse.x_, mat_data.diffuse.y_, mat_data.diffuse.z_); 
         }
-        diffuse_total += albedo * light.color * diff;
+        diffuse_total += albedo * light.color * diff * light.intensity;
 
         // Specular
         Vec3f halfway_dir = normalize(view_dir + light_dir);
@@ -78,7 +81,7 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
     final_color.y_ = std::min(1.f, final_color.y_);
     final_color.z_ = std::min(1.f, final_color.z_);
 
-    return RGBA(ambient + diffuse_total + specular_total, 1.f);
+    return RGBA(diffuse_total, 1.f);
 }
 
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)

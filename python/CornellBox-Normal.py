@@ -20,6 +20,7 @@ if __name__ == "__main__":
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")
 
     scene_info = {
+        "asset_path": ASSET_PATH,
         "camera" : {
             "position" : [0.0, 0.0, 3.0],
             "center" : [0.0, 0.0, 0.0],
@@ -35,6 +36,12 @@ if __name__ == "__main__":
                 "direction" : [-1, -1, -1],
                 "color" : [1, 1, 1],
                 "intensity" : 1.0
+            },
+            {
+                "type" : "Directional",
+                "direction" : [1, -1, -1],
+                "color" : [1, 1, 1],
+                "intensity" : 0.7
             }
         ],
         "object" : {

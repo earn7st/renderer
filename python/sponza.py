@@ -19,6 +19,7 @@ if __name__ == "__main__":
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")
 
     scene_info = {
+        "asset_path": ASSET_PATH,
         "camera" : {
             "position" : [10.0, 10.0, 10.0],
             "center" : [0.0, 0.0, 0.0],

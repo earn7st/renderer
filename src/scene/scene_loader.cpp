@@ -35,6 +35,9 @@ int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_conte
     std::ifstream f(scene_filepath);
     json data = json::parse(f);
 
+    std::string asset_path = data.at("asset_path").get<std::string>();
+    r_manager.set_scene_assets_root_path(asset_path);
+
     if (data.contains("camera")) 
     {
         json& camera_data = data.at("camera");
@@ -74,7 +77,6 @@ int JsonSceneLoader::load_object_from_json(const json& data, const std::string& 
 
     std::string materials_filename = object_name + "_materials.json";
     std::string materials_filepath = scene_context_path + materials_filename;
-    const std::string& scene_assets_root_path = r_manager.concatenate_to_scene_assets_root(object_name + "/");
 
     std::ifstream f_material(materials_filepath);
     json materials_data = json::parse(f_material);
@@ -245,7 +247,7 @@ void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager
         mat.illumination_model =it->at("illumination_model").get<uint8_t>();
 
         const json& textures = it->at("textures");
-        std::string scene_assets_root_path = r_manager.get_scene_assets_root();
+        std::string scene_assets_root_path = r_manager.get_scene_assets_root_path();
         if (!textures.at("diffuse_map").is_null())
         {
             std::string filename = textures.at("diffuse_map").get<std::string>();
