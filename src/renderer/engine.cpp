@@ -55,8 +55,8 @@ void Engine::run()
             main_framebuffer_.clear();
             
             renderer_.render(scene_);
+            
         }
-
         displayer_.present(main_framebuffer_);
     }
 
