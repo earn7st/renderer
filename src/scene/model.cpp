@@ -50,5 +50,8 @@ void Model::print_info() const
         std::cout << "SubMesh " << i << ":" << std::endl;
         std::cout << "Offset: " << submesh.index_offset << " Size:" << submesh.index_count << std::endl;
     }
-
+    std::cout << "Transform: " << std::endl;
+    std::cout << "scale: " << transform_.scale << std::endl;
+    std::cout << "translation: " << transform_.translation << std::endl;
+    std::cout << "rotation: " << transform_.rotation << std::endl;
 }

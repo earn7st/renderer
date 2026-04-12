@@ -18,7 +18,7 @@ Texture::Texture(unsigned char* data, uint32_t width, uint32_t height, const std
 Vec3f Texture::textureRGB(float x, float y) const
 {
     uint32_t row = height_ * y, col = width_ * x;
-    uint32_t index = row * width_ + col;
+    uint32_t index = (height_ - row) * width_ + col;
     if (index < pixels_.size())
     {
         RGBA res = pixels_[index];

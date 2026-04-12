@@ -25,6 +25,7 @@ struct DirectionalLight : public Light
 
     void print_info() const override
     {
+        std::cout << "---- Light ----" << std::endl;
         std::cout << "LightType: " << type << std::endl;
         std::cout << "Color: " << color << std::endl;
         std::cout << "Intensity: " << intensity << std::endl;

@@ -4,6 +4,7 @@
 void ResourceManager::init_shaders()
 {
     register_shader("blinn_phong", std::make_shared<Shader>("blinn_phong", standard_vertex_shader, blinn_phong_fragment_shader));
+    register_shader("PBR", std::make_shared<Shader>("PBR", standard_vertex_shader, PBR_fragment_shader));
     register_shader("wireframe", std::make_shared<Shader>("wireframe", standard_vertex_shader, wireframe_fragment_shader));
     register_shader("flat", std::make_shared<Shader>("flat", standard_vertex_shader, flat_fragment_shader));
 }

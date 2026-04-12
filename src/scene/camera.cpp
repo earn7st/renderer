@@ -5,6 +5,7 @@
 
 void Camera::print_info() const
 {
+    std::cout << "---- Camera ----" << std::endl;
     std::cout << "pos: " << pos_ << std::endl;
     std::cout << "center: " << center_ << std::endl;
     std::cout << "up: " << up_ << std::endl;

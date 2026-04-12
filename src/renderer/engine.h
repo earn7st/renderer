@@ -1,8 +1,8 @@
 #ifndef __ENGINE_H__
 #define __ENGINE_H__
 
-#include "renderer/displayer.h"
 #include "renderer/input_handler.h"
+#include "renderer/displayer.h"
 #include "renderer/resource_manager.h"
 #include "renderer/renderer.h"
 #include "scene/scene.h"
@@ -18,8 +18,8 @@ public:
     void print_info() const;
 
 private:
-    Displayer displayer_;
     InputHandler input_handler_;
+    Displayer displayer_;
     ResourceManager resource_manager_;
     Scene scene_;
     Renderer renderer_;

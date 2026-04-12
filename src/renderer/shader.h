@@ -21,6 +21,7 @@ typedef std::function<RGBA(const FragmentIn&, const ShaderConstants&)> FragmentS
 
 VertexOut standard_vertex_shader(const Vertex& input, const ShaderConstants& shader_constants);
 RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
+RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
 RGBA wireframe_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
 RGBA flat_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants);
 

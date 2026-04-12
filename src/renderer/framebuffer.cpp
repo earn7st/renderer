@@ -1,23 +1,24 @@
+#include "math/color.h"
 #include "renderer/framebuffer.h"
 
 Framebuffer::Framebuffer(uint32_t w, uint32_t h)
 {
     initialized = true;
     width_ = w, height_ = h;
-    color_buffer_.resize(w * h, RGBA(1.f, 0, 1.f, 1.f));
+    color_buffer_.resize(w * h, Color::GRAY);
     depth_buffer_.resize(w * h, std::numeric_limits<float>::max());
 }
 
 void Framebuffer::resize(uint32_t w, uint32_t h)
 {
     width_ = w, height_ = h;
-    color_buffer_.resize(w * h, RGBA(1.f, 0.f, 1.f, 1.f));
+    color_buffer_.resize(w * h, Color::GRAY);
     depth_buffer_.resize(w * h, std::numeric_limits<float>::max());
 }
 
 void Framebuffer::clear()
 {
-    std::fill(color_buffer_.begin(), color_buffer_.end(), RGBA(1.f, 0, 1.f, 1.f));
+    std::fill(color_buffer_.begin(), color_buffer_.end(), Color::GRAY);
     std::fill(depth_buffer_.begin(), depth_buffer_.end(), std::numeric_limits<float>::max());
 }
 

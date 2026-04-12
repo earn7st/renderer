@@ -31,6 +31,7 @@ void Scene::set_main_camera(const Camera& camera)
 
 void Scene::print_info() const
 {
+    std::cout << "==== Scene Content ====" << std::endl;
     for (size_t i = 0; i < models_.size(); ++i)
     {
         const Model& model = models_[i];

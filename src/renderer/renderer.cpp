@@ -88,7 +88,7 @@ void Renderer::draw_model(const Model& model, ShaderConstants& shader_constants)
             std::shared_ptr<Shader> spShader = spMaterial->wpShader.lock();
             if(spShader)
             {
-               draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
+                draw_call(mesh, submesh.index_offset, submesh.index_count, spShader.get(), shader_constants);
             }
         }
     }
@@ -166,7 +166,18 @@ void Renderer::prepare_mat_data(ShaderConstants& shader_constants, const Materia
     }
     else if (pMat->get_type() == PBR_MAT)
     {
-        //
+        const PBRMaterial& mat = *(static_cast<const PBRMaterial*>(pMat));
+
+        mat_data.albedo = mat.albedo;
+        mat_data.roughness = mat.roughness;
+        mat_data.metallic = mat.metallic;
+
+        mat_data.pAlbedo_map = mat.wpAlbedo_map.lock().get();
+        mat_data.pRoughness_map = mat.wpRoughness_map.lock().get();
+        mat_data.pMetallic_map = mat.wpMetallic_map.lock().get();
+        mat_data.pNormal_map = mat.wpNormal_map.lock().get();
+        mat_data.pAO_map = mat.wpAO_map.lock().get();
+
     } else 
     {
         std::cout << "Invalid Mat Type" << std::endl;

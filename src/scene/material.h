@@ -53,8 +53,20 @@ public:
 class PBRMaterial : public Material
 {
 public:
-    PBRMaterial() = default;
+    PBRMaterial() : Material(PBR_MAT) {}
+    PBRMaterial(const PBRMaterial& mat);
 
+    void print_info() const override;
+
+    Vec4f albedo;
+    float roughness;
+    float metallic;
+
+    std::weak_ptr<Texture> wpAlbedo_map;
+    std::weak_ptr<Texture> wpRoughness_map;
+    std::weak_ptr<Texture> wpMetallic_map;
+    std::weak_ptr<Texture> wpNormal_map;
+    std::weak_ptr<Texture> wpAO_map;
 };
 
 #endif

@@ -61,9 +61,11 @@ bool Displayer::present(const Framebuffer& fb)
 {
     const std::vector<RGBA> float_pixels = fb.get_color_data();
 
-    display_buffer_.resize(float_pixels.size());    
+    if (display_buffer_.size() != float_pixels.size())
+        display_buffer_.resize(float_pixels.size());    
 
-    if (!texture_ || !renderer_) {
+    if (!texture_ || !renderer_) 
+    {
         SDL_Log("Displayer::present(): SDL::Invalid pixel data or SDL objects.");
         return false;
     }

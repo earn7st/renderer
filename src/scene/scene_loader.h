@@ -18,20 +18,20 @@ class ISceneLoader
 {
 public:
     virtual ~ISceneLoader() = default;
-    virtual int load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager) = 0;
+    virtual int load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager, ShaderType shader_type) = 0;
 };
 
 class JsonSceneLoader : public ISceneLoader
 {
 public:
-    int load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager);
-    int load_object_from_json(const json& objects_data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager);
+    int load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager, ShaderType shader_type);
+    int load_object_from_json(const json& objects_data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager, ShaderType shader_type);
     
     int load_camera_from_json(const json& data, Scene& scene);
     int load_lights_from_json(const json& data, Scene& scene);
 
     Model load_model_from_json(const json& data, ResourceManager& r_manager);
-    void load_materials_from_json(const json& data, ResourceManager& r_manager);
+    void load_materials_from_json(const json& data, ResourceManager& r_manager, ShaderType shader_type);
 };
 
 

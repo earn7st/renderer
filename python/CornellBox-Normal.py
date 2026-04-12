@@ -1,4 +1,4 @@
-from exporter import export_to_json
+from model_reader import read_model
 import os
 import json
 
@@ -13,14 +13,24 @@ OBJ_FILEPATH = os.path.join(ASSET_PATH, OBJ_FILENAME)
 
 if __name__ == "__main__":
 
-    # 1. Load Model Mesh (-> {MODEL_NAME}.json) and Materials (-> materials.json)
-    export_to_json(MODEL_NAME, OBJ_FILEPATH, SCENE_CONTEXT_PATH)
+    # 1. Read Model: Material JSON Data -> mat_library, Model Mesh JSON Data -> model_info
+    mat_library, model_info = read_model(MODEL_NAME, OBJ_FILEPATH, SCENE_CONTEXT_PATH, "BlinnPhong")
+
+    # Produce [MODEL_NAME]_material.json file
+    output_file = os.path.join(SCENE_CONTEXT_PATH, f"{MODEL_NAME}_materials.json")
+    with open(output_file, "w") as f:
+        json.dump(mat_library, f, indent=2)
+
+    # Produce [MODEL_NAME].json file
+    output_file = os.path.join(SCENE_CONTEXT_PATH, f"{MODEL_NAME}.json")
+    with open(output_file, "w") as f:
+        json.dump(model_info, f, indent=2)
     
     # 2. Build scene.json in SCENE_CONTEXT_PATH
     output_filepath = os.path.join(SCENE_CONTEXT_PATH, "scene.json")
 
     scene_info = {
-        "asset_path": ASSET_PATH,
+        "asset_path" : ASSET_PATH,
         "camera" : {
             "position" : [0.0, 0.0, 3.0],
             "center" : [0.0, 0.0, 0.0],

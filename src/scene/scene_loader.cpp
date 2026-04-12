@@ -28,7 +28,7 @@ std::shared_ptr<Texture> TextureLoader::load_texture_from_file(const std::string
     return spTexture;
 }
 
-int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
+int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager, ShaderType shader_type)
 {
     std::string scene_filepath = scene_context_path + "scene.json";
 
@@ -50,7 +50,7 @@ int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_conte
     if (data.contains("object")) 
     {
         json& object_data = data.at("object");
-        if (load_object_from_json(object_data, scene_context_path, scene, r_manager) != 0)
+        if (load_object_from_json(object_data, scene_context_path, scene, r_manager, shader_type) != 0)
         {
             std::cerr << "JsonSceneLoader::load_objects : Failed Loading Objects Data\n";
             return -1;
@@ -70,7 +70,7 @@ int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_conte
     return 0;
 }
 
-int JsonSceneLoader::load_object_from_json(const json& data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager)
+int JsonSceneLoader::load_object_from_json(const json& data, const std::string& scene_context_path, Scene& scene, ResourceManager& r_manager, ShaderType shader_type)
 {
     std::string object_name = data.at("name").get<std::string>();
     std::string object_filename = data.at("filename").get<std::string>();
@@ -80,7 +80,7 @@ int JsonSceneLoader::load_object_from_json(const json& data, const std::string& 
 
     std::ifstream f_material(materials_filepath);
     json materials_data = json::parse(f_material);
-    load_materials_from_json(materials_data, r_manager);
+    load_materials_from_json(materials_data, r_manager, shader_type);
 
     std::string model_filepath = scene_context_path + object_filename;
     std::ifstream f_model(model_filepath);
@@ -227,59 +227,121 @@ Model JsonSceneLoader::load_model_from_json(const json& data, ResourceManager& r
     return model;
 }    
 
-void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager& r_manager)
+void JsonSceneLoader::load_materials_from_json(const json& data, ResourceManager& r_manager, ShaderType shader_type)
 {
-    for (auto it = data.begin(); it != data.end(); ++it)
+    if (shader_type == BLINN_PHONG)
     {
-        BlinnPhongMaterial mat;
-        mat.name = it.key();
-
-        mat.wpShader = r_manager.get_shader("blinn_phong");
-        
-        std::vector<float> ambient_v = it->at("ambient").get<std::vector<float>>();
-        mat.ambient = Vec4f(ambient_v[0], ambient_v[1], ambient_v[2], ambient_v[3]);
-        std::vector<float> diffuse_v = it->at("diffuse").get<std::vector<float>>();
-        mat.diffuse = Vec4f(diffuse_v[0], diffuse_v[1], diffuse_v[2], diffuse_v[3]);     
-        std::vector<float> specular_v = it->at("specular").get<std::vector<float>>();
-        mat.specular = Vec4f(specular_v[0], specular_v[1], specular_v[2], specular_v[3]);
-        mat.shininess = it->at("shininess").get<float>();
-        mat.optical_density = it->at("optical_density").get<float>();
-        mat.illumination_model =it->at("illumination_model").get<uint8_t>();
-
-        const json& textures = it->at("textures");
-        std::string scene_assets_root_path = r_manager.get_scene_assets_root_path();
-        if (!textures.at("diffuse_map").is_null())
+        for (auto it = data.begin(); it != data.end(); ++it)
         {
-            std::string filename = textures.at("diffuse_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
-            r_manager.load_texture(spTexture->get_name(), spTexture);
-            mat.wpDiffuse_map = spTexture;
-        }
+            BlinnPhongMaterial mat;
+            mat.name = it.key();
+
+            mat.wpShader = r_manager.get_shader("blinn_phong");
             
-        if (!textures.at("specular_map").is_null())
-        {
-            std::string filename = textures.at("specular_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
-            r_manager.load_texture(spTexture->get_name(), spTexture);
-            mat.wpSpecular_map = spTexture;
+            std::vector<float> ambient_v = it->at("ambient").get<std::vector<float>>();
+            mat.ambient = Vec4f(ambient_v[0], ambient_v[1], ambient_v[2], ambient_v[3]);
+            std::vector<float> diffuse_v = it->at("diffuse").get<std::vector<float>>();
+            mat.diffuse = Vec4f(diffuse_v[0], diffuse_v[1], diffuse_v[2], diffuse_v[3]);     
+            std::vector<float> specular_v = it->at("specular").get<std::vector<float>>();
+            mat.specular = Vec4f(specular_v[0], specular_v[1], specular_v[2], specular_v[3]);
+            mat.shininess = it->at("shininess").get<float>();
+            mat.optical_density = it->at("optical_density").get<float>();
+            mat.illumination_model =it->at("illumination_model").get<uint8_t>();
+
+            const json& textures = it->at("textures");
+            std::string scene_assets_root_path = r_manager.get_scene_assets_root_path();
+            if (!textures.at("diffuse_map").is_null())
+            {
+                std::string filename = textures.at("diffuse_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpDiffuse_map = spTexture;
+            }
+                
+            if (!textures.at("specular_map").is_null())
+            {
+                std::string filename = textures.at("specular_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpSpecular_map = spTexture;
+            }
+                
+            if (!textures.at("bump_map").is_null())
+            {
+                std::string filename = textures.at("bump_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpBump_map = spTexture;
+            }
+
+            if (!textures.at("alpha_map").is_null())
+            {
+                std::string filename = textures.at("alpha_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpAlpha_map = spTexture;
+            }
+
+            r_manager.load_material(mat.name, std::make_shared<BlinnPhongMaterial>(mat));
         }
+    } else if (shader_type == PBR)
+    {
+        for (auto it = data.begin(); it != data.end(); ++it)
+        {
+            PBRMaterial mat;
+            mat.name = it.key();
+
+            mat.wpShader = r_manager.get_shader("PBR");
             
-        if (!textures.at("bump_map").is_null())
-        {
-            std::string filename = textures.at("bump_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
-            r_manager.load_texture(spTexture->get_name(), spTexture);
-            mat.wpBump_map = spTexture;
-        }
+            std::vector<float> albedo_v = it->at("albedo").get<std::vector<float>>();
+            mat.albedo = Vec4f(albedo_v[0], albedo_v[1], albedo_v[2], albedo_v[3]);
+            mat.roughness = it->at("roughness").get<float>();
+            mat.metallic = it->at("metallic").get<float>();
 
-        if (!textures.at("alpha_map").is_null())
-        {
-            std::string filename = textures.at("alpha_map").get<std::string>();
-            std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
-            r_manager.load_texture(spTexture->get_name(), spTexture);
-            mat.wpAlpha_map = spTexture;
-        }
+            const json& textures = it->at("textures");
+            std::string scene_assets_root_path = r_manager.get_scene_assets_root_path();
+            if (!textures.at("albedo_map").is_null())
+            {
+                std::string filename = textures.at("albedo_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpAlbedo_map = spTexture;
+            }
+                
+            if (!textures.at("roughness_map").is_null())
+            {
+                std::string filename = textures.at("roughness_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpRoughness_map = spTexture;
+            }
+                
+            if (!textures.at("metallic_map").is_null())
+            {
+                std::string filename = textures.at("metallic_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpMetallic_map = spTexture;
+            }
 
-        r_manager.load_material(mat.name, std::make_shared<BlinnPhongMaterial>(mat));
+            if (!textures.at("normal_map").is_null())
+            {
+                std::string filename = textures.at("normal_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpNormal_map = spTexture;
+            }
+
+            if (!textures.at("ao_map").is_null())
+            {
+                std::string filename = textures.at("ao_map").get<std::string>();
+                std::shared_ptr<Texture> spTexture = TextureLoader::load_texture_from_file(scene_assets_root_path + filename);
+                r_manager.load_texture(spTexture->get_name(), spTexture);
+                mat.wpAO_map = spTexture;
+            }
+
+            r_manager.load_material(mat.name, std::make_shared<PBRMaterial>(mat));
+        }
     }
+    
 }

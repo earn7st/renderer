@@ -9,7 +9,7 @@
 
 struct MaterialData
 {
-    // Blinn-Phong's
+    // BlinnPhong's
     Vec4f ambient;
     Vec4f diffuse;
     Vec4f specular;
@@ -19,13 +19,22 @@ struct MaterialData
     uint8_t illumination_model = 2;
 
     //PBR's
-
+    Vec4f albedo;
+    float roughness;
+    float metallic;
     
     //Texture Pointers
+    // BlinnPhong's
     const Texture* pDiffuse_map = nullptr;
     const Texture* pSpecular_map = nullptr;
     const Texture* pBump_map = nullptr;
-    const Texture* pAlpha_map = nullptr;
+    const Texture* pAlpha_map = nullptr;   
+    // PBR's
+    const Texture* pAlbedo_map = nullptr;
+    const Texture* pRoughness_map = nullptr;
+    const Texture* pMetallic_map = nullptr;
+    const Texture* pNormal_map = nullptr;
+    const Texture* pAO_map = nullptr;
     
 };
 
