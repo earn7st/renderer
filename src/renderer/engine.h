@@ -13,6 +13,7 @@ public:
     Engine(uint32_t w = DEFAULT_DISPLAYER_WIDTH, uint32_t h = DEFAULT_DISPLAYER_HEIGHT);
     int start_up(const std::string& scene_name, const RenderState& render_state);
     void run();
+    void export_ppm_image(const std::string& export_filepath);
     int shut_down();
 
     void print_info() const;

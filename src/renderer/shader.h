@@ -3,7 +3,6 @@
 
 #include <functional>
 
-#include "math/math_all.h"
 #include "renderer/render_types.hpp"
 #include "renderer/shader_constants.h"
 

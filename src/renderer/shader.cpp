@@ -1,4 +1,5 @@
 #include "math/vector.hpp"
+#include "math/geometry.hpp"
 #include "renderer/shader.h"
 #include "renderer/render_types.hpp"
 
@@ -80,39 +81,6 @@ RGBA blinn_phong_fragment_shader(const FragmentIn& input, const ShaderConstants&
 
     return RGBA(final_color, 1.f);
 }
-// 辅助函数：正态分布函数 (Trowbridge-Reitz GGX)
-float DistributionGGX(Vec3f N, Vec3f H, float roughness) {
-    float a = roughness * roughness;
-    float a2 = a * a;
-    float NdotH = std::max(dot(N, H), 0.0f);
-    float NdotH2 = NdotH * NdotH;
-    float nom = a2;
-    float denom = (NdotH2 * (a2 - 1.0f) + 1.0f);
-    denom = 3.14159265359f * denom * denom;
-    return nom / denom;
-}
-
-// 辅助函数：几何遮蔽函数 (Schlick-GGX)
-float GeometrySchlickGGX(float NdotV, float roughness) {
-    float r = (roughness + 1.0f);
-    float k = (r * r) / 8.0f;
-    float nom = NdotV;
-    float denom = NdotV * (1.0f - k) + k;
-    return nom / denom;
-}
-
-float GeometrySmith(Vec3f N, Vec3f V, Vec3f L, float roughness) {
-    float NdotV = std::max(dot(N, V), 0.0f);
-    float NdotL = std::max(dot(N, L), 0.0f);
-    float ggx2 = GeometrySchlickGGX(NdotV, roughness);
-    float ggx1 = GeometrySchlickGGX(NdotL, roughness);
-    return ggx1 * ggx2;
-}
-
-// 辅助函数：菲涅尔方程 (Fresnel-Schlick)
-Vec3f fresnelSchlick(float cosTheta, Vec3f F0) {
-    return F0 + (Vec3f(1.0f) - F0) * std::pow(std::clamp(1.0f - cosTheta, 0.0f, 1.0f), 5.0f);
-}
 
 RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_constants)
 {
@@ -138,7 +106,7 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     float metallic  = mat_data.pMetallic_map  ? mat_data.pMetallic_map->textureRGB(input.texcoord.x_, input.texcoord.y_).x_ : mat_data.metallic;
     float roughness = mat_data.pRoughness_map ? mat_data.pRoughness_map->textureRGB(input.texcoord.x_, input.texcoord.y_).x_ : mat_data.roughness;
     float ao        = mat_data.pAO_map        ? mat_data.pAO_map->textureRGB(input.texcoord.x_, input.texcoord.y_).x_ : 1.0f;
-
+    
     // 3. 计算 F0 (基础反射率)
     // 非金属固定为 0.04，金属则使用 Albedo 颜色
     Vec3f F0 = Vec3f(0.04f); 
@@ -170,15 +138,14 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
         kD *= 1.0f - metallic; // 金属不产生漫反射
 
         float NdotL = std::max(dot(N, L), 0.0f);
-        Lo += (kD * albedo / 3.14159265359f + specular) * radiance * NdotL;
+        Lo += (kD * albedo / PI + specular) * radiance * NdotL;
     }
 
     // 5. 环境光与最终整合
     Vec3f ambient = Vec3f(0.03f) * albedo * ao; // 简化的环境光
     Vec3f color = ambient + Lo;
 
-
-    // color = color / (color + Vec3f(1.0f));
+    color = color / (color + Vec3f(1.0f));
     color = Vec3f(std::pow(color.x_, 1.0f/2.2f), std::pow(color.y_, 1.0f/2.2f), std::pow(color.z_, 1.0f/2.2f));
 
     return RGBA(color, 1.0f);

@@ -7,7 +7,7 @@
 #include <cmath>
 #include <cstring>
 
-#include "constant.h"
+#include "constants.h"
 #include "vector.hpp"
 
 // Matrix 4x4

@@ -1,3 +1,5 @@
+#include <fstream>
+
 #include "renderer/engine.h"
 #include "renderer/render_states.h"
 #include "renderer/render_types.hpp"
@@ -60,6 +62,30 @@ void Engine::run()
         displayer_.present(main_framebuffer_);
     }
 
+}
+
+void Engine::export_ppm_image(const std::string& export_filepath)
+{
+    std::ofstream ofs(export_filepath);
+
+    uint32_t width = main_framebuffer_.get_width();
+    uint32_t height = main_framebuffer_.get_height();
+    
+    ofs << "P3\n" << width << " " << height << "\n255\n";
+
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            RGBA color = main_framebuffer_.get_color(x, y);
+
+            int r = static_cast<int>(255.999f * color.x_);
+            int g = static_cast<int>(255.999f * color.y_);
+            int b = static_cast<int>(255.999f * color.z_);
+
+            ofs << r << " " << g << " " << b << " ";
+        }
+        ofs << "\n";
+    }
+    ofs.close();
 }
 
 int Engine::shut_down()

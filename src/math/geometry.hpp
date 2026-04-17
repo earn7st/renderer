@@ -4,6 +4,7 @@
 #include <algorithm>
 
 #include "vector.hpp"
+#include "constants.h"
 
 inline
 bool inside_triangle(const Vec2f& p, const Vec2f& v_a, const Vec2f& v_b, const Vec2f& v_c)
@@ -97,6 +98,44 @@ Vec4f interpolate(const Vec4f& v0, const Vec4f& v1, const Vec4f& v2, float alpha
         v0.y_ * alpha + v1.y_ * beta + v2.y_ * gamma,
         v0.z_ * alpha + v1.z_ * beta + v2.z_ * gamma,
         1.0f);
+}
+
+// (Trowbridge-Reitz GGX)
+inline
+float DistributionGGX(Vec3f N, Vec3f H, float roughness) {
+    float a = roughness * roughness;
+    float a2 = a * a;
+    float NdotH = std::max(dot(N, H), 0.0f);
+    float NdotH2 = NdotH * NdotH;
+    float nom = a2;
+    float denom = (NdotH2 * (a2 - 1.0f) + 1.0f);
+    denom = PI * denom * denom;
+    return nom / denom;
+}
+
+// (Schlick-GGX)
+inline
+float GeometrySchlickGGX(float NdotV, float roughness) {
+    float r = (roughness + 1.0f);
+    float k = (r * r) / 8.0f;
+    float nom = NdotV;
+    float denom = NdotV * (1.0f - k) + k;
+    return nom / denom;
+}
+
+inline
+float GeometrySmith(Vec3f N, Vec3f V, Vec3f L, float roughness) {
+    float NdotV = std::max(dot(N, V), 0.0f);
+    float NdotL = std::max(dot(N, L), 0.0f);
+    float ggx2 = GeometrySchlickGGX(NdotV, roughness);
+    float ggx1 = GeometrySchlickGGX(NdotL, roughness);
+    return ggx1 * ggx2;
+}
+
+// (Fresnel-Schlick)
+inline
+Vec3f fresnelSchlick(float cosTheta, Vec3f F0) {
+    return F0 + (Vec3f(1.0f) - F0) * std::pow(std::clamp(1.0f - cosTheta, 0.0f, 1.0f), 5.0f);
 }
 
 #endif

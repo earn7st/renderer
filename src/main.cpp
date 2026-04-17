@@ -8,7 +8,7 @@
 #include "scene/mesh.h"
 #include "scene/camera.h"
 
-RenderState parse_parameters(int argc, char* argv[])
+RenderState parse_parameters(int argc, char* argv[], std::string& export_filepath)
 {
     RenderState render_state;
     for(int i = 2; i < argc; ++i)
@@ -30,6 +30,26 @@ RenderState parse_parameters(int argc, char* argv[])
         {
             render_state.polygon_mode = FILL;
         }
+        if (arg == "-e" or arg == "--export")
+        {
+            if (i + 1 >= argc)
+            {
+                std::cout << "Default Export filepath: ../results/output.ppm" << std::endl;
+            } else {
+                i++;
+                std::string filepath = argv[i];
+                if (filepath.length() >= 4 && filepath.compare(filepath.length() - 4, 4, ".ppm") == 0) 
+                {
+                    export_filepath = filepath;
+                } else
+                {
+                    std::cout << arg << " Requires .ppm Format Export Filepath " << std::endl;
+                    std::cout << "Default Export Filepath: ../results/output.ppm" << std::endl;
+                }
+            }
+            // Export filepath Valid Check
+            
+        }
         // TODO: CullMode, DepthTest...
     }
     return render_state;
@@ -46,12 +66,15 @@ int main(int argc, char* argv[])
     }
 
     std::string scene_name = argv[1];
-    RenderState render_state = parse_parameters(argc, argv);
-    
+    std::string export_filepath = "../results/output.ppm";
+    RenderState render_state = parse_parameters(argc, argv, export_filepath);
+
     Engine engine;
     if(engine.start_up(scene_name, render_state) < 0) return -1;
 
     engine.run();
+
+    engine.export_ppm_image(export_filepath);
 
     return 0;
 }
