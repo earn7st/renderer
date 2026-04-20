@@ -88,13 +88,12 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     const LightUniform& light_uniform = shader_constants.light_uniform;
     const MaterialData& mat_data = shader_constants.mat_data;
 
-    // 1. 准备基础向量
     Vec3f world_pos = Vec3f(input.world_pos.x_, input.world_pos.y_, input.world_pos.z_);
     Vec3f N = normalize(Vec3f(input.world_normal.x_, input.world_normal.y_, input.world_normal.z_));
     Vec3f V = normalize(uniform.world_camera_position - world_pos);
 
-    // 2. 采样贴图并处理空间
-    // Albedo 转线性空间
+    // Sampling
+    // Albedo, To Linear
     Vec3f albedo;
     if (mat_data.pAlbedo_map) {
         Vec3f srgb = mat_data.pAlbedo_map->textureRGB(input.texcoord.x_, input.texcoord.y_);
@@ -107,19 +106,19 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     float roughness = mat_data.pRoughness_map ? mat_data.pRoughness_map->textureRGB(input.texcoord.x_, input.texcoord.y_).x_ : mat_data.roughness;
     float ao        = mat_data.pAO_map        ? mat_data.pAO_map->textureRGB(input.texcoord.x_, input.texcoord.y_).x_ : 1.0f;
     
-    // 3. 计算 F0 (基础反射率)
-    // 非金属固定为 0.04，金属则使用 Albedo 颜色
+    // F0
+    // 0.04 for dielectric，Albedo color for metal
     Vec3f F0 = Vec3f(0.04f); 
     F0 = F0 * (1.0f - metallic) + albedo * metallic; // 假设你有一个 lerp 函数，或者手动：F0 * (1-m) + albedo * m
 
     Vec3f Lo(0.0f);
 
-    // 4. 计算直接光照 (这里以 Directional Light 为例)
+    // Calculate Direct Lighting
     for (const auto& light : light_uniform.directional_lights) {
         Vec3f L = normalize(-light.direction);
         Vec3f H = normalize(V + L);
         
-        // 辐射率 (辐射强度)
+        // radiance
         Vec3f radiance = light.color * light.intensity;
 
         // Cook-Torrance BRDF
@@ -127,25 +126,27 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
         float G = GeometrySmith(N, V, L, roughness);
         Vec3f F = fresnelSchlick(std::max(dot(H, V), 0.0f), F0);
 
-        // 计算镜面反射部分
+        // specular
         Vec3f numerator = F * D * G;
         float denominator = 4.0f * std::max(dot(N, V), 0.0f) * std::max(dot(N, L), 0.0f) + 0.0001f; // 防止除 0
         Vec3f specular = numerator / denominator;
 
-        // 计算漫反射部分 (能量守恒)
+        // diffuse
         Vec3f kS = F;
         Vec3f kD = Vec3f(1.0f) - kS;
-        kD *= 1.0f - metallic; // 金属不产生漫反射
+        kD *= 1.0f - metallic;
 
         float NdotL = std::max(dot(N, L), 0.0f);
         Lo += (kD * albedo / PI + specular) * radiance * NdotL;
     }
 
-    // 5. 环境光与最终整合
-    Vec3f ambient = Vec3f(0.03f) * albedo * ao; // 简化的环境光
+    // ambient
+    Vec3f ambient = Vec3f(0.03f) * albedo * ao; // Simplfied ambient light
     Vec3f color = ambient + Lo;
 
-    color = color / (color + Vec3f(1.0f));
+    // Simple Tone Mapping
+    // color = color / (color + Vec3f(1.0f));
+
     color = Vec3f(std::pow(color.x_, 1.0f/2.2f), std::pow(color.y_, 1.0f/2.2f), std::pow(color.z_, 1.0f/2.2f));
 
     return RGBA(color, 1.0f);

@@ -86,7 +86,7 @@ public:
 
     Vector3<T>() : Vector3(0, 0, 0) {}
     Vector3<T>(T x, T y, T z) : x_(x), y_(y), z_(z) {}
-    Vector3<T>(T value) : x_(value), y_(value), z_(value) {}
+    explicit Vector3<T>(T value) : x_(value), y_(value), z_(value) {}
     Vector3<T>(const Vector3<T>& v) : x_(v.x_), y_(v.y_), z_(v.z_) {}
     Vector3<T>& operator = (const Vector3<T>& v)
     {
@@ -108,6 +108,8 @@ public:
     Vector3<T>& operator *= (const T& v) { x_ *= v, y_ *= v, z_ *= v; return *this; }
     Vector3<T> operator / (const T& v) const { return Vector3<T>(x_ / v, y_ / v, z_ / v); }
     Vector3<T>& operator /= (const T& v) { x_ /= v, y_ /= v, z_ /= v; return *this; }
+    Vector3<T> operator / (const Vector3<T>& v) { return Vector3<T>(x_ / v.x_, y_ / v.y_, z_ / v.z_); }
+    Vector3<T>& operator /= (const Vector3<T>& v) { x_ /= v.x_, y_ /= v.y_, z_ /= v.z_; }
 
     double length2() const { return x_ * x_ + y_ * y_ + z_ * z_; }
     double length() const { return sqrt(length2()); }
