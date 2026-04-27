@@ -109,7 +109,7 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     // F0
     // 0.04 for dielectric，Albedo color for metal
     Vec3f F0 = Vec3f(0.04f); 
-    F0 = F0 * (1.0f - metallic) + albedo * metallic; // 假设你有一个 lerp 函数，或者手动：F0 * (1-m) + albedo * m
+    F0 = F0 * (1.0f - metallic) + albedo * metallic; // lerp
 
     Vec3f Lo(0.0f);
 
@@ -145,7 +145,7 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     Vec3f color = ambient + Lo;
 
     // Simple Tone Mapping
-    // color = color / (color + Vec3f(1.0f));
+    color = color / (color + Vec3f(1.0f));
 
     color = Vec3f(std::pow(color.x_, 1.0f/2.2f), std::pow(color.y_, 1.0f/2.2f), std::pow(color.z_, 1.0f/2.2f));
 

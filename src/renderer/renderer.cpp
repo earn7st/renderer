@@ -5,6 +5,13 @@
 
 uint32_t cnt = 0;
 
+bool should_clip(const Varying &v) {
+    float w = v.clip_w;
+    return (v.clip_pos.x_ > w || v.clip_pos.x_ < -w) &&
+           (v.clip_pos.y_ > w || v.clip_pos.y_ < -w) &&
+           (v.clip_pos.z_ > w || v.clip_pos.z_ < -w);
+}
+
 Renderer::Renderer(RenderState rs)
 {
     render_state_.polygon_mode = rs.polygon_mode;
@@ -61,7 +68,6 @@ void Renderer::render(const Scene& scene)
         const Model& model = *it;
         draw_model(model, shader_constants);
     }
-    
 }
 
 void Renderer::draw_model(const Model& model, ShaderConstants& shader_constants)
@@ -98,7 +104,7 @@ void Renderer::draw_model(const Model& model, ShaderConstants& shader_constants)
 void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, const Shader* shader, const ShaderConstants& shader_constants)
 {
     if (count % 3 != 0){
-        std::cerr << "Renderer::draw_call(): Size cannot divided by 3!\n";
+        std::cerr << "Renderer::draw_call(): Size cannot be divided by 3!\n";
         return ;
     }
 
@@ -114,7 +120,12 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, cons
 
         // (Optional) Geometry Shading
         // (Optional) Culling
-        // (Optional) Clipping
+
+        // Clipping
+        if (should_clip(v0) && should_clip(v1) && should_clip(v2))
+        {
+            continue;
+        }
 
         // Rasterization : Perspective Division, Screen Mapping, rasterizing
         rasterizer_.rasterize(v0, v1, v2, fb_, shader, shader_constants, render_state_);

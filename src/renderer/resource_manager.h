@@ -31,7 +31,6 @@ public:
 
     void print_resources() const;
 
-
 private:
     std::string scene_assets_root_path_;
 
