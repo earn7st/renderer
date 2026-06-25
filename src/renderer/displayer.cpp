@@ -62,15 +62,15 @@ bool Displayer::present(const Framebuffer& fb)
     const std::vector<RGBA> float_pixels = fb.get_color_data();
 
     if (display_buffer_.size() != float_pixels.size())
-        display_buffer_.resize(float_pixels.size());    
+        display_buffer_.resize(float_pixels.size());
 
-    if (!texture_ || !renderer_) 
+    if (!texture_ || !renderer_)
     {
         SDL_Log("Displayer::present(): SDL::Invalid pixel data or SDL objects.");
         return false;
     }
 
-    for (int i = 0; i < float_pixels.size(); ++i)
+    for (size_t i = 0; i < float_pixels.size(); ++i)
     {
         RGBA c = float_pixels[i];
         uint8_t r = static_cast<uint8_t>(std::clamp(c.x_, 0.f, 1.f) * 255.f);
@@ -86,4 +86,10 @@ bool Displayer::present(const Framebuffer& fb)
     SDL_RenderPresent(renderer_);
 
     return true;
+}
+
+void Displayer::set_title(const std::string& title)
+{
+    if (window_)
+        SDL_SetWindowTitle(window_, title.c_str());
 }

@@ -20,6 +20,8 @@ public:
 
     int init_SDL();
     bool present(const Framebuffer& fb);
+    SDL_Window* get_window() const { return window_; }
+    void set_title(const std::string& title);
 
 private:
     uint32_t width_ = DEFAULT_DISPLAYER_WIDTH;

@@ -73,6 +73,83 @@ Vec3f compute_barycentric_coord_2D(const Vec2f& v, const Vec2f& v_a, const Vec2f
 
     return Vec3f(alpha, beta, gamma);
 }
+// ============================================================
+// Incremental edge-function traversal for triangle rasterization
+// ============================================================
+//
+// For a triangle with vertices (v0, v1, v2), define three edge functions:
+//   f0(p) = edge(p, v0, v1)  — zero on the line v0→v1
+//   f1(p) = edge(p, v1, v2)  — zero on the line v1→v2
+//   f2(p) = edge(p, v2, v0)  — zero on the line v2→v0
+//
+// The edge function f_ab(x,y) = (a.y-b.y)*x + (b.x-a.x)*y + (a.x*b.y - b.x*a.y)
+// is linear, so stepping x by +1 adds (a.y-b.y), stepping y by +1 adds (b.x-a.x).
+//
+// Winding is normalized so all edge functions are positive for interior points.
+// Barycentrics:  alpha = f1/area,  beta = f2/area,  gamma = f0/area
+// where area = f0(v2) = f1(v0) = f2(v1) = 2 * triangle_area.
+
+struct TriangleEdgeSetup
+{
+    float f0, f1, f2;          // edge values at current scan position
+    float f0_sx, f1_sx, f2_sx; // delta per +x step
+    float f0_sy, f1_sy, f2_sy; // delta per +y step
+    float inv_area;            // 1 / (2 * signed triangle area)
+    int min_x, min_y, max_x, max_y;
+};
+
+inline TriangleEdgeSetup setup_triangle_edges(const Vec2f& v0, const Vec2f& v1, const Vec2f& v2,
+                                               uint32_t screen_width, uint32_t screen_height)
+{
+    TriangleEdgeSetup s;
+
+    // --- bounding box (clamped to screen) ---
+    s.min_x = (int)std::floor(std::min({v0.x_, v1.x_, v2.x_}));
+    s.min_y = (int)std::floor(std::min({v0.y_, v1.y_, v2.y_}));
+    s.max_x = (int)std::ceil (std::max({v0.x_, v1.x_, v2.x_}));
+    s.max_y = (int)std::ceil (std::max({v0.y_, v1.y_, v2.y_}));
+
+    s.min_x = std::max(0, s.min_x);
+    s.min_y = std::max(0, s.min_y);
+    s.max_x = std::min((int)screen_width  - 1, s.max_x);
+    s.max_y = std::min((int)screen_height - 1, s.max_y);
+
+    // --- edge step deltas ---
+    // f_ab(x+1, y) - f_ab(x,y) = a.y - b.y
+    // f_ab(x, y+1) - f_ab(x,y) = b.x - a.x
+    s.f0_sx = v0.y_ - v1.y_;   s.f0_sy = v1.x_ - v0.x_;   // edge v0→v1
+    s.f1_sx = v1.y_ - v2.y_;   s.f1_sy = v2.x_ - v1.x_;   // edge v1→v2
+    s.f2_sx = v2.y_ - v0.y_;   s.f2_sy = v0.x_ - v2.x_;   // edge v2→v0
+
+    // --- edge-function constants C = a.x * b.y - b.x * a.y ---
+    float c0 = v0.x_ * v1.y_ - v1.x_ * v0.y_;
+    float c1 = v1.x_ * v2.y_ - v2.x_ * v1.y_;
+    float c2 = v2.x_ * v0.y_ - v0.x_ * v2.y_;
+
+    // --- base values at the first sample point (min_x + 0.5, min_y + 0.5) ---
+    float bx = (float)s.min_x + 0.5f;
+    float by = (float)s.min_y + 0.5f;
+    s.f0 = s.f0_sx * bx + s.f0_sy * by + c0;
+    s.f1 = s.f1_sx * bx + s.f1_sy * by + c1;
+    s.f2 = s.f2_sx * bx + s.f2_sy * by + c2;
+
+    // --- area = f0(v2) = 2 * signed triangle area ---
+    float area = s.f0_sx * v2.x_ + s.f0_sy * v2.y_ + c0;
+
+    // --- normalise winding so interior points have all edges >= 0 ---
+    if (area < 0.0f) {
+        s.f0 = -s.f0;  s.f0_sx = -s.f0_sx;  s.f0_sy = -s.f0_sy;
+        s.f1 = -s.f1;  s.f1_sx = -s.f1_sx;  s.f1_sy = -s.f1_sy;
+        s.f2 = -s.f2;  s.f2_sx = -s.f2_sx;  s.f2_sy = -s.f2_sy;
+        area = -area;
+    }
+
+    // Degenerate triangle guard: area near zero
+    s.inv_area = (area > 1e-12f) ? (1.0f / area) : 0.0f;
+
+    return s;
+}
+
 inline
 Vec2f interpolate(const Vec2f& v0, const Vec2f& v1, const Vec2f& v2, float alpha, float beta, float gamma)
 {

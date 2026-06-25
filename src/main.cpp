@@ -72,7 +72,25 @@ int main(int argc, char* argv[])
     Engine engine;
     if(engine.start_up(scene_name, render_state) < 0) return -1;
 
-    engine.run();
+    bool headless = false, parallel = false, interactive = false;
+    for (int i = 2; i < argc; ++i) {
+        if (std::string(argv[i]) == "--headless")    { headless = true; }
+        if (std::string(argv[i]) == "--parallel")    { parallel = true; }
+        if (std::string(argv[i]) == "--interactive") { interactive = true; }
+    }
+    if (headless) {
+        if (parallel)
+            engine.render_one_frame_parallel();
+        else
+            engine.render_one_frame();
+    } else if (interactive) {
+        if (parallel)
+            engine.run_interactive_parallel();
+        else
+            engine.run_interactive();
+    } else {
+        engine.run();
+    }
 
     engine.export_ppm_image(export_filepath);
 
