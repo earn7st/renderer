@@ -34,7 +34,7 @@ RenderState parse_parameters(int argc, char* argv[], std::string& export_filepat
         {
             if (i + 1 >= argc)
             {
-                std::cout << "Default Export filepath: ../results/output.ppm" << std::endl;
+                std::cout << "Default Export filepath: ../../results/output.ppm" << std::endl;
             } else {
                 i++;
                 std::string filepath = argv[i];
@@ -44,7 +44,7 @@ RenderState parse_parameters(int argc, char* argv[], std::string& export_filepat
                 } else
                 {
                     std::cout << arg << " Requires .ppm Format Export Filepath " << std::endl;
-                    std::cout << "Default Export Filepath: ../results/output.ppm" << std::endl;
+                    std::cout << "Default Export Filepath: ../../results/output.ppm" << std::endl;
                 }
             }
             // Export filepath Valid Check
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
     }
 
     std::string scene_name = argv[1];
-    std::string export_filepath = "../results/output.ppm";
+    std::string export_filepath = PROJECT_SOURCE_DIR "/results/output.ppm";
     RenderState render_state = parse_parameters(argc, argv, export_filepath);
 
     Engine engine;

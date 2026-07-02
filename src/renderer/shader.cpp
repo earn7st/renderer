@@ -96,20 +96,19 @@ RGBA PBR_fragment_shader(const FragmentIn& input, const ShaderConstants& shader_
     // --- Normal mapping ---
     if (mat_data.pNormal_map)
     {
+        // Build TBN: T is already ~unit-length from compute_tangents();
+        // re-orthogonalise against N and normalise in a single step.
         Vec3f T(input.tangent.x_, input.tangent.y_, input.tangent.z_);
-        T = normalize(T);
-        float handedness = input.tangent.w_ >= 0.0f ? 1.0f : -1.0f;
-
-        // Re-orthogonalise T against N (Gram-Schmidt)
         T = normalize(T - N * dot(N, T));
-        Vec3f B = cross(N, T) * handedness;
+        Vec3f B = cross(N, T);
+        if (input.tangent.w_ < 0.0f) B = -B;          // handedness
 
-        // Sample normal map and decode [0,1] → [-1,1]
+        // Sample normal map and decode [0,1] → [-1,1].
+        // Normal maps store unit vectors — skip re-normalise.
         Vec3f tn = mat_data.pNormal_map->textureRGB(input.texcoord.x_, input.texcoord.y_);
         Vec3f ts_normal(tn.x_ * 2.0f - 1.0f,
                         tn.y_ * 2.0f - 1.0f,
                         tn.z_ * 2.0f - 1.0f);
-        ts_normal = normalize(ts_normal);
 
         // Transform tangent-space normal to world space
         N = normalize(T * ts_normal.x_ + B * ts_normal.y_ + N * ts_normal.z_);

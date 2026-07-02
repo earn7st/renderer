@@ -6,7 +6,7 @@
 #include "renderer/render_types.hpp"
 #include "scene/scene_loader.h"
 
-#define SCENE_PATH  "../scenes/"
+#define SCENE_PATH  PROJECT_SOURCE_DIR "/scenes/"
 
 Engine::Engine(uint32_t w, uint32_t h)
     : displayer_(w, h), input_handler_(), resource_manager_(),

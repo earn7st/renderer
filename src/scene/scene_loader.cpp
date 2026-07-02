@@ -112,6 +112,11 @@ int JsonSceneLoader::load_scene_from_context_path(const std::string& scene_conte
     json data = json::parse(f);
 
     std::string asset_path = data.at("asset_path").get<std::string>();
+    // asset_path in JSON is "../assets/<name>/", authored for CWD one level
+    // below the project root. Strip the leading ".." and anchor to the
+    // compile-time project source directory so resolution is CWD-independent.
+    if (asset_path.size() >= 2 && asset_path[0] == '.' && asset_path[1] == '.')
+        asset_path = PROJECT_SOURCE_DIR + asset_path.substr(2);
     r_manager.set_scene_assets_root_path(asset_path);
 
     if (data.contains("camera")) 

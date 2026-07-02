@@ -7,9 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 file(GLOB_RECURSE SOURCE_FILES "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-target_include_directories(${PROJECT_NAME} 
+target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+
+target_compile_definitions(${PROJECT_NAME}
+    PRIVATE
+        PROJECT_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 if(WIN32)
