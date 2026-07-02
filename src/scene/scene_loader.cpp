@@ -3,12 +3,88 @@
 #include "scene/scene_loader.h"
 
 #include <fstream>
+#include <cstring>
 
 #include "thirdparty/json.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #include "thirdparty/stb_image.h"
 
 using json = nlohmann::json;
+
+// ============================================================
+// Compute per-vertex tangent vectors from triangle geometry.
+// Uses the MikkTSpace convention: tangent.w stores handedness
+// so that bitangent = cross(normal, tangent.xyz) * tangent.w.
+// ============================================================
+static void compute_tangents(Mesh& mesh)
+{
+    size_t num_vertices = mesh.vertices.size();
+    std::vector<Vec3f> accum_t(num_vertices, Vec3f(0.0f));
+    std::vector<Vec3f> accum_b(num_vertices, Vec3f(0.0f));
+
+    for (size_t i = 0; i + 2 < mesh.indices.size(); i += 3)
+    {
+        uint32_t i0 = mesh.indices[i];
+        uint32_t i1 = mesh.indices[i + 1];
+        uint32_t i2 = mesh.indices[i + 2];
+
+        const Vertex& v0 = mesh.vertices[i0];
+        const Vertex& v1 = mesh.vertices[i1];
+        const Vertex& v2 = mesh.vertices[i2];
+
+        Vec3f e1(v1.pos.x_ - v0.pos.x_, v1.pos.y_ - v0.pos.y_, v1.pos.z_ - v0.pos.z_);
+        Vec3f e2(v2.pos.x_ - v0.pos.x_, v2.pos.y_ - v0.pos.y_, v2.pos.z_ - v0.pos.z_);
+
+        float du1 = v1.texcoord.x_ - v0.texcoord.x_;
+        float dv1 = v1.texcoord.y_ - v0.texcoord.y_;
+        float du2 = v2.texcoord.x_ - v0.texcoord.x_;
+        float dv2 = v2.texcoord.y_ - v0.texcoord.y_;
+
+        float det = du1 * dv2 - du2 * dv1;
+        float inv_det = (std::abs(det) > 1e-12f) ? (1.0f / det) : 0.0f;
+
+        Vec3f tri_t = Vec3f(
+            inv_det * (dv2 * e1.x_ - dv1 * e2.x_),
+            inv_det * (dv2 * e1.y_ - dv1 * e2.y_),
+            inv_det * (dv2 * e1.z_ - dv1 * e2.z_)
+        );
+        Vec3f tri_b = Vec3f(
+            inv_det * (-du2 * e1.x_ + du1 * e2.x_),
+            inv_det * (-du2 * e1.y_ + du1 * e2.y_),
+            inv_det * (-du2 * e1.z_ + du1 * e2.z_)
+        );
+
+        accum_t[i0] = accum_t[i0] + tri_t;
+        accum_t[i1] = accum_t[i1] + tri_t;
+        accum_t[i2] = accum_t[i2] + tri_t;
+        accum_b[i0] = accum_b[i0] + tri_b;
+        accum_b[i1] = accum_b[i1] + tri_b;
+        accum_b[i2] = accum_b[i2] + tri_b;
+    }
+
+    for (size_t i = 0; i < num_vertices; ++i)
+    {
+        Vec3f n(mesh.vertices[i].normal.x_,
+                mesh.vertices[i].normal.y_,
+                mesh.vertices[i].normal.z_);
+        n = normalize(n);
+
+        Vec3f t = accum_t[i];
+        // Gram-Schmidt orthogonalise tangent against normal
+        t = t - n * dot(n, t);
+        float t_len = t.length();
+        if (t_len > 1e-8f)
+            t = t / t_len;
+        else
+            t = Vec3f(1.0f, 0.0f, 0.0f);  // degenerate fallback
+
+        // Determine handedness: does cross(n, t) agree with accumulated bitangent?
+        Vec3f b_cross = cross(n, t);
+        float handedness = (dot(b_cross, accum_b[i]) >= 0.0f) ? 1.0f : -1.0f;
+
+        mesh.vertices[i].tangent = Vec4f(t.x_, t.y_, t.z_, handedness);
+    }
+}
 
 std::shared_ptr<Texture> TextureLoader::load_texture_from_file(const std::string& filepath)
 {
@@ -221,6 +297,7 @@ Model JsonSceneLoader::load_model_from_json(const json& data, ResourceManager& r
         model.add_submesh(submesh);
     }
 
+    compute_tangents(*new_mesh_ptr);
     r_manager.load_mesh(new_mesh_ptr);
     model.set_mesh_weak(new_mesh_ptr);
 
