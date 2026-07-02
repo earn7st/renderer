@@ -6,8 +6,8 @@ uint32_t cnt = 0;
 
 bool should_clip(const Varying &v) {
     float w = v.clip_w;
-    return (v.clip_pos.x_ > w || v.clip_pos.x_ < -w) &&
-           (v.clip_pos.y_ > w || v.clip_pos.y_ < -w) &&
+    return (v.clip_pos.x_ > w || v.clip_pos.x_ < -w) ||
+           (v.clip_pos.y_ > w || v.clip_pos.y_ < -w) ||
            (v.clip_pos.z_ > w || v.clip_pos.z_ < -w);
 }
 
@@ -131,6 +131,17 @@ void Renderer::render_parallel(const Scene& scene, const FpsCamera& camera)
             Varying v0 = b.shader->execute_vertex_shader(ori_v0, b.constants);
             Varying v1 = b.shader->execute_vertex_shader(ori_v1, b.constants);
             Varying v2 = b.shader->execute_vertex_shader(ori_v2, b.constants);
+
+            // Backface culling (world-space)
+            if (render_state_.cull_mode == BACK) {
+                Vec3f w0(v0.world_pos.x_, v0.world_pos.y_, v0.world_pos.z_);
+                Vec3f w1(v1.world_pos.x_, v1.world_pos.y_, v1.world_pos.z_);
+                Vec3f w2(v2.world_pos.x_, v2.world_pos.y_, v2.world_pos.z_);
+                Vec3f face_normal = cross(w1 - w0, w2 - w0);
+                Vec3f view_dir   = b.constants.uniform.world_camera_position - w0;
+                if (dot(face_normal, view_dir) <= 0.0f)
+                    continue;
+            }
 
             if (should_clip(v0) && should_clip(v1) && should_clip(v2))
                 continue;  // leave at default-constructed (shader=nullptr)
@@ -281,8 +292,17 @@ void Renderer::draw_call(const Mesh& mesh, uint32_t offset, uint32_t count, cons
         Varying v1 = shader->execute_vertex_shader(ori_v1, shader_constants);
         Varying v2 = shader->execute_vertex_shader(ori_v2, shader_constants);
 
-        // (Optional) Geometry Shading
-        // (Optional) Culling
+        // Backface culling (world-space)
+        if (render_state_.cull_mode == BACK)
+        {
+            Vec3f w0(v0.world_pos.x_, v0.world_pos.y_, v0.world_pos.z_);
+            Vec3f w1(v1.world_pos.x_, v1.world_pos.y_, v1.world_pos.z_);
+            Vec3f w2(v2.world_pos.x_, v2.world_pos.y_, v2.world_pos.z_);
+            Vec3f face_normal = cross(w1 - w0, w2 - w0);
+            Vec3f view_dir   = shader_constants.uniform.world_camera_position - w0;
+            if (dot(face_normal, view_dir) <= 0.0f)
+                continue;
+        }
 
         // Clipping
         if (should_clip(v0) && should_clip(v1) && should_clip(v2))
